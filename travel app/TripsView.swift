@@ -13,6 +13,15 @@ struct TripsView: View {
     
     var body: some View {
         NavigationStack {
+            Button("Itinerary"){
+                print("Itinerary button pressed")
+            }
+            Button("Packing list"){
+                print("Packing list button pressed")
+            }
+            
+            
+            
             Text(".")
                 .navigationTitle("Trips")
                 .toolbar {
