@@ -42,6 +42,4 @@ struct TripDetailsView: View {
         }
     }
 }
-    #Preview {
-        TripDetailsView()
-    }
+

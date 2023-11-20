@@ -16,6 +16,3 @@ struct ItineraryView: View {
     }
 }
 
-#Preview {
-    ItineraryView()
-}

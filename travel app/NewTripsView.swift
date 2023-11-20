@@ -17,6 +17,8 @@ struct NewTripsView: View {
     @State private var startDate = Date()
     @State private var endDate = Date()
     @State private var flight = ""
+    @State private var departure = Date()
+    @State private var arrival = Date()
     
     var body: some View {
         VStack {
@@ -42,8 +44,10 @@ struct NewTripsView: View {
                 
                 Section("Flight") {
                     TextField("Enter Flight Number", text: $flight)
-                    DatePicker("Departure", selection: $currentDate, displayedComponents: .hourAndMinute)
-                    DatePicker("Arrival", selection: $currentDate, displayedComponents: .hourAndMinute)
+                    
+                    DatePicker("Departure", selection: $departure, displayedComponents: .hourAndMinute)
+                    
+                    DatePicker("Arrival", selection: $arrival, displayedComponents: .hourAndMinute)
 
                 }
                 Section {
