@@ -29,10 +29,14 @@ struct TripsView: View {
                 }
         }
         
+//        .sheet(isPresented: $showAddSheet) {
+//            NewTripsView(trips: .constant([]))
+//                .presentationDetents([.large])
+//        }
         .sheet(isPresented: $showAddSheet) {
-            NewTripsView(trips: .constant([]))
-                .presentationDetents([.large])
-        }
+                    NewTripsView(trips: .constant([]), isPresented: $showAddSheet)
+                        .presentationDetents([.large])
+                }
         
     }
 }
