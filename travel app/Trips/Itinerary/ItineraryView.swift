@@ -22,7 +22,7 @@ struct ItineraryView: View {
             }
             ScrollView(.horizontal) {
                         HStack {
-                            ForEach(1..<10) { index in
+                            ForEach(1..<2) { index in
                                 RoundedRectangle(cornerRadius: 10)
                                     .foregroundColor(.gray)
                                     .frame(width: 200, height: 200)
@@ -44,7 +44,9 @@ struct ItineraryView: View {
                     }
                 }
         }
-        
+        .sheet(isPresented: $showAddSheet) {
+            NewDayView()
+        }
     }
 }
 

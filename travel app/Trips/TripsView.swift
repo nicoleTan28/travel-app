@@ -15,6 +15,7 @@ struct TripsView: View {
         NavigationStack {
             
             Text(".")
+            
                 .navigationTitle("Trips")
                 .toolbar {
                     ToolbarItem {
