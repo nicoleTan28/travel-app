@@ -16,3 +16,8 @@ struct ItineraryView: View {
     }
 }
 
+struct ItineraryView_Previews: PreviewProvider {
+    static var previews: some View {
+        ItineraryView()
+    }
+}

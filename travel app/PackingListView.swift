@@ -38,9 +38,7 @@ struct PackingListView: View {
             }
             .navigationTitle("Packing List")
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    EditButton()
-                }
+                
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         showAddSheet = true
@@ -51,12 +49,12 @@ struct PackingListView: View {
             }
         }
         
-            .sheet(isPresented: $showAddSheet) {
-                NewTodoView(sourceArray: $todos)
-            }
-            
+        .sheet(isPresented: $showAddSheet) {
+            NewTodoView(sourceArray: $todos)
         }
+        
     }
+}
 
 
 struct PackingListView_Previews: PreviewProvider {

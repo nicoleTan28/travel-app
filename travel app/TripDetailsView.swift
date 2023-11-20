@@ -10,21 +10,19 @@ import SwiftUI
 struct TripDetailsView: View {
     var body: some View {
         NavigationStack{
-            VStack{
-                NavigationLink(destination: ItineraryView()) {
-                    Text("Itinerary")
-                        .padding()
-                        .background(.blue)
-                        .foregroundStyle(.white)
-                }
+            List{
+                
                     NavigationLink(destination: ItineraryView()) {
-                        Text("Packing list")
-                            .padding()
-                            .background(.blue)
-                            .foregroundStyle(.white)
+                        Text("Itinerary")
+                            
                     }
-                }
-            
+                    
+                    NavigationLink(destination: PackingListView()) {
+                        Text("Packing list")
+                            
+                    }
+                
+            }
             // Button("Itinerary"){
             //    print("Itinerary button pressed")
             //}
@@ -43,3 +41,8 @@ struct TripDetailsView: View {
     }
 }
 
+struct TripDetailsView_Previews: PreviewProvider {
+    static var previews: some View {
+        TripDetailsView()
+    }
+}
