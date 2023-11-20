@@ -9,6 +9,7 @@ import SwiftUI
 
 struct NewTripsView: View {
     
+    @Binding var trips: [Trip]
     @State private var name = ""
     @State private var startDate = Date()
     @State private var endDate = Date()
@@ -54,6 +55,18 @@ struct NewTripsView: View {
                             print("Pressed")
                         }
                     }
+//                    Section {
+//                        Button("Save", role: .none) {
+//                            // code to save the todo
+//                            let newTrip = Trip(name: name, startDate: startDate)
+//                            trips.append(newTrip)
+//                            dismiss()
+//                        }
+//                        Button("Cancel", role: .destructive) {
+//                            // code to cancel
+//                            dismiss()
+//                        }
+//                    }
                 }
         }
 //            Form {
@@ -88,6 +101,6 @@ struct NewTripsView: View {
 }
 struct NewTripsView_Previews: PreviewProvider {
     static var previews: some View {
-        NewTripsView()
+        NewTripsView(trips: .constant([]))
     }
 }

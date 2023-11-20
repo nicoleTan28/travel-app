@@ -12,9 +12,28 @@ struct TripsView: View {
     @State private var showAddSheet = false
     
     var body: some View {
-        VStack {
+        NavigationStack {
             Text(".")
+                .navigationTitle("Trips")
+                .toolbar {
+                    ToolbarItem {
+                        Button {
+                            showAddSheet = true
+                        } label: {
+                            Label("New candidate", systemImage: "plus")
+                        }
+                    }
+                    
+                    
+                    
+                }
         }
+        
+        .sheet(isPresented: $showAddSheet) {
+            NewTripsView(trips: .constant([]))
+                .presentationDetents([.large])
+        }
+        
     }
 }
 struct TripsView_Previews: PreviewProvider {
