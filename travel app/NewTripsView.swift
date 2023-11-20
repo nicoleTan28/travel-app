@@ -9,7 +9,27 @@ import SwiftUI
 
 struct NewTripsView: View {
     var body: some View {
-        Text("New trips view")
+        NavigationView {
+            Text("Content")
+                .navigationTitle("Navigation Title")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing){
+                        Button("Add") {
+                            print("pressed")
+                        }
+                    }
+                    ToolbarItem(placement: .navigationBarLeading){
+                        Button("Cancel") {
+                            print("Pressed")
+                        }
+                    }
+                }
+            
+            
+            
+            
+            
+        }
     }
 }
 

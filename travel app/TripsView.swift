@@ -16,6 +16,7 @@ struct TripsView: View {
                     ToolbarItem(placement: .automatic) {
                         Button("+") {
                             print("Pressed")
+                            
                         }
                         .font(.largeTitle)
                     }
