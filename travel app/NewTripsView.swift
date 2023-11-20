@@ -1,5 +1,5 @@
 //
-//  LocationsView.swift
+//  NewTripsView.swift
 //  travel app
 //
 //  Created by T Krobot on 20/11/23.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct LocationsView: View {
+struct NewTripsView: View {
     var body: some View {
-        Text("Locations")
+        Text("New trips view")
     }
 }
 
-struct LocationsView_Previews: PreviewProvider {
+struct NewTripsView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationsView()
+        NewTripsView()
     }
 }

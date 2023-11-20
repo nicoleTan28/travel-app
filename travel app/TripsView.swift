@@ -9,7 +9,19 @@ import SwiftUI
 
 struct TripsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            Text("Hello, World!").padding()
+                .navigationTitle("Trips")
+                .toolbar {
+                    ToolbarItem(placement: .automatic) {
+                        Button("+") {
+                            print("Pressed")
+                        }
+                        .font(.largeTitle)
+                    }
+                }
+        }
+        Text("Trips")
     }
 }
 

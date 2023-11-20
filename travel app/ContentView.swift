@@ -12,18 +12,16 @@ struct ContentView: View {
         VStack {
             TabView {
                 LocationsView()
-                    .badge(2)
                     .tabItem {
-                        Label("Received", systemImage: "tray.and.arrow.down.fill")
+                        Label("Locations", systemImage: "tray.and.arrow.down.fill")
                     }
                 HomeView()
                     .tabItem {
-                        Label("Sent", systemImage: "tray.and.arrow.up.fill")
+                        Label("Home", systemImage: "tray.and.arrow.up.fill")
                     }
                 TripsView()
-                    .badge("!")
                     .tabItem {
-                        Label("Account", systemImage: "person.crop.circle.fill")
+                        Label("Trips", systemImage: "person.crop.circle.fill")
                     }
             }
         }
