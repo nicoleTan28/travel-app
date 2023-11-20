@@ -12,6 +12,7 @@ struct NewTripsView: View {
     
     @Binding var trips: [Trip]
     @Binding var isPresented: Bool
+    @State private var currentDate = Date()
     @State private var name = ""
     @State private var startDate = Date()
     @State private var endDate = Date()
@@ -41,6 +42,9 @@ struct NewTripsView: View {
                 
                 Section("Flight") {
                     TextField("Enter Flight Number", text: $flight)
+                    DatePicker("Departure", selection: $currentDate, displayedComponents: .hourAndMinute)
+                    DatePicker("Arrival", selection: $currentDate, displayedComponents: .hourAndMinute)
+
                 }
                 Section {
                     Button("Save", role: .none) {
