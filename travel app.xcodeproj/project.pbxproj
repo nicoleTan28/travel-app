@@ -52,6 +52,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E2188082B0B8C8700F0C2A8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		D96FB5462B0AED0900E99464 = {
 			isa = PBXGroup;
 			children = (
@@ -71,7 +78,7 @@
 		D96FB5512B0AED0900E99464 /* travel app */ = {
 			isa = PBXGroup;
 			children = (
-				D9A2F89B2B0B46450085087A /* Preview Content */,
+				9E2188082B0B8C8700F0C2A8 /* Preview Content */,
 				D96FB5522B0AED0900E99464 /* travel_appApp.swift */,
 				D96FB5542B0AED0900E99464 /* ContentView.swift */,
 				D96FB5602B0AF0EF00E99464 /* LocationsView.swift */,
@@ -112,13 +119,6 @@
 				9E2188032B0B343F00F0C2A8 /* ItineraryView.swift */,
 			);
 			path = Itinerary;
-			sourceTree = "<group>";
-		};
-		D9A2F89B2B0B46450085087A /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
