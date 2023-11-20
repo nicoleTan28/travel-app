@@ -12,12 +12,16 @@ struct TripDetailsView: View {
         NavigationStack{
             List{
                 
-                    NavigationLink(destination: ItineraryView()) {
-                        Text("Itinerary")
-                            
+                NavigationLink{
+                    ItineraryView()
+                }label:{
+                    Text("Itinerary")
+
                     }
                     
-                    NavigationLink(destination: PackingListView()) {
+                NavigationLink{
+                    PackingListView()
+                }label:{
                         Text("Packing list")
                             
                     }

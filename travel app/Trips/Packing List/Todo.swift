@@ -14,3 +14,13 @@ struct Todo: Identifiable {
     var subtitle = ""
     var isCompleted = false
 }
+
+struct trip: Identifiable{
+    
+    let id = UUID()
+    var name: String
+    var start = Date()
+    var end = Date()
+    
+    
+}
