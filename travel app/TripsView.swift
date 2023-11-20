@@ -14,18 +14,21 @@ struct TripsView: View {
                 .navigationTitle("Trips")
                 .toolbar {
                     ToolbarItem(placement: .automatic) {
-                        Button("+") {
-                            print("Pressed")
+                        NavigationLink(destination: NewTripsView()){
+                            Text("+")
+                            // Button("+") {
+                            //    print("Pressed")
                             
+                            //}
+                            //.font(.largeTitle)
+                            // }
                         }
-                        .font(.largeTitle)
                     }
                 }
+            Text("Trips")
         }
-        Text("Trips")
     }
 }
-
 struct TripsView_Previews: PreviewProvider {
     static var previews: some View {
         TripsView()
