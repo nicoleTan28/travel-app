@@ -8,24 +8,12 @@
 import SwiftUI
 
 struct TripsView: View {
+    
+    @State private var showAddSheet = false
+    
     var body: some View {
-        NavigationStack {
-            Text("Hello, World!").padding()
-                .navigationTitle("Trips")
-                .toolbar {
-                    ToolbarItem(placement: .automatic) {
-                        NavigationLink(destination: NewTripsView()){
-                            Text("+")
-                            // Button("+") {
-                            //    print("Pressed")
-                            
-                            //}
-                            //.font(.largeTitle)
-                            // }
-                        }
-                    }
-                }
-            Text("Trips")
+        VStack {
+            Text(".")
         }
     }
 }

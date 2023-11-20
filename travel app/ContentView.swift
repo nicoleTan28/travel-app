@@ -13,15 +13,15 @@ struct ContentView: View {
             TabView {
                 LocationsView()
                     .tabItem {
-                        Label("Locations", systemImage: "tray.and.arrow.down.fill")
+                        Label("Locations", systemImage: "location.circle.fill")
                     }
                 HomeView()
                     .tabItem {
-                        Label("Home", systemImage: "tray.and.arrow.up.fill")
+                        Label("Home", systemImage: "house.fill")
                     }
                 TripsView()
                     .tabItem {
-                        Label("Trips", systemImage: "person.crop.circle.fill")
+                        Label("Trips", systemImage: "globe")
                     }
             }
         }
