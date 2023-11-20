@@ -16,8 +16,9 @@
 		D96FB5652B0AF10000E99464 /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5642B0AF10000E99464 /* TripsView.swift */; };
 		D96FB5672B0AF2F800E99464 /* NewTripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5662B0AF2F800E99464 /* NewTripsView.swift */; };
 		D96FB5692B0B00FE00E99464 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5682B0B00FE00E99464 /* Trip.swift */; };
-		D98A3CCB2B0B224200066D39 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A3CCA2B0B224200066D39 /* List.swift */; };
-		D98A3CCD2B0B229600066D39 /* NewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A3CCC2B0B229600066D39 /* NewListView.swift */; };
+		D98A3CD52B0B2A6500066D39 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A3CD42B0B2A6500066D39 /* Todo.swift */; };
+		D98A3CD72B0B2A8E00066D39 /* PackingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A3CD62B0B2A8E00066D39 /* PackingListView.swift */; };
+		D98A3CD92B0B2D1000066D39 /* NewTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A3CD82B0B2D1000066D39 /* NewTodoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +32,9 @@
 		D96FB5642B0AF10000E99464 /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
 		D96FB5662B0AF2F800E99464 /* NewTripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripsView.swift; sourceTree = "<group>"; };
 		D96FB5682B0B00FE00E99464 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
-		D98A3CCA2B0B224200066D39 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
-		D98A3CCC2B0B229600066D39 /* NewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewListView.swift; sourceTree = "<group>"; };
+		D98A3CD42B0B2A6500066D39 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		D98A3CD62B0B2A8E00066D39 /* PackingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingListView.swift; sourceTree = "<group>"; };
+		D98A3CD82B0B2D1000066D39 /* NewTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,9 +72,10 @@
 				D96FB5602B0AF0EF00E99464 /* LocationsView.swift */,
 				D96FB5622B0AF0F700E99464 /* HomeView.swift */,
 				D96FB5642B0AF10000E99464 /* TripsView.swift */,
-				D98A3CCA2B0B224200066D39 /* List.swift */,
-				D98A3CCC2B0B229600066D39 /* NewListView.swift */,
 				D96FB5682B0B00FE00E99464 /* Trip.swift */,
+				D98A3CD42B0B2A6500066D39 /* Todo.swift */,
+				D98A3CD62B0B2A8E00066D39 /* PackingListView.swift */,
+				D98A3CD82B0B2D1000066D39 /* NewTodoView.swift */,
 				D96FB5662B0AF2F800E99464 /* NewTripsView.swift */,
 				D96FB5562B0AED0B00E99464 /* Assets.xcassets */,
 				D96FB5582B0AED0B00E99464 /* Preview Content */,
@@ -159,13 +162,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D96FB5652B0AF10000E99464 /* TripsView.swift in Sources */,
-				D98A3CCB2B0B224200066D39 /* List.swift in Sources */,
 				D96FB5612B0AF0EF00E99464 /* LocationsView.swift in Sources */,
 				D96FB5632B0AF0F700E99464 /* HomeView.swift in Sources */,
-				D98A3CCD2B0B229600066D39 /* NewListView.swift in Sources */,
+				D98A3CD92B0B2D1000066D39 /* NewTodoView.swift in Sources */,
+				D98A3CD52B0B2A6500066D39 /* Todo.swift in Sources */,
 				D96FB5552B0AED0900E99464 /* ContentView.swift in Sources */,
 				D96FB5672B0AF2F800E99464 /* NewTripsView.swift in Sources */,
 				D96FB5692B0B00FE00E99464 /* Trip.swift in Sources */,
+				D98A3CD72B0B2A8E00066D39 /* PackingListView.swift in Sources */,
 				D96FB5532B0AED0900E99464 /* travel_appApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
