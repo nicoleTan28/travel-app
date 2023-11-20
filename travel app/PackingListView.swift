@@ -15,6 +15,7 @@ struct PackingListView: View {
     ]
     @State private var showAddSheet = false
     
+    
     var body: some View {
         NavigationStack {
             List($todos) { $todo in
