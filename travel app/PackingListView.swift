@@ -56,7 +56,6 @@ struct PackingListView: View {
     }
 }
 
-
 struct PackingListView_Previews: PreviewProvider {
     static var previews: some View {
         PackingListView()
