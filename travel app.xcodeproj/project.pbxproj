@@ -11,6 +11,9 @@
 		D96FB5552B0AED0900E99464 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5542B0AED0900E99464 /* ContentView.swift */; };
 		D96FB5572B0AED0B00E99464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D96FB5562B0AED0B00E99464 /* Assets.xcassets */; };
 		D96FB55A2B0AED0B00E99464 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D96FB5592B0AED0B00E99464 /* Preview Assets.xcassets */; };
+		D96FB5612B0AF0EF00E99464 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5602B0AF0EF00E99464 /* LocationsView.swift */; };
+		D96FB5632B0AF0F700E99464 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5622B0AF0F700E99464 /* HomeView.swift */; };
+		D96FB5652B0AF10000E99464 /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5642B0AF10000E99464 /* TripsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		D96FB5542B0AED0900E99464 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D96FB5562B0AED0B00E99464 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D96FB5592B0AED0B00E99464 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D96FB5602B0AF0EF00E99464 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
+		D96FB5622B0AF0F700E99464 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D96FB5642B0AF10000E99464 /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,9 @@
 			children = (
 				D96FB5522B0AED0900E99464 /* travel_appApp.swift */,
 				D96FB5542B0AED0900E99464 /* ContentView.swift */,
+				D96FB5602B0AF0EF00E99464 /* LocationsView.swift */,
+				D96FB5622B0AF0F700E99464 /* HomeView.swift */,
+				D96FB5642B0AF10000E99464 /* TripsView.swift */,
 				D96FB5562B0AED0B00E99464 /* Assets.xcassets */,
 				D96FB5582B0AED0B00E99464 /* Preview Content */,
 			);
@@ -137,6 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D96FB5652B0AF10000E99464 /* TripsView.swift in Sources */,
+				D96FB5612B0AF0EF00E99464 /* LocationsView.swift in Sources */,
+				D96FB5632B0AF0F700E99464 /* HomeView.swift in Sources */,
 				D96FB5552B0AED0900E99464 /* ContentView.swift in Sources */,
 				D96FB5532B0AED0900E99464 /* travel_appApp.swift in Sources */,
 			);
