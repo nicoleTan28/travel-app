@@ -43,7 +43,7 @@ struct NewTripsView: View {
 
                 
             }
-                .navigationTitle("Navigation Title")
+                .navigationTitle("New trip")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing){
                         Button("Add") {
