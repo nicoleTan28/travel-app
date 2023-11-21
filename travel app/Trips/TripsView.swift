@@ -58,7 +58,7 @@ struct TripsView: View {
 //        }
         .sheet(isPresented: $showAddSheet) {
                     NewTripsView(tripSource: $trips, isPresented: $showAddSheet)
-                        .presentationDetents([.large])
+                        .presentationDetents([.medium, .large])
                 }
         
     }
