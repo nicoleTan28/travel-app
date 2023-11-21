@@ -9,11 +9,8 @@ import SwiftUI
 
 struct TripDetailsView: View {
     
-    @Binding var tripName: [Trip]
-    @State private var tripTitle: String = "name"
     
     var body: some View {
-        NavigationStack{
             List{
                 
                 NavigationLink{
@@ -44,15 +41,14 @@ struct TripDetailsView: View {
             //.navigationTitle("Trip name")
             
             //}
-            .navigationTitle($tripTitle)
 
-        }
+        
     }
 }
 
 struct TripDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        TripDetailsView(tripName: .constant([]))
+        TripDetailsView()
     }
 }
 
