@@ -21,7 +21,7 @@ struct TripsView: View {
     
     var body: some View {
         NavigationStack {
-            List($trips){$trip in
+            List($trips, editActions: [.all]){ $trip in
                 NavigationLink{
                     TripDetailsView(tripName: $trips)
                 }label:{
@@ -32,14 +32,21 @@ struct TripsView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                         Text("**End date:** \(trip.endDate, formatter: dateFormatter)")
                             .frame(maxWidth: .infinity, alignment: .leading)
-
+                        
                     }
-
-                }}
+                    
+                    
+                }
+                
+            }
             
                 .navigationTitle("Trips")
                 .toolbar {
                     ToolbarItem {
+                        EditButton()
+                    }
+                    ToolbarItem {
+                       
                         Button {
                             showAddSheet = true
                         } label: {
@@ -58,7 +65,7 @@ struct TripsView: View {
 //        }
         .sheet(isPresented: $showAddSheet) {
                     NewTripsView(tripSource: $trips, isPresented: $showAddSheet)
-                        .presentationDetents([.medium, .large])
+                        .presentationDetents([.large])
                 }
         
     }
