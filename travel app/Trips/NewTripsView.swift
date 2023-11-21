@@ -77,11 +77,7 @@ struct NewTripsView: View {
         }
     }
 }
-//struct NewTripsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        NewTripsView(trips: .constant([]))
-//    }
-//}
+
 
 struct NewTripsView_Previews: PreviewProvider {
     static var previews: some View {

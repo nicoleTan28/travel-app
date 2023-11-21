@@ -18,7 +18,7 @@ struct PackingListView: View {
     
     var body: some View {
         NavigationStack {
-            List($todos) { $todo in
+            List($todos,editActions: [.all]) { $todo in
                 HStack {
                     Image(systemName: todo.isCompleted ? "checkmark.circle.fill" :  "circle")
                         .onTapGesture {
@@ -45,6 +45,9 @@ struct PackingListView: View {
                     } label: {
                         Image(systemName: "plus")
                     }
+                }
+                ToolbarItem(placement: .navigationBarLeading){
+                    EditButton()
                 }
             }
         }

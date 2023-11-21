@@ -17,7 +17,6 @@ struct NewTodoView: View {
         Form {
             Section("Info") {
                 TextField("Title", text: $todoTitle)
-                TextField("Subtitle", text: $todoSubtitle)
             }
             
             Section("Actions") {
