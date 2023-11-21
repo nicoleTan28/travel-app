@@ -10,7 +10,13 @@ import SwiftUI
 struct TripsView: View {
     
     @State private var showAddSheet = false
-    @State private var trips = [Trip(name: "Trip 1", startDate: Date.now),Trip(name: "Trip 2", startDate: Date.now)]
+    @State private var trips = [Trip(name: "Trip 1", startDate: Date.now, endDate: Date.now)]
+    
+    let dateFormatter: DateFormatter = {
+       let formatter = DateFormatter()
+       formatter.dateStyle = .medium
+       return formatter
+    }()
     
     var body: some View {
         NavigationStack {
@@ -20,9 +26,9 @@ struct TripsView: View {
                 }label:{
                     VStack(){
                         Text("**Trip name:** \(trip.name)")
-                        Text("**Start date:** \(trip.startDate)")
+                        Text("**Start date:** \(trip.startDate,formatter: dateFormatter)")
+                        Text("**End date:** \(trip.endDate, formatter: dateFormatter)")
                     }
-                    .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
                 }}
             
                 .navigationTitle("Trips")
@@ -45,7 +51,7 @@ struct TripsView: View {
 //                .presentationDetents([.large])
 //        }
         .sheet(isPresented: $showAddSheet) {
-                    NewTripsView(trips: .constant([]), isPresented: $showAddSheet)
+                    NewTripsView(tripSource: $trips, isPresented: $showAddSheet)
                         .presentationDetents([.large])
                 }
         

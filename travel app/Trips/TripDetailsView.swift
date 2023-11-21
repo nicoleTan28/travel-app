@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TripDetailsView: View {
+    
+    //@Binding var tripName: [Trip]
+    
     var body: some View {
         NavigationStack{
             List{
@@ -22,7 +25,7 @@ struct TripDetailsView: View {
                 NavigationLink{
                     PackingListView()
                 }label:{
-                        Text("Packing list")
+                    Text("Packing list")
                             
                     }
                 
@@ -50,3 +53,4 @@ struct TripDetailsView_Previews: PreviewProvider {
         TripDetailsView()
     }
 }
+

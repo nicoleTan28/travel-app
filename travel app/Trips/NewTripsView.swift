@@ -10,12 +10,13 @@ import SwiftUI
 
 struct NewTripsView: View {
     
-    @Binding var trips: [Trip]
+    @Environment(\.dismiss) var dismiss
+    @Binding var tripSource: [Trip]
     @Binding var isPresented: Bool
     @State private var currentDate = Date()
     @State private var name = ""
-    @State private var startDate = Date()
-    @State private var endDate = Date()
+    @State private var startDate: Date = Date()
+    @State private var endDate: Date = Date()
     @State private var flight = ""
     @State private var departure = Date()
     @State private var arrival = Date()
@@ -54,11 +55,13 @@ struct NewTripsView: View {
                     Button("Save", role: .none) {
                         // code to save the todo
                         let newTrip = Trip(name: name, startDate: startDate)
-                        trips.append(newTrip)
+                        tripSource.append(newTrip)
+                        dismiss()
                         isPresented = false
                     }
                     Button("Cancel", role: .destructive) {
                         // code to cancel
+                        dismiss()
                         isPresented = false
                     }
                 }
@@ -82,6 +85,6 @@ struct NewTripsView: View {
 
 struct NewTripsView_Previews: PreviewProvider {
     static var previews: some View {
-        NewTripsView(trips: .constant([]), isPresented: .constant(false))
+        NewTripsView(tripSource: .constant([]), isPresented: .constant(false))
     }
 }

@@ -96,8 +96,9 @@
 			children = (
 				D9A2F89A2B0B43810085087A /* Itinerary */,
 				D9A2F8992B0B43710085087A /* Packing List */,
-				D96FB5642B0AF10000E99464 /* TripsView.swift */,
 				D96FB5682B0B00FE00E99464 /* Trip.swift */,
+				D96FB5642B0AF10000E99464 /* TripsView.swift */,
+				9E2188012B0B30AC00F0C2A8 /* TripDetailsView.swift */,
 				D96FB5662B0AF2F800E99464 /* NewTripsView.swift */,
 			);
 			path = Trips;
@@ -108,7 +109,6 @@
 			children = (
 				D98A3CD42B0B2A6500066D39 /* Todo.swift */,
 				D98A3CD82B0B2D1000066D39 /* NewTodoView.swift */,
-				9E2188012B0B30AC00F0C2A8 /* TripDetailsView.swift */,
 				D98A3CD62B0B2A8E00066D39 /* PackingListView.swift */,
 			);
 			path = "Packing List";

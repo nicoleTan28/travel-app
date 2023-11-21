@@ -10,7 +10,7 @@ struct Trip: Identifiable, Codable {
     let id = UUID()
     var name: String
     var startDate:Date = Date()
-    //var endDate:Date = Date()
+    var endDate:Date = Date()
     //var departure = Date()
     //var arrival = Date()
 
