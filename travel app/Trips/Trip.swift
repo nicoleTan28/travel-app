@@ -6,15 +6,13 @@
 //
 
 import Foundation
-
 struct Trip: Identifiable, Codable {
-    
-    var id = UUID()
+    let id = UUID()
     var name: String
-    var startDate = Date()
-    var endDate = Date()
-    var departure = Date()
-    var arrival = Date()
+    var startDate:Date = Date()
+    //var endDate:Date = Date()
+    //var departure = Date()
+    //var arrival = Date()
 
 }
 
