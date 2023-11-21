@@ -25,6 +25,7 @@ struct TripDetailsView: View {
                     
                 NavigationLink{
                     PackingListView()
+                        .navigationTitle("Packing List")
                 }label:{
                     Text("Packing list")
                             

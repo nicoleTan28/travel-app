@@ -17,7 +17,6 @@ struct PackingListView: View {
     
     
     var body: some View {
-        NavigationStack {
             List($todos,editActions: [.all]) { $todo in
                 HStack {
                     Image(systemName: todo.isCompleted ? "checkmark.circle.fill" :  "circle")
@@ -36,7 +35,6 @@ struct PackingListView: View {
                 }
                 
             }
-            .navigationTitle("Packing List")
             .toolbar {
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -46,11 +44,11 @@ struct PackingListView: View {
                         Image(systemName: "plus")
                     }
                 }
-                ToolbarItem(placement: .navigationBarLeading){
+                ToolbarItem(){
                     EditButton()
                 }
             }
-        }
+        
         
         .sheet(isPresented: $showAddSheet) {
             NewTodoView(sourceArray: $todos)
