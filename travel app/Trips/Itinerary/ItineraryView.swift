@@ -57,7 +57,7 @@ struct ItineraryView: View {
                 }
         }
         .sheet(isPresented: $showAddSheet) {
-            NewLocationView()
+            LocationsView()
         }
     }
 }
