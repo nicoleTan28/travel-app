@@ -28,12 +28,12 @@ struct TripDetailsView: View {
                             .navigationTitle($trip.name)
                     } label:{
                         VStack() {
-//                            Text("**Trip name:** \(trip.name)")
-//                                .frame(maxWidth: .infinity, alignment: .leading)
-//                            Text("**Start date:** \(trip.startDate,formatter: dateFormatter)")
-//                                .frame(maxWidth: .infinity, alignment: .leading)
-//                            Text("**End date:** \(trip.endDate, formatter: dateFormatter)")
-//                                .frame(maxWidth: .infinity, alignment: .leading)
+                            Text("**Trip name:** \(trip.name)")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            Text("**Start date:** \(trip.startDate,formatter: dateFormatter)")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                            Text("**End date:** \(trip.endDate, formatter: dateFormatter)")
+                                .frame(maxWidth: .infinity, alignment: .leading)
                             
                         }
                         

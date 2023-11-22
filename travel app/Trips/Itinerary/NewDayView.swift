@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct NewDayView: View {
     
@@ -17,12 +18,23 @@ struct NewDayView: View {
     @Binding var tripSource: [Trip]
     @Binding var locationSource: [Location]
     @Binding var showAddSheet: Bool
-
+    @State private var showSearch = false
+    
     
     var body: some View {
         NavigationView {
-         //  Text(".")
+            //  Text(".")
             Form {
+                Section {
+                    Button {
+                        NavigationLink(destination: SearchView()) {
+                            
+                        }
+                    } label: {
+                        Text("Add location")
+                    }
+                }
+                
                 Section("Time") {
                     Toggle("All Day", isOn: $isAllDay)
                     
@@ -50,11 +62,15 @@ struct NewDayView: View {
                     }
                 }
             }
-                .navigationTitle("New location")
-
+            .navigationTitle("New location")
+            
         }
+        
     }
 }
+
+
+
 
 struct NewDayView_Previews: PreviewProvider {
     static var previews: some View {
