@@ -16,3 +16,4 @@ struct Trip: Identifiable, Codable {
 
 }
 
+

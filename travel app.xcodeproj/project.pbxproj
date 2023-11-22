@@ -24,6 +24,7 @@
 		D98A3CD52B0B2A6500066D39 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A3CD42B0B2A6500066D39 /* Todo.swift */; };
 		D98A3CD72B0B2A8E00066D39 /* PackingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A3CD62B0B2A8E00066D39 /* PackingListView.swift */; };
 		D98A3CD92B0B2D1000066D39 /* NewTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A3CD82B0B2D1000066D39 /* NewTodoView.swift */; };
+		D98AA4ED2B0DA207006B2827 /* LocationStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AA4EC2B0DA207006B2827 /* LocationStruct.swift */; };
 		D9A2F8952B0B41920085087A /* NewDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A2F8942B0B41920085087A /* NewDayView.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		D98A3CD42B0B2A6500066D39 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		D98A3CD62B0B2A8E00066D39 /* PackingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingListView.swift; sourceTree = "<group>"; };
 		D98A3CD82B0B2D1000066D39 /* NewTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoView.swift; sourceTree = "<group>"; };
+		D98AA4EC2B0DA207006B2827 /* LocationStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStruct.swift; sourceTree = "<group>"; };
 		D9A2F8942B0B41920085087A /* NewDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +136,7 @@
 		D9A2F89A2B0B43810085087A /* Itinerary */ = {
 			isa = PBXGroup;
 			children = (
+				D98AA4EC2B0DA207006B2827 /* LocationStruct.swift */,
 				D9A2F8942B0B41920085087A /* NewDayView.swift */,
 				9E2188032B0B343F00F0C2A8 /* ItineraryView.swift */,
 			);
@@ -220,6 +223,7 @@
 				D96FB5612B0AF0EF00E99464 /* LocationsView.swift in Sources */,
 				D96FB5632B0AF0F700E99464 /* HomeView.swift in Sources */,
 				D98A3CD92B0B2D1000066D39 /* NewTodoView.swift in Sources */,
+				D98AA4ED2B0DA207006B2827 /* LocationStruct.swift in Sources */,
 				D98A3CD52B0B2A6500066D39 /* Todo.swift in Sources */,
 				D96FB5552B0AED0900E99464 /* ContentView.swift in Sources */,
 				47C0F8892B0D914D0032E1E1 /* Location.swift in Sources */,

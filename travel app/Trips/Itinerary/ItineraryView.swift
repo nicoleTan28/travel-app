@@ -57,7 +57,7 @@ struct ItineraryView: View {
                 }
         }
         .sheet(isPresented: $showAddSheet) {
-            LocationsView()
+            NewDayView(tripSource: .constant([]), locationSource: .constant([]), showAddSheet: .constant(false))
         }
     }
 }

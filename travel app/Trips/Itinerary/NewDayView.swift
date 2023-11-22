@@ -9,9 +9,15 @@ import SwiftUI
 
 struct NewDayView: View {
     
+    @Environment(\.dismiss) var dismiss
     @State private var startTime = Date()
     @State private var endTime = Date()
     @State private var isAllDay = false
+    @State private var selectedDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date()) ?? Date()
+    @Binding var tripSource: [Trip]
+    @Binding var locationSource: [Location]
+    @Binding var showAddSheet: Bool
+
     
     var body: some View {
         NavigationView {
@@ -20,11 +26,28 @@ struct NewDayView: View {
                 Section("Time") {
                     Toggle("All Day", isOn: $isAllDay)
                     
-                    DatePicker("Start", selection: $startTime, displayedComponents: .hourAndMinute)
+                    DatePicker("Start", selection: isAllDay ? $selectedDate : $startTime, displayedComponents: .hourAndMinute)
                         .disabled(isAllDay ? true : false)
                         .foregroundColor(isAllDay ? .gray : .black)
-                    DatePicker("End", selection: $endTime, displayedComponents: .hourAndMinute)
+                    DatePicker("End", selection: isAllDay ? $selectedDate : $endTime, displayedComponents: .hourAndMinute)
+                        .disabled(isAllDay ? true : false)
+                        .foregroundColor(isAllDay ? .gray : .black)
                     
+                }
+                
+                Section {
+                    Button("Save", role: .none) {
+                        // code to save the todo
+                        let timing = Location(startTime: startTime, endTime: endTime)
+                        locationSource.append(timing)
+                        dismiss()
+                        showAddSheet = false
+                    }
+                    Button("Cancel", role: .destructive) {
+                        // code to cancel
+                        dismiss()
+                        showAddSheet = false
+                    }
                 }
             }
                 .navigationTitle("New location")
@@ -35,6 +58,6 @@ struct NewDayView: View {
 
 struct NewDayView_Previews: PreviewProvider {
     static var previews: some View {
-        NewDayView()
+        NewDayView(tripSource: .constant([]), locationSource: .constant([]), showAddSheet: .constant(false))
     }
 }
