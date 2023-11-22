@@ -21,21 +21,21 @@ struct NewDayView: View {
     @State private var showSearch = false
     
     let names = ["Holly", "Josh", "Rhonda", "Ted"]
-        @State private var searchText = ""
+    @State private var searchText = ""
     
     var body: some View {
         NavigationView {
             //  Text(".")
             Form {
                 List {
-                                ForEach(searchResults, id: \.self) { name in
-                                    NavigationLink {
-                                        Text(name)
-                                    } label: {
-                                        Text(name)
-                                    }
-                                }
-                            }
+                    ForEach(searchResults, id: \.self) { name in
+                        NavigationLink {
+                            Text(name)
+                        } label: {
+                            Text(name)
+                        }
+                    }
+                }
                 .navigationTitle("Contacts")
                 
                 
@@ -75,12 +75,12 @@ struct NewDayView: View {
     }
     
     var searchResults: [String] {
-            if searchText.isEmpty {
-                return names
-            } else {
-                return names.filter { $0.contains(searchText) }
-            }
+        if searchText.isEmpty {
+            return names
+        } else {
+            return names.filter { $0.contains(searchText) }
         }
+    }
     
 }
 

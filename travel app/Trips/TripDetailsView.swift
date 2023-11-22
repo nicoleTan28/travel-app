@@ -21,27 +21,27 @@ struct TripDetailsView: View {
     
     var body: some View {
         List{
-
-                List($trips, editActions: [.all]){ $trip in
-                    NavigationLink{
-                        TripDetailsView(tripSource: .constant([]))
-                            .navigationTitle($trip.name)
-                    } label:{
-                        VStack() {
-                            Text("**Trip name:** \(trip.name)")
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            Text("**Start date:** \(trip.startDate,formatter: dateFormatter)")
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            Text("**End date:** \(trip.endDate, formatter: dateFormatter)")
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                            
-                        }
-                        
+            
+            List($trips, editActions: [.all]){ $trip in
+                NavigationLink{
+                    TripDetailsView(tripSource: .constant([]))
+                        .navigationTitle($trip.name)
+                } label:{
+                    VStack() {
+                        Text("**Trip name:** \(trip.name)")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        Text("**Start date:** \(trip.startDate,formatter: dateFormatter)")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        Text("**End date:** \(trip.endDate, formatter: dateFormatter)")
+                            .frame(maxWidth: .infinity, alignment: .leading)
                         
                     }
                     
+                    
                 }
                 
+            }
+            
             
             NavigationLink{
                 ItineraryView(tripName: .constant([]))

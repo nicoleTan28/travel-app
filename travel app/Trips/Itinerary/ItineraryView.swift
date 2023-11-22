@@ -13,11 +13,11 @@ struct ItineraryView: View {
     @Binding var tripName: [Trip]
     @State private var day = 1
     @Environment(\.dismiss) var dismiss
-
-
+    
+    
     var body: some View {
         NavigationStack{
-      //      Text(".")
+            //      Text(".")
             List {
                 HStack {
                     Text("Day \(day)")
@@ -34,27 +34,27 @@ struct ItineraryView: View {
                 }
                 ScrollView(.horizontal) {
                     HStack {
-//                        ForEach(1..<2) { index in
-//                            RoundedRectangle(cornerRadius: 10)
-//                                .foregroundColor(.gray)
-//                                .frame(width: 200, height: 200)
-//                                .id(index)
-//                        }
+                        //                        ForEach(1..<2) { index in
+                        //                            RoundedRectangle(cornerRadius: 10)
+                        //                                .foregroundColor(.gray)
+                        //                                .frame(width: 200, height: 200)
+                        //                                .id(index)
+                        //                        }
                         
                     }
-                  
+                    
                 }
             }
-                .navigationTitle("Itinerary")
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            
-                        } label: {
-                            Image(systemName: "plus")
-                        }
+            .navigationTitle("Itinerary")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "plus")
                     }
                 }
+            }
         }
         .sheet(isPresented: $showAddSheet) {
             NewDayView(tripSource: .constant([]), locationSource: .constant([]), showAddSheet: .constant(false))

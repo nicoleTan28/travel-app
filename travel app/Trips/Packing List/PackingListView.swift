@@ -17,37 +17,37 @@ struct PackingListView: View {
     
     
     var body: some View {
-            List($todos, editActions: [.all]) { $todo in
-                HStack {
-                    Image(systemName: todo.isCompleted ? "checkmark.circle.fill" :  "circle")
+        List($todos, editActions: [.all]) { $todo in
+            HStack {
+                Image(systemName: todo.isCompleted ? "checkmark.circle.fill" :  "circle")
+                    .onTapGesture {
+                        todo.isCompleted.toggle()
+                    }
+                VStack(alignment: .leading) {
+                    Text(todo.title)
+                        .strikethrough(todo.isCompleted)
                         .onTapGesture {
                             todo.isCompleted.toggle()
                         }
-                    VStack(alignment: .leading) {
-                        Text(todo.title)
-                            .strikethrough(todo.isCompleted)
-                            .onTapGesture {
-                                todo.isCompleted.toggle()
-                            }
-                        
-                    }
                     
                 }
                 
             }
-            .toolbar {
-                
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        showAddSheet = true
-                    } label: {
-                        Image(systemName: "plus")
-                    }
-                }
-                ToolbarItem(){
-                    EditButton()
+            
+        }
+        .toolbar {
+            
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    showAddSheet = true
+                } label: {
+                    Image(systemName: "plus")
                 }
             }
+            ToolbarItem(){
+                EditButton()
+            }
+        }
         
         
         .sheet(isPresented: $showAddSheet) {

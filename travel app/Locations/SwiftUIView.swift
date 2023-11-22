@@ -20,9 +20,9 @@ struct SwiftUIView: View {
                 TextField("Search for a place", text: $search)
                     .autocorrectionDisabled()
             }
-
+            
             Spacer()
-
+            
             // 2
             List {
                 ForEach(locationService.completions) { completion in

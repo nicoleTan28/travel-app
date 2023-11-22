@@ -23,13 +23,10 @@ struct ContentView: View {
                     .tabItem {
                         Label("Locations", systemImage: "location.circle.fill")
                     }
-                    
-                
-                
-                    }
             }
         }
     }
+}
 
 
 struct ContentView_Previews: PreviewProvider {

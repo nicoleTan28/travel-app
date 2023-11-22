@@ -11,7 +11,7 @@ import SwiftUI
 struct NewTripsView: View {
     
     
-           
+    
     @Environment(\.dismiss) var dismiss
     @Binding var tripSource: [Trip]
     @Binding var isPresented: Bool
@@ -26,55 +26,55 @@ struct NewTripsView: View {
     
     var body: some View {
         VStack {
-        NavigationView {
-         //  Text(".")
-            Form {
-                Section("Name") {
-                    TextField("Enter Trip Name", text: $name)
-                }
-                
-                Section("Date") {
-                    DatePicker(
-                        "Start Date",
-                                selection: $startDate,
-                                displayedComponents: [.date]
-                    )
-                    DatePicker(
-                        "End Date",
-                                selection: $endDate,
-                                displayedComponents: [.date]
-                    )
-                }
-                
-                Section("Flight") {
-                    TextField("Enter Flight Number", text: $flight)
-                    
-                    DatePicker("Departure", selection: $departure, displayedComponents: .hourAndMinute)
-                    
-                    DatePicker("Arrival", selection: $arrival, displayedComponents: .hourAndMinute)
-
-                }
-                Section {
-                    Button("Save", role: .none) {
-                        // code to save the todo
-                        let newTrip = Trip(name: name, startDate: startDate, endDate: endDate)
-                        tripSource.append(newTrip)
-                        dismiss()
-                        isPresented = false
+            NavigationView {
+                //  Text(".")
+                Form {
+                    Section("Name") {
+                        TextField("Enter Trip Name", text: $name)
                     }
-                    Button("Cancel", role: .destructive) {
-                        // code to cancel
-                        dismiss()
-                        isPresented = false
+                    
+                    Section("Date") {
+                        DatePicker(
+                            "Start Date",
+                            selection: $startDate,
+                            displayedComponents: [.date]
+                        )
+                        DatePicker(
+                            "End Date",
+                            selection: $endDate,
+                            displayedComponents: [.date]
+                        )
                     }
+                    
+                    Section("Flight") {
+                        TextField("Enter Flight Number", text: $flight)
+                        
+                        DatePicker("Departure", selection: $departure, displayedComponents: .hourAndMinute)
+                        
+                        DatePicker("Arrival", selection: $arrival, displayedComponents: .hourAndMinute)
+                        
+                    }
+                    Section {
+                        Button("Save", role: .none) {
+                            // code to save the todo
+                            let newTrip = Trip(name: name, startDate: startDate, endDate: endDate)
+                            tripSource.append(newTrip)
+                            dismiss()
+                            isPresented = false
+                        }
+                        Button("Cancel", role: .destructive) {
+                            // code to cancel
+                            dismiss()
+                            isPresented = false
+                        }
+                    }
+                    
                 }
-                
-            }
                 .navigationTitle("New trip")
                 
-        }
-
-
+            }
+            
+            
             
             
         }

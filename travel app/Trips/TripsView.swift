@@ -13,9 +13,9 @@ struct TripsView: View {
     @State var trips = [Trip(name: "Trip 1", startDate: Date.now, endDate: Date.now)]
     
     let dateFormatter: DateFormatter = {
-       let formatter = DateFormatter()
-       formatter.dateStyle = .medium
-       return formatter
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        return formatter
     }()
     
     
@@ -41,33 +41,33 @@ struct TripsView: View {
                 
             }
             
-                .navigationTitle("Trips")
-                .toolbar {
-                    ToolbarItem {
-                        EditButton()
-                    }
-                    ToolbarItem {
-                       
-                        Button {
-                            showAddSheet = true
-                        } label: {
-                            Label("New candidate", systemImage: "plus")
-                        }
-                    }
-                    
-                    
-                    
+            .navigationTitle("Trips")
+            .toolbar {
+                ToolbarItem {
+                    EditButton()
                 }
+                ToolbarItem {
+                    
+                    Button {
+                        showAddSheet = true
+                    } label: {
+                        Label("New candidate", systemImage: "plus")
+                    }
+                }
+                
+                
+                
+            }
         }
         
-//        .sheet(isPresented: $showAddSheet) {
-//            NewTripsView(trips: .constant([]))
-//                .presentationDetents([.large])
-//        }
+        //        .sheet(isPresented: $showAddSheet) {
+        //            NewTripsView(trips: .constant([]))
+        //                .presentationDetents([.large])
+        //        }
         .sheet(isPresented: $showAddSheet) {
-                    NewTripsView(tripSource: $trips, isPresented: $showAddSheet)
-                        .presentationDetents([.large])
-                }
+            NewTripsView(tripSource: $trips, isPresented: $showAddSheet)
+                .presentationDetents([.large])
+        }
         
     }
 }
