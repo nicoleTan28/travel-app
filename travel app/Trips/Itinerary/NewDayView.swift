@@ -20,20 +20,25 @@ struct NewDayView: View {
     @Binding var showAddSheet: Bool
     @State private var showSearch = false
     
+    let names = ["Holly", "Josh", "Rhonda", "Ted"]
+        @State private var searchText = ""
     
     var body: some View {
         NavigationView {
             //  Text(".")
             Form {
-                Section {
-                    Button {
-                        NavigationLink(destination: SearchView()) {
-                            
-                        }
-                    } label: {
-                        Text("Add location")
-                    }
-                }
+                List {
+                                ForEach(searchResults, id: \.self) { name in
+                                    NavigationLink {
+                                        Text(name)
+                                    } label: {
+                                        Text(name)
+                                    }
+                                }
+                            }
+                .navigationTitle("Contacts")
+                
+                
                 
                 Section("Time") {
                     Toggle("All Day", isOn: $isAllDay)
@@ -65,8 +70,18 @@ struct NewDayView: View {
             .navigationTitle("New location")
             
         }
+        .searchable(text: $searchText)
         
     }
+    
+    var searchResults: [String] {
+            if searchText.isEmpty {
+                return names
+            } else {
+                return names.filter { $0.contains(searchText) }
+            }
+        }
+    
 }
 
 
