@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NewLocationView: View {
+struct NewDayView: View {
     
     @State private var startTime = Date()
     @State private var endTime = Date()
@@ -33,8 +33,8 @@ struct NewLocationView: View {
     }
 }
 
-struct NewLocationView_Previews: PreviewProvider {
+struct NewDayView_Previews: PreviewProvider {
     static var previews: some View {
-        NewLocationView()
+        NewDayView()
     }
 }
