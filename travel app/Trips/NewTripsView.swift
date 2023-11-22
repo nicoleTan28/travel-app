@@ -10,6 +10,8 @@ import SwiftUI
 
 struct NewTripsView: View {
     
+    
+           
     @Environment(\.dismiss) var dismiss
     @Binding var tripSource: [Trip]
     @Binding var isPresented: Bool
@@ -20,6 +22,7 @@ struct NewTripsView: View {
     @State private var flight = ""
     @State private var departure = Date()
     @State private var arrival = Date()
+    
     
     var body: some View {
         VStack {

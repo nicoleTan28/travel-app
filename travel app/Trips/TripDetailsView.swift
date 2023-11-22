@@ -17,7 +17,7 @@ struct TripDetailsView: View {
             List{
                 
                 NavigationLink{
-                    ItineraryView()
+                    ItineraryView(tripName: .constant([]))
                 }label:{
                     Text("Itinerary")
 
