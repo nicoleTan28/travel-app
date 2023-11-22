@@ -21,7 +21,7 @@
 		D98A3CD52B0B2A6500066D39 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A3CD42B0B2A6500066D39 /* Todo.swift */; };
 		D98A3CD72B0B2A8E00066D39 /* PackingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A3CD62B0B2A8E00066D39 /* PackingListView.swift */; };
 		D98A3CD92B0B2D1000066D39 /* NewTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A3CD82B0B2D1000066D39 /* NewTodoView.swift */; };
-		D9A2F8952B0B41920085087A /* NewDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A2F8942B0B41920085087A /* NewDayView.swift */; };
+		D9A2F8952B0B41920085087A /* NewLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A2F8942B0B41920085087A /* NewLocationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +39,7 @@
 		D98A3CD42B0B2A6500066D39 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		D98A3CD62B0B2A8E00066D39 /* PackingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingListView.swift; sourceTree = "<group>"; };
 		D98A3CD82B0B2D1000066D39 /* NewTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoView.swift; sourceTree = "<group>"; };
-		D9A2F8942B0B41920085087A /* NewDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDayView.swift; sourceTree = "<group>"; };
+		D9A2F8942B0B41920085087A /* NewLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +117,7 @@
 		D9A2F89A2B0B43810085087A /* Itinerary */ = {
 			isa = PBXGroup;
 			children = (
-				D9A2F8942B0B41920085087A /* NewDayView.swift */,
+				D9A2F8942B0B41920085087A /* NewLocationView.swift */,
 				9E2188032B0B343F00F0C2A8 /* ItineraryView.swift */,
 			);
 			path = Itinerary;
@@ -206,7 +206,7 @@
 				D98A3CD52B0B2A6500066D39 /* Todo.swift in Sources */,
 				D96FB5552B0AED0900E99464 /* ContentView.swift in Sources */,
 				9E2188042B0B343F00F0C2A8 /* ItineraryView.swift in Sources */,
-				D9A2F8952B0B41920085087A /* NewDayView.swift in Sources */,
+				D9A2F8952B0B41920085087A /* NewLocationView.swift in Sources */,
 				D96FB5672B0AF2F800E99464 /* NewTripsView.swift in Sources */,
 				D96FB5692B0B00FE00E99464 /* Trip.swift in Sources */,
 				D98A3CD72B0B2A8E00066D39 /* PackingListView.swift in Sources */,

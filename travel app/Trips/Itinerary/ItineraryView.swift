@@ -13,38 +13,38 @@ struct ItineraryView: View {
     @Binding var tripName: [Trip]
     @State private var day = 1
     @Environment(\.dismiss) var dismiss
-    @State private var locations = 0
 
 
     var body: some View {
         NavigationStack{
       //      Text(".")
-            HStack {
-                Text("Day \(day)")
-                    .font(.title)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
-                Button {
-                    
-                } label: {
-                    Image(systemName: "plus")
-                }
-                .padding()
-            
-            }
-            ScrollView(.horizontal) {
-                        HStack {
-                            ForEach(1..<3) { index in
-                                RoundedRectangle(cornerRadius: 10)
-                                    .foregroundColor(.gray)
-                                    .frame(width: 200, height: 200)
-                                    .id(index)
-                            }
-                            
-                        }
+            List {
+                HStack {
+                    Text("Day \(day)")
+                        .font(.title)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
+                    Button {
+                        showAddSheet = true
+                    } label: {
+                        Image(systemName: "plus")
                     }
-            
+                    .padding()
+                    
+                }
+                ScrollView(.horizontal) {
+                    HStack {
+//                        ForEach(1..<2) { index in
+//                            RoundedRectangle(cornerRadius: 10)
+//                                .foregroundColor(.gray)
+//                                .frame(width: 200, height: 200)
+//                                .id(index)
+//                        }
+                        
+                    }
+                  
+                }
+            }
                 .navigationTitle("Itinerary")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
@@ -57,7 +57,7 @@ struct ItineraryView: View {
                 }
         }
         .sheet(isPresented: $showAddSheet) {
-            NewDayView()
+            NewLocationView()
         }
     }
 }
