@@ -57,7 +57,7 @@ struct NewTripsView: View {
                 Section {
                     Button("Save", role: .none) {
                         // code to save the todo
-                        let newTrip = Trip(name: name, startDate: startDate)
+                        let newTrip = Trip(name: name, startDate: startDate, endDate: endDate)
                         tripSource.append(newTrip)
                         dismiss()
                         isPresented = false

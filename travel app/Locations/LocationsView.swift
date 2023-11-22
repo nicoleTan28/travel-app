@@ -13,28 +13,31 @@ import MapKit
 struct LocationsView: View {
     @State private var showingSheet = false
     @State private var position = MapCameraPosition.automatic
-      @State private var isSheetPresented: Bool = true
+      @State private var isSheetPresented: Bool = false
     @State private var isMarkerVisible = false
 
-
-      var body: some View {
-
-          Map(position: $position)
-              .ignoresSafeArea()
-              .sheet(isPresented: $isSheetPresented) {
-                  SwiftUIView()
-                  Button("Recommeded Areas") {
-                             showingSheet.toggle()
-                         }
-                         .sheet(isPresented: $showingSheet) {
-                             SheetView()
-                         }
-
-
-
-              }
-
-      }
+    
+    var body: some View {
+        
+        NavigationStack {
+            Map(position: $position)
+                .frame(width: 300, height: 400)
+                .sheet(isPresented: $isSheetPresented) {
+                    SwiftUIView()
+                    Button("Recommeded Areas") {
+                        showingSheet.toggle()
+                    }
+                    .sheet(isPresented: $showingSheet) {
+                        SheetView()
+                    }
+                    
+                }
+                .padding()
+            
+        }
+        .navigationTitle("Locations")
+        
+    }
 }
 
 

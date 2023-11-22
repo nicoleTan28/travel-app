@@ -11,10 +11,6 @@ struct ContentView: View {
     var body: some View {
         VStack {
             TabView {
-                LocationsView()
-                    .tabItem {
-                        Label("Locations", systemImage: "location.circle.fill")
-                    }
                 HomeView()
                     .tabItem {
                         Label("Home", systemImage: "house.fill")
@@ -23,10 +19,18 @@ struct ContentView: View {
                     .tabItem {
                         Label("Trips", systemImage: "globe")
                     }
+                LocationsView()
+                    .tabItem {
+                        Label("Locations", systemImage: "location.circle.fill")
+                    }
+                    
+                
+                
+                    }
             }
         }
     }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

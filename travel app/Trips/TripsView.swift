@@ -23,7 +23,7 @@ struct TripsView: View {
         NavigationStack {
             List($trips, editActions: [.all]){ $trip in
                 NavigationLink{
-                    TripDetailsView()
+                    TripDetailsView(tripSource: .constant([]))
                         .navigationTitle($trip.name)
                 }label:{
                     VStack(){
