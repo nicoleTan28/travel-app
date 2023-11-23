@@ -26,6 +26,7 @@
 		D98A3CD92B0B2D1000066D39 /* NewTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A3CD82B0B2D1000066D39 /* NewTodoView.swift */; };
 		D98AA4ED2B0DA207006B2827 /* LocationStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AA4EC2B0DA207006B2827 /* LocationStruct.swift */; };
 		D9A2F8952B0B41920085087A /* NewDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A2F8942B0B41920085087A /* NewDayView.swift */; };
+		D9CBEA482B0F69A300A02014 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CBEA472B0F69A300A02014 /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		D98A3CD82B0B2D1000066D39 /* NewTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoView.swift; sourceTree = "<group>"; };
 		D98AA4EC2B0DA207006B2827 /* LocationStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStruct.swift; sourceTree = "<group>"; };
 		D9A2F8942B0B41920085087A /* NewDayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDayView.swift; sourceTree = "<group>"; };
+		D9CBEA472B0F69A300A02014 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			children = (
 				D98AA4EC2B0DA207006B2827 /* LocationStruct.swift */,
 				D9A2F8942B0B41920085087A /* NewDayView.swift */,
+				D9CBEA472B0F69A300A02014 /* SearchView.swift */,
 				9E2188032B0B343F00F0C2A8 /* ItineraryView.swift */,
 			);
 			path = Itinerary;
@@ -228,6 +231,7 @@
 				D96FB5552B0AED0900E99464 /* ContentView.swift in Sources */,
 				47C0F8892B0D914D0032E1E1 /* Location.swift in Sources */,
 				9E2188042B0B343F00F0C2A8 /* ItineraryView.swift in Sources */,
+				D9CBEA482B0F69A300A02014 /* SearchView.swift in Sources */,
 				47C0F8872B0D90F90032E1E1 /* SwiftUIView.swift in Sources */,
 				D9A2F8952B0B41920085087A /* NewDayView.swift in Sources */,
 				D96FB5672B0AF2F800E99464 /* NewTripsView.swift in Sources */,
