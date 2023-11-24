@@ -14,7 +14,7 @@ struct ItineraryView: View {
     @State  var day = 1
     @Environment(\.dismiss) var dismiss
     @State var locations = [Location(name: "Trip 1")]
-    @State  var valueFromLocation: Location
+    @Binding  var valueFromLocation: [Location]
 
     
 
@@ -38,14 +38,14 @@ struct ItineraryView: View {
                     }
                     //                    if let value = valueFromLocation {
                     //                        Text("\(value)")
-                    //                    }
-                    
+                    //                    }                    
                     
                     
                 }
                 ScrollView(.horizontal) {
                     HStack {
-                        Text(".")
+                        let value = valueFromLocation
+                        Text("help")
                     }
                     
                 }
@@ -69,6 +69,7 @@ struct ItineraryView: View {
 
 struct ItineraryView_Previews: PreviewProvider {
     static var previews: some View {
-        ItineraryView(tripName: .constant([]), valueFromLocation: Location(name: "Example"))
+       // ItineraryView(tripName: .constant([]), valueFromLocation: Location(name: "...."))
+        ItineraryView(tripName: .constant([]), valueFromLocation: .constant([]))
     }
 }

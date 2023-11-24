@@ -35,7 +35,7 @@ struct TripDetailsView: View {
             
             
             
-            NavigationLink(destination: ItineraryView(tripName: .constant([]), valueFromLocation: Location(name: "Example"))) {
+            NavigationLink(destination: ItineraryView(tripName: .constant([]), valueFromLocation: .constant([]))) {
                 Text("Itinerary")
             }
             
