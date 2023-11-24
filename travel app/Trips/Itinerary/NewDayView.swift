@@ -30,6 +30,8 @@ struct NewDayView: View {
                     } label: {
                         Text("Add location")
                     }
+                    
+                    Text(".")
                 }
                 
                 Section("Time") {
@@ -63,7 +65,7 @@ struct NewDayView: View {
             
         }
         .sheet(isPresented: $showSearch) {
-            SearchView()
+            SearchView(locationSource: .constant([]))
         }
         
     }
