@@ -9,11 +9,14 @@ import SwiftUI
 
 struct ItineraryView: View {
     
-    @State private var showAddSheet = false
+    @State  var showAddSheet = false
     @Binding var tripName: [Trip]
-    @State private var day = 1
+    @State  var day = 1
     @Environment(\.dismiss) var dismiss
     @State var locations = [Location(name: "Trip 1")]
+    @State  var valueFromLocation: Location
+
+    
 
     var body: some View {
         NavigationStack{
@@ -23,12 +26,21 @@ struct ItineraryView: View {
                         .font(.title)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
-                    Button {
-                        showAddSheet = true
-                    } label: {
-                        Image(systemName: "plus")
+                    Button("+") {
+                        showAddSheet.toggle()
                     }
                     .padding()
+                    .font(.title)
+                    .sheet(isPresented: $showAddSheet, onDismiss: {
+                        // Handle any actions when the sheet is dismissed
+                    }) {
+                        NewLocationsView(tripSource: .constant([]), locationSource: .constant([]), showAddSheet: .constant(false), valueFromLocation: .constant(Location(name: "")))
+                    }
+                    //                    if let value = valueFromLocation {
+                    //                        Text("\(value)")
+                    //                    }
+                    
+                    
                     
                 }
                 ScrollView(.horizontal) {
@@ -57,6 +69,6 @@ struct ItineraryView: View {
 
 struct ItineraryView_Previews: PreviewProvider {
     static var previews: some View {
-        ItineraryView(tripName: .constant([]))
+        ItineraryView(tripName: .constant([]), valueFromLocation: Location(name: "Example"))
     }
 }

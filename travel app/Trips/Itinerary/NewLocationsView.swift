@@ -58,19 +58,12 @@ struct NewLocationsView: View {
                 
                 Section {
                     Button("Save", role: .none) {
-                        
                         let information = Location(name: valueFromSheet ?? "", startTime: startTime, endTime: endTime)
-                        selectedIndex = information //sets selectedIndex to said index
-                        locationSource.append(Location(name: valueFromSheet ?? "", startTime: startTime, endTime: endTime)) //adding to a 'list'
+                        selectedIndex = information
+                        locationSource.append(Location(name: valueFromSheet ?? "", startTime: startTime, endTime: endTime))
+                        valueFromLocation = information
                         dismiss()
-                        valueFromLocation = information //tapped name
                     }
-                    
-                    //                        // code to save the todo
-                    //                        let timing = Location(name: ".", startTime: startTime, endTime: endTime)
-                    //                        locationSource.append(timing)
-                    //                        dismiss()
-                    //                        showAddSheet = false
                 }
                 Button("Cancel", role: .destructive) {
                     // code to cancel
