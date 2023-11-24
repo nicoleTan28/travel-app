@@ -18,47 +18,33 @@ struct TripDetailsView: View {
         return formatter
     }()
     
-    
     var body: some View {
-        List{
-            
-            List($trips, editActions: [.all]){ $trip in
-                NavigationLink{
-                    TripDetailsView(tripSource: .constant([]))
-                        .navigationTitle($trip.name)
-                } label:{
-                    VStack() {
-                        Text("**Trip name:** \(trip.name)")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        Text("**Start date:** \(trip.startDate,formatter: dateFormatter)")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        Text("**End date:** \(trip.endDate, formatter: dateFormatter)")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        
-                    }
+        List {
+            ForEach($trips) { $trip in
+                VStack(alignment: .leading, spacing: 8) {
+                    Text("**Trip name:** \(trip.name)")
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     
+                    Text("**Start date:** \(trip.startDate, formatter: dateFormatter)")
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     
+                    Text("**End date:** \(trip.endDate, formatter: dateFormatter)")
+                        .frame(maxWidth: .infinity, alignment: .leading)
                 }
-                
             }
             
             
-            NavigationLink{
-                ItineraryView(tripName: .constant([]))
-            }label:{
+            
+            NavigationLink(destination: ItineraryView(tripName: .constant([]))) {
                 Text("Itinerary")
-                
             }
             
-            NavigationLink{
-                PackingListView()
-                    .navigationTitle("Packing List")
-            }label:{
+            NavigationLink(destination: PackingListView().navigationTitle("Packing List")) {
                 Text("Packing list")
-                
             }
-            
         }
+   //     .listStyle(PlainListStyle())
+        
         // Button("Itinerary"){
         //    print("Itinerary button pressed")
         //}
