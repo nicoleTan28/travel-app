@@ -5,20 +5,21 @@
 //  Created by Shakthi Vel on 22/11/23.
 //
 
+
 import SwiftUI
 import MapKit
 
-@available(iOS 17.0, *)
+
 struct SwiftUIView: View {
-    // 1
-    @State private var locationService = LocationService(completer: .init())
-    @State private var search: String = ""
+    @StateObject private var viewModel = ContentViewModel()
+    
+    
     var body: some View {
-        VStack {
-            HStack {
-                Image(systemName: "magnifyingglass")
-                TextField("Search for a place", text: $search)
-                    .autocorrectionDisabled()
+        Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
+            .ignoresSafeArea()
+            .accentColor(Color(.systemPink))
+            .onAppear(){
+                viewModel.checklocationenabled()
             }
             
             Spacer()
@@ -54,3 +55,48 @@ struct SwiftUIView: View {
     }
 }
 
+#Preview {
+    ContentView()
+}
+
+
+final class ContentViewModel:NSObject, ObservableObject, CLLocationManagerDelegate{
+    
+    @Published var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 1.3521, longitude: 103.8198), span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+
+    
+    var locationManager:CLLocationManager?
+    
+    func checklocationenabled(){
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager = CLLocationManager()
+            locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager!.delegate = self
+        } else {
+            print("Show alert to turn on")
+        }
+    }
+    
+    private func checklocatauthorization(){
+        guard let locationManager = locationManager else{return}
+        
+        switch locationManager.authorizationStatus{
+            
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .restricted:
+            print("location restricted L bozo")
+        case .denied:
+            print("U have denied it bro")
+        case .authorizedAlways, .authorizedWhenInUse:
+            region = MKCoordinateRegion(center: locationManager.location!.coordinate , span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        @unknown default:
+            break
+        }
+    
+    }
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checklocatauthorization()
+    }
+    
+}

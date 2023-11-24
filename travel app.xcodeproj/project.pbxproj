@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		47C0F8872B0D90F90032E1E1 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C0F8862B0D90F80032E1E1 /* SwiftUIView.swift */; };
-		47C0F8892B0D914D0032E1E1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C0F8882B0D914D0032E1E1 /* Location.swift */; };
-		47C0F88B2B0D923E0032E1E1 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C0F88A2B0D923E0032E1E1 /* SheetView.swift */; };
+		47C0F8FF2B0DE2E20032E1E1 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C0F8FE2B0DE2E20032E1E1 /* SwiftUIView.swift */; };
+		47C0F9012B0DE2FD0032E1E1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C0F9002B0DE2FD0032E1E1 /* Location.swift */; };
 		9E2188022B0B30AC00F0C2A8 /* TripDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2188012B0B30AC00F0C2A8 /* TripDetailsView.swift */; };
 		9E2188042B0B343F00F0C2A8 /* ItineraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2188032B0B343F00F0C2A8 /* ItineraryView.swift */; };
 		9E21880B2B0B8D5D00F0C2A8 /* Forever in Frameworks */ = {isa = PBXBuildFile; productRef = 9E21880A2B0B8D5D00F0C2A8 /* Forever */; };
@@ -30,9 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		47C0F8862B0D90F80032E1E1 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
-		47C0F8882B0D914D0032E1E1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		47C0F88A2B0D923E0032E1E1 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
+		47C0F8FE2B0DE2E20032E1E1 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		47C0F9002B0DE2FD0032E1E1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		9E2188012B0B30AC00F0C2A8 /* TripDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsView.swift; sourceTree = "<group>"; };
 		9E2188032B0B343F00F0C2A8 /* ItineraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryView.swift; sourceTree = "<group>"; };
 		D96FB54F2B0AED0900E99464 /* travel app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "travel app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,22 +62,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		47C0F8842B0D8EDC0032E1E1 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
 		47C0F8852B0D90550032E1E1 /* Locations */ = {
 			isa = PBXGroup;
 			children = (
 				D96FB5602B0AF0EF00E99464 /* LocationsView.swift */,
-				47C0F8862B0D90F80032E1E1 /* SwiftUIView.swift */,
-				47C0F8882B0D914D0032E1E1 /* Location.swift */,
-				47C0F88A2B0D923E0032E1E1 /* SheetView.swift */,
+				47C0F9002B0DE2FD0032E1E1 /* Location.swift */,
+				47C0F8FE2B0DE2E20032E1E1 /* SwiftUIView.swift */,
 			);
 			path = Locations;
+			sourceTree = "<group>";
+		};
+		47C0F8FD2B0DC5220032E1E1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		D96FB5462B0AED0900E99464 = {
@@ -101,7 +98,7 @@
 		D96FB5512B0AED0900E99464 /* travel app */ = {
 			isa = PBXGroup;
 			children = (
-				47C0F8842B0D8EDC0032E1E1 /* Preview Content */,
+				47C0F8FD2B0DC5220032E1E1 /* Preview Content */,
 				D96FB5522B0AED0900E99464 /* travel_appApp.swift */,
 				D96FB5542B0AED0900E99464 /* ContentView.swift */,
 				47C0F8852B0D90550032E1E1 /* Locations */,
@@ -223,13 +220,13 @@
 			files = (
 				9E2188022B0B30AC00F0C2A8 /* TripDetailsView.swift in Sources */,
 				D96FB5652B0AF10000E99464 /* TripsView.swift in Sources */,
+				47C0F9012B0DE2FD0032E1E1 /* Location.swift in Sources */,
 				D96FB5612B0AF0EF00E99464 /* LocationsView.swift in Sources */,
 				D96FB5632B0AF0F700E99464 /* HomeView.swift in Sources */,
 				D98A3CD92B0B2D1000066D39 /* NewTodoView.swift in Sources */,
 				D98AA4ED2B0DA207006B2827 /* LocationStruct.swift in Sources */,
 				D98A3CD52B0B2A6500066D39 /* Todo.swift in Sources */,
 				D96FB5552B0AED0900E99464 /* ContentView.swift in Sources */,
-				47C0F8892B0D914D0032E1E1 /* Location.swift in Sources */,
 				9E2188042B0B343F00F0C2A8 /* ItineraryView.swift in Sources */,
 				D9CBEA482B0F69A300A02014 /* SearchView.swift in Sources */,
 				47C0F8872B0D90F90032E1E1 /* SwiftUIView.swift in Sources */,
@@ -237,8 +234,8 @@
 				D96FB5672B0AF2F800E99464 /* NewTripsView.swift in Sources */,
 				D96FB5692B0B00FE00E99464 /* Trip.swift in Sources */,
 				D98A3CD72B0B2A8E00066D39 /* PackingListView.swift in Sources */,
-				47C0F88B2B0D923E0032E1E1 /* SheetView.swift in Sources */,
 				D96FB5532B0AED0900E99464 /* travel_appApp.swift in Sources */,
+				47C0F8FF2B0DE2E20032E1E1 /* SwiftUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
