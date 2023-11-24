@@ -50,7 +50,7 @@ struct ItineraryView: View {
             }
         }
         .sheet(isPresented: $showAddSheet) {
-            NewLocationsView(tripSource: .constant([]), locationSource: .constant([]), showAddSheet: .constant(false))
+            NewLocationsView(tripSource: .constant([]), locationSource: .constant([]), showAddSheet: .constant(false), valueFromLocation: .constant(Location(name: "")))
         }
     }
 }

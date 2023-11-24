@@ -22,6 +22,10 @@ struct NewLocationsView: View {
     @State var locations = [Location(name: "Location 1")]
     @State private var valueFromSheet: String?
 
+//    @Binding var locationSource: [Location]
+    @State private var location = Location(name: "")
+    @State private var selectedIndex: Location?
+    @Binding var valueFromLocation: Location
 
     
     var body: some View {
@@ -54,14 +58,22 @@ struct NewLocationsView: View {
                 
                 Section {
                     Button("Save", role: .none) {
-                        // code to save the todo
-                        let timing = Location(name: ".", startTime: startTime, endTime: endTime)
-                        locationSource.append(timing)
+                        
+                        let information = Location(name: valueFromSheet ?? "", startTime: startTime, endTime: endTime)
+                        selectedIndex = information //sets selectedIndex to said index
+                        locationSource.append(Location(name: valueFromSheet ?? "", startTime: startTime, endTime: endTime)) //adding to a 'list'
                         dismiss()
-                        showAddSheet = false
+                        valueFromLocation = information //tapped name
                     }
-                    Button("Cancel", role: .destructive) {
-                        // code to cancel
+                    
+                    //                        // code to save the todo
+                    //                        let timing = Location(name: ".", startTime: startTime, endTime: endTime)
+                    //                        locationSource.append(timing)
+                    //                        dismiss()
+                    //                        showAddSheet = false
+                }
+                Button("Cancel", role: .destructive) {
+                    // code to cancel
                         dismiss()
                         showAddSheet = false
                     }
@@ -71,13 +83,13 @@ struct NewLocationsView: View {
             .navigationTitle("New location")
         }
     }
-}
+
 
 
 
 
 struct NewLocationsView_Previews: PreviewProvider {
     static var previews: some View {
-        NewLocationsView(tripSource: .constant([]), locationSource: .constant([]), showAddSheet: .constant(false))
+        NewLocationsView(tripSource: .constant([]), locationSource: .constant([]), showAddSheet: .constant(false), valueFromLocation: .constant(Location(name: "")))
     }
 }
