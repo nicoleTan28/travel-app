@@ -9,9 +9,9 @@ import SwiftUI
 
 struct TripDetailsView: View {
     
-    @Binding var tripSource: [Trip]
+//    @Binding var tripSource: [Trip]
     @State var trips = [Trip(name: "Trip 1", startDate: Date.now, endDate: Date.now)]
-    
+
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
@@ -21,7 +21,7 @@ struct TripDetailsView: View {
     var body: some View {
         List {
             ForEach($trips) { $trip in
-                VStack(alignment: .leading, spacing: 8) {
+                VStack {
                     Text("**Trip name:** \(trip.name)")
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
@@ -64,7 +64,7 @@ struct TripDetailsView: View {
 
 struct TripDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        TripDetailsView(tripSource: .constant([]))
+        TripDetailsView()//tripSource: .constant([]))
     }
 }
 

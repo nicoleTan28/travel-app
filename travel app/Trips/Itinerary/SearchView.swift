@@ -26,7 +26,7 @@ struct SearchView: View {
                     dismiss()
                 }
             }
-            .navigationTitle("Contacts")
+            .navigationTitle("Locations")
         }
         .searchable(text: $searchText)
     }
