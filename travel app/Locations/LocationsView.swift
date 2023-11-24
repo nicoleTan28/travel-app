@@ -62,13 +62,15 @@ struct LocationsView: View {
             .presentationDetents([.height(200), .large])
             .presentationBackground(.regularMaterial)
             .presentationBackgroundInteraction(.enabled(upThrough: .large))
+            
+            Button("Show Current Location") {
+                showingSheet.toggle()
+            }
+            .sheet(isPresented: $showingSheet) {
+                SwiftUIView()
+            }
         }
-        Button("Show Current Location") {
-            showingSheet.toggle()
-        }
-        .sheet(isPresented: $showingSheet) {
-            SwiftUIView()
-        }
+        
         
     }
     
