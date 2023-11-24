@@ -22,9 +22,9 @@ struct LocationsView: View {
     var body: some View {
         NavigationStack{
             Map(position: $position)
-                .frame(width: 400, height: 200)
+                .frame(width: 350, height: 250)
                 .navigationTitle("Locations")
-            
+                
             VStack {
                 HStack {
                     Image(systemName: "magnifyingglass")

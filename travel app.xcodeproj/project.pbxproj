@@ -136,8 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				D98AA4EC2B0DA207006B2827 /* LocationStruct.swift */,
-				D9A2F8942B0B41920085087A /* NewLocationsView.swift */,
 				D9CBEA472B0F69A300A02014 /* SearchView.swift */,
+				D9A2F8942B0B41920085087A /* NewLocationsView.swift */,
 				9E2188032B0B343F00F0C2A8 /* ItineraryView.swift */,
 			);
 			path = Itinerary;

@@ -27,20 +27,7 @@ struct NewLocationsView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section {
-//                    Button {
-//                        showSearch = true
-//                    } label: {
-//                        if let value = valueFromSheet {
-//                            Text("Value from Sheet: \(value)")
-//                        }
-//                            .sheet(isPresented: $isSheetPresented, onDismiss: {
-//                                            // Handle any actions when the sheet is dismissed
-//                                        }) {
-//                                            SheetView(valueFromSheet: $valueFromSheet)
-//                                        }
-//
-//                    }
+                Section("Location") {
                     Button("Find locations") {
                         showSearch.toggle()
                     }
@@ -49,13 +36,9 @@ struct NewLocationsView: View {
                     }) {
                         SearchView(locationSource: .constant([]), valueFromSheet: $valueFromSheet)
                     }
-                    
                     if let value = valueFromSheet {
                         Text("\(value)")
                     }
-                    
-      //              Text(locations.first?.name ?? "No locations")
-                    
                 }
                 
                 Section("Time") {
@@ -67,7 +50,6 @@ struct NewLocationsView: View {
                     DatePicker("End", selection: isAllDay ? $selectedDate : $endTime, displayedComponents: .hourAndMinute)
                         .disabled(isAllDay ? true : false)
                         .foregroundColor(isAllDay ? .gray : .black)
-                    
                 }
                 
                 Section {
@@ -83,16 +65,11 @@ struct NewLocationsView: View {
                         dismiss()
                         showAddSheet = false
                     }
+                    
                 }
             }
             .navigationTitle("New location")
-            
         }
-//        .sheet(isPresented: $showSearch) {
-//            SearchView(locationSource: .constant([]), valueFromSheet: .constant(nil))
-//        }
-        
-        
     }
 }
 

@@ -18,7 +18,6 @@ struct TripsView: View {
         return formatter
     }()
     
-    
     var body: some View {
         NavigationStack {
             List($trips, editActions: [.all]){ $trip in
@@ -36,11 +35,9 @@ struct TripsView: View {
                         
                     }
                     
-                    
                 }
                 
             }
-            
             .navigationTitle("Trips")
             .toolbar {
                 ToolbarItem {
@@ -60,10 +57,6 @@ struct TripsView: View {
             }
         }
         
-        //        .sheet(isPresented: $showAddSheet) {
-        //            NewTripsView(trips: .constant([]))
-        //                .presentationDetents([.large])
-        //        }
         .sheet(isPresented: $showAddSheet) {
             NewTripsView(tripSource: $trips, isPresented: $showAddSheet)
                 .presentationDetents([.large])
@@ -71,6 +64,7 @@ struct TripsView: View {
         
     }
 }
+
 struct TripsView_Previews: PreviewProvider {
     static var previews: some View {
         TripsView()

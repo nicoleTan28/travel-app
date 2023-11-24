@@ -9,27 +9,26 @@ import SwiftUI
 
 struct SearchView: View {
     
-    let names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17"]
+    let names = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "A", "D", "C", "M", "X"]
     @State private var searchText = ""
     @Environment(\.dismiss) var dismiss
     @Binding var locationSource: [Location]
     @State var location = Location(name: "")
     @State private var selectedIndex: Int?
     @Binding var valueFromSheet: String?
-
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(names.indices, id: \.self) { index in
-                    let name = names[index]
+                ForEach(names.sorted(), id: \.self) { name in
                     Text(name)
                         .onTapGesture {
-                            selectedIndex = index
-                            locationSource.append(Location(name: name))
-                            dismiss()
-                     //       print(name)
-                            valueFromSheet = name
+                            if let index = names.firstIndex(of: name) {
+                                selectedIndex = index
+                                locationSource.append(Location(name: name))
+                                dismiss()
+                                valueFromSheet = name
+                            }
                         }
                 }
             }
