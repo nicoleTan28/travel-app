@@ -1,0 +1,26 @@
+{
+    "type": "FeatureCollection",
+    "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+    
+    "features": [
+        {  "Name": "kml_1", "Description": null, "URL_PATH":"www.yoursingapore.com\/en\/see-do-singapore\/arts\/museums-galleries\/national-gallery-singapore.html", "attractImage":"1095-national-gallery-singapore-carousel-01-rec","Photo credits":"©Darren Soh\/National Gallery", "name": "National Gallery Singapore", "LATITUDE":1.29, "LONGTITUDE":103.851356, "ADDRESS": "St Andrew's Road","POSTALCODE" : null, "overview": "Take in the regionâ€™s newest and largest museum of modern Singapore and Southeast Asian art housed within two of Singapore's awe-inspiring national monuments", "EXTERNAL_LINK" : "http:\/\/www.nationalgallery.sg", "META_DESCRIPTION": "Take in the regionâ€™s newest and largest museum of modern Singapore and Southeast Asian art housed within two of Singapore's awe-inspiring national monuments", "OPENING_HOURS":"Effective from 24 November 2015, Sunday to Thursday and  public holidays,10am - 7pm ,Friday to Saturday and  eve of public holidays, 10am - 10pm"},
+        {   "Name": "kml_2", "Description": null,  "URL_PATH":"www.yoursingapore.com\/en\/see-do-singapore\/culture-heritage\/places-of-worship\/sultan-mosque.html", " attractImage":null,"IMAGE_ALT_TEXT":null, "PHOTOCREDITS":null, "name":"Sultan Mosque (Masjid Sultan) Singapore  ", "LASTMODIFIED":"  2015-11-02T10:27:45.190+08:00","LATITUDE":  1.302,"LONGTITUDE": 103.859171, "ADDRESS":"3 Muscat Street", "POSTALCODE":null, "overview":  "Also known as Masjid Sultan, the impressive Sultan Mosque in historic Kampong Glam is the focal point for Singapore's Muslim community", "EXTERNAL_LINK":"  http:\/\/www.sultanmosque.org.sg", "META_DESCRIPTION":"  The impressive Sultan Mosque (also known as Masjid Sultan) in historic Kampong Glam is the focal point for Singapore's Muslim community", "OPENING_HOURS":"  Monday to Sunday:9.30am â€“ 12pm and 2pm â€“ 4pm ,Friday:2.30pm â€“ 4pm", "INC_CRC":"  A3218DB77F17BFC6 FMEL_UPD_D  20180619175243 " },
+        {   "Name": "kml_3", "Description": null, "URL_PATH":" www.yoursingapore.com\/en\/see-do-singapore\/culture-heritage\/places-of-worship\/sri-mariamman-temple.html"," attractImage":"sri-mariamman-temple-carousel02-rect","IMAGE_ALT_TEXT":  "Sri Mariamman Temple's ornate and elaborate detailing makes it a wonder to behold","PHOTOCREDITS":"  Joel Chua DY","name":"Sri Mariamman Temple: Hindu Temple in Singapore","LASTMODIFIED":"  2015-11-02T10:31:58.848+08:00","LATITUDE":  1.282 ,"LONGTITUDE":  103.84538,"ADDRESS": "244 South Bridge Road", "POSTALCODE": null, "overview": "Located in Chinatown, the Sri Mariamman Temple dates back to 1827 and is the oldest Hindu temple in Singapore","EXTERNAL_LINK":" http:\/\/heb.gov.sg\/our-subsidiaries\/temples\/sri-mariamman-temple.aspx","META_DESCRIPTION":  "Sri Mariamman Temple, located in Chinatown, is the oldest Hindu temple in Singapore","OPENING_HOURS":  "Daily from 7am â€“ 12pm, and 6pm â€“ 9pm", "INC_CRC":  "F66A0BB9C79777F1 FMEL_UPD_D  20180619175243 " },
+        {   "Name": "kml_4", "Description": null,
+            "URL_PATH": "www.yoursingapore.com\/en\/see-do-singapore\/culture-heritage\/places-of-worship\/armenian-church.html", "attractImage":  "armenian-church-carousel01-rect",
+            "IMAGE_ALT_TEXT":  "The Armenian Church in Singapore is a 19th-century architectural masterpiece ",
+            "PHOTOCREDITS": "Joel Chua DY",
+            "name":  "Armenian Church in Singapore", "LASTMODIFIED":  "2015-11-02T10:34:55.710+08:00", "LATITUDE":  1.293, "LONGTITUDE":  103.84966, "ADDRESS":  "60 Hill Street" ,"POSTALCODE": null,  "overview": "The oldest Christian church in Singapore is an architectural masterpiece from the early 19th century","EXTERNAL_LINK":  "http:\/\/www.armeniansinasia.org\"","META_DESCRIPTION":  "The Armenian Church is the oldest Christian church in Singapore and an architectural masterpiece from the early 19th century", "OPENING_HOURS":  "Daily, 9am â€“6pm", "INC_CRC":  "4C9C762C0E30783B FMEL_UPD_D  20180619175243" },
+    {   "Name": "kml_5", "Description": null,  "URL_PATH":  "www.yoursingapore.com\/en\/see-do-singapore\/architecture\/historical\/chijmes.html",
+        "attractImage":  "chijmes-carousel01-rect",
+        "IMAGE_ALT_TEXT":  "The charm of CHIJMES, Singapore harks back to a bygone, gracious age",
+        "PHOTOCREDITS":null,
+        "name":  "CHIJMES Singapore",
+        "LASTMODIFIED":  "2015-11-02T10:13:35.220+08:00", "LATITUDE":  1.295 , "LONGTITUDE":  103.85168,
+        "ADDRESS":  "30 Victoria Street",
+        "POSTALCODE":null,
+        "overview": "Whether functioning as a school or a lifestyle and entertainment complex, it appears the beauty of CHIJMES is only equalled by its versatility",
+        "EXTERNAL_LINK":  "http:\/\/chijmes.com.sg\/",
+        "META_DESCRIPTION":  "Who would have thought a former school would make such a graceful transition? As a lifestyle and entertainment complex, CHIJMES soars high above the rest",
+        "OPENING_HOURS":  "Daily, 24 hours,Opening hours of businesses in CHIJMES may vary.", "INC_CRC":  "5A0FF621153ABB8F FMEL_UPD_D  20180619175243" }]
+    }
