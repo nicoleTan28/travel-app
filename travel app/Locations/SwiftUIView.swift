@@ -24,9 +24,9 @@ struct SwiftUIView: View {
         Button("Press to dismiss") {
                     dismiss()
                 }
-                .font(.title)
+                .font(.title2)
                 .padding()
-                .background(.black)
+                .background(.white)
     }
 }
 

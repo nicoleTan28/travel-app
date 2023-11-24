@@ -8,7 +8,7 @@
 import SwiftUI
 import UIKit
 
-struct NewDayView: View {
+struct NewLocationsView: View {
     
     @Environment(\.dismiss) var dismiss
     @State private var startTime = Date()
@@ -19,7 +19,8 @@ struct NewDayView: View {
     @Binding var locationSource: [Location]
     @Binding var showAddSheet: Bool
     @State private var showSearch = false
-    
+    @State var locations = [Location(name: "Location 1")]
+
     
     var body: some View {
         NavigationView {
@@ -31,7 +32,8 @@ struct NewDayView: View {
                         Text("Add location")
                     }
                     
-                    Text(".")
+                    Text(locations.first?.name ?? "No locations")
+                    
                 }
                 
                 Section("Time") {
@@ -49,7 +51,7 @@ struct NewDayView: View {
                 Section {
                     Button("Save", role: .none) {
                         // code to save the todo
-                        let timing = Location(startTime: startTime, endTime: endTime)
+                        let timing = Location(name: ".", startTime: startTime, endTime: endTime)
                         locationSource.append(timing)
                         dismiss()
                         showAddSheet = false
@@ -74,8 +76,8 @@ struct NewDayView: View {
 
 
 
-struct NewDayView_Previews: PreviewProvider {
+struct NewLocationsView_Previews: PreviewProvider {
     static var previews: some View {
-        NewDayView(tripSource: .constant([]), locationSource: .constant([]), showAddSheet: .constant(false))
+        NewLocationsView(tripSource: .constant([]), locationSource: .constant([]), showAddSheet: .constant(false))
     }
 }

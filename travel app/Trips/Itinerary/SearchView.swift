@@ -13,23 +13,29 @@ struct SearchView: View {
     @State private var searchText = ""
     @Environment(\.dismiss) var dismiss
     @Binding var locationSource: [Location]
+    @State var location = Location(name: "")
+    @State private var selectedIndex: Int?
+
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(searchResults, id: \.self) { name in
+                ForEach(names.indices, id: \.self) { index in
+                    let name = names[index]
                     Text(name)
-                }
-                .onTapGesture {
-                    let location = Location()
-                    locationSource.append(location)
-                    dismiss()
+                        .onTapGesture {
+                            selectedIndex = index
+                            locationSource.append(Location(name: name))
+                            dismiss()
+                            print(name)
+                        }
                 }
             }
             .navigationTitle("Locations")
         }
         .searchable(text: $searchText)
     }
+    
     
     var searchResults: [String] {
         if searchText.isEmpty {

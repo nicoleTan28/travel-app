@@ -9,6 +9,7 @@ import Foundation
 
 struct Location: Identifiable, Codable {
     let id = UUID()
+    var name: String
     var startTime = Date()
     var endTime = Date()
 }

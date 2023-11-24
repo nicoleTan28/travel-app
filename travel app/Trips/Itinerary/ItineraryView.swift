@@ -13,8 +13,8 @@ struct ItineraryView: View {
     @Binding var tripName: [Trip]
     @State private var day = 1
     @Environment(\.dismiss) var dismiss
-    
-    
+    @State var locations = [Location(name: "Trip 1")]
+
     var body: some View {
         NavigationStack{
             List {
@@ -33,7 +33,7 @@ struct ItineraryView: View {
                 }
                 ScrollView(.horizontal) {
                     HStack {
-                        
+                        Text(".")
                     }
                     
                 }
@@ -50,7 +50,7 @@ struct ItineraryView: View {
             }
         }
         .sheet(isPresented: $showAddSheet) {
-            NewDayView(tripSource: .constant([]), locationSource: .constant([]), showAddSheet: .constant(false))
+            NewLocationsView(tripSource: .constant([]), locationSource: .constant([]), showAddSheet: .constant(false))
         }
     }
 }
