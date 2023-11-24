@@ -17,7 +17,6 @@ struct ItineraryView: View {
     
     var body: some View {
         NavigationStack{
-            //      Text(".")
             List {
                 HStack {
                     Text("Day \(day)")
@@ -34,12 +33,6 @@ struct ItineraryView: View {
                 }
                 ScrollView(.horizontal) {
                     HStack {
-                        //                        ForEach(1..<2) { index in
-                        //                            RoundedRectangle(cornerRadius: 10)
-                        //                                .foregroundColor(.gray)
-                        //                                .frame(width: 200, height: 200)
-                        //                                .id(index)
-                        //                        }
                         
                     }
                     

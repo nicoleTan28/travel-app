@@ -23,16 +23,10 @@ struct NewDayView: View {
     
     var body: some View {
         NavigationView {
-            //  Text(".")
             Form {
                 Section {
-//                    NavigationLink(destination: SearchView()) {
-//                        
-//                    } label: {
-//                        Text("Add location")
-//                    }
-                    NavigationLink {
-                        SearchView()
+                    Button {
+                        showSearch = true
                     } label: {
                         Text("Add location")
                     }
@@ -67,6 +61,9 @@ struct NewDayView: View {
             }
             .navigationTitle("New location")
             
+        }
+        .sheet(isPresented: $showSearch) {
+            SearchView()
         }
         
     }
