@@ -24,6 +24,7 @@ struct LocationsView: View {
             Map(position: $position)
                 .frame(width: 400, height: 200)
                 .navigationTitle("Locations")
+            
             VStack {
                 HStack {
                     Image(systemName: "magnifyingglass")
@@ -62,7 +63,15 @@ struct LocationsView: View {
             .presentationBackground(.regularMaterial)
             .presentationBackgroundInteraction(.enabled(upThrough: .large))
         }
+        Button("Show Current Location") {
+            showingSheet.toggle()
+        }
+        .sheet(isPresented: $showingSheet) {
+            SwiftUIView()
+        }
+        
     }
+    
 }
 
 #Preview {

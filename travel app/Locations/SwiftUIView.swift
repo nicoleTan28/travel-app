@@ -12,7 +12,7 @@ import MapKit
 
 struct SwiftUIView: View {
     @StateObject private var viewModel = ContentViewModel()
-    
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         Map(coordinateRegion: $viewModel.region, showsUserLocation: true)
@@ -21,42 +21,17 @@ struct SwiftUIView: View {
             .onAppear(){
                 viewModel.checklocationenabled()
             }
-            
-            Spacer()
-            
-            // 2
-            List {
-                ForEach(locationService.completions) { completion in
-                    Button(action: { }) {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(completion.title)
-                                .font(.headline)
-                                .fontDesign(.rounded)
-                            Text(completion.subTitle)
-                        }
-                    }
-                    // 3
-                    .listRowBackground(Color.clear)
+        Button("Press to dismiss") {
+                    dismiss()
                 }
-            }
-            // 4
-            .listStyle(.plain)
-            .scrollContentBackground(.hidden)
-        }
-        // 5
-        .onChange(of: search) {
-            locationService.update(queryFragment: search)
-        }
-        .padding()
-        .interactiveDismissDisabled()
-        .presentationDetents([.height(200), .large])
-        .presentationBackground(.regularMaterial)
-        .presentationBackgroundInteraction(.enabled(upThrough: .large))
+                .font(.title)
+                .padding()
+                .background(.black)
     }
 }
 
 #Preview {
-    ContentView()
+    SwiftUIView()
 }
 
 
@@ -99,4 +74,8 @@ final class ContentViewModel:NSObject, ObservableObject, CLLocationManagerDelega
         checklocatauthorization()
     }
     
+}
+
+#Preview {
+    SwiftUIView()
 }
