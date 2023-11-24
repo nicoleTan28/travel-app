@@ -20,19 +20,41 @@ struct NewLocationsView: View {
     @Binding var showAddSheet: Bool
     @State private var showSearch = false
     @State var locations = [Location(name: "Location 1")]
+    @State private var valueFromSheet: String?
+
 
     
     var body: some View {
         NavigationView {
             Form {
                 Section {
-                    Button {
-                        showSearch = true
-                    } label: {
-                        Text("Add location")
+//                    Button {
+//                        showSearch = true
+//                    } label: {
+//                        if let value = valueFromSheet {
+//                            Text("Value from Sheet: \(value)")
+//                        }
+//                            .sheet(isPresented: $isSheetPresented, onDismiss: {
+//                                            // Handle any actions when the sheet is dismissed
+//                                        }) {
+//                                            SheetView(valueFromSheet: $valueFromSheet)
+//                                        }
+//
+//                    }
+                    Button("Find locations") {
+                        showSearch.toggle()
+                    }
+                    .sheet(isPresented: $showSearch, onDismiss: {
+                        // Handle any actions when the sheet is dismissed
+                    }) {
+                        SearchView(locationSource: .constant([]), valueFromSheet: $valueFromSheet)
                     }
                     
-                    Text(locations.first?.name ?? "No locations")
+                    if let value = valueFromSheet {
+                        Text("\(value)")
+                    }
+                    
+      //              Text(locations.first?.name ?? "No locations")
                     
                 }
                 
@@ -66,9 +88,10 @@ struct NewLocationsView: View {
             .navigationTitle("New location")
             
         }
-        .sheet(isPresented: $showSearch) {
-            SearchView(locationSource: .constant([]))
-        }
+//        .sheet(isPresented: $showSearch) {
+//            SearchView(locationSource: .constant([]), valueFromSheet: .constant(nil))
+//        }
+        
         
     }
 }

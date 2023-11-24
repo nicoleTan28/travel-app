@@ -15,6 +15,7 @@ struct SearchView: View {
     @Binding var locationSource: [Location]
     @State var location = Location(name: "")
     @State private var selectedIndex: Int?
+    @Binding var valueFromSheet: String?
 
     
     var body: some View {
@@ -27,7 +28,8 @@ struct SearchView: View {
                             selectedIndex = index
                             locationSource.append(Location(name: name))
                             dismiss()
-                            print(name)
+                     //       print(name)
+                            valueFromSheet = name
                         }
                 }
             }
@@ -47,5 +49,5 @@ struct SearchView: View {
 }
 
 #Preview {
-    SearchView(locationSource: .constant([]))
+    SearchView(locationSource: .constant([]), valueFromSheet: .constant(nil))
 }
