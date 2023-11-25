@@ -64,3 +64,4 @@ struct attract: Decodable,Hashable{
     //var overview: String
    //var attractImage: String?
 }
+

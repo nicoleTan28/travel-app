@@ -13,7 +13,7 @@ struct ItineraryView: View {
     @State  var showAddSheet = false
     @Binding var tripName: [Trip]
     
- @State var valueFromLocation: [Location] = []
+    @State var valueFromLocation: [Location] = []
 
     var body: some View {
         NavigationStack{
@@ -31,7 +31,7 @@ struct ItineraryView: View {
                     .sheet(isPresented: $showAddSheet, onDismiss: {
                         // Handle any actions when the sheet is dismissed
                     }) {
-                    NewLocationsView(showAddSheet: $showAddSheet, locationSource: $valueFromLocation)
+                        NewLocationsView(showAddSheet: $showAddSheet, locationSource: $valueFromLocation, valueFromLocation: <#Binding<Location>#>)
                     }
                     //                    if let value = valueFromLocation {
                     //                        Text("\(value)")
@@ -58,14 +58,13 @@ struct ItineraryView: View {
             }
         }
         .sheet(isPresented: $showAddSheet) {
-            NewLocationsView(tripSource: , locationSource: , showAddSheet: , valueFromLocation: )
+            NewLocationsView(showAddSheet: $showAddSheet, locationSource: $valueFromLocation, valueFromLocation: $tripName)
         }
     }
 }
 
 struct ItineraryView_Previews: PreviewProvider {
     static var previews: some View {
-       // ItineraryView(tripName: .constant([]), valueFromLocation: Location(name: "...."))
         ItineraryView(tripName: .constant([]), valueFromLocation: .constant([]))
     }
 }

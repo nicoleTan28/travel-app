@@ -25,7 +25,7 @@ struct NewLocationsView: View {
 //    @State private var selectedIndex: Location?
 //    @Binding var tripSource: [Trip]
     @Binding var locationSource: [Location]
-//    @Binding var valueFromLocation: Location
+    @Binding var valueFromLocation: Location
 
     
     var body: some View {
@@ -35,14 +35,13 @@ struct NewLocationsView: View {
                     Button("Find locations") {
                         showSearch.toggle()
                     }
-                    .sheet(isPresented: $showSearch, onDismiss: {
-                        // Handle any actions when the sheet is dismissed
-                    }) {
-                        SearchView()
-                    }
-//                    if let value = valueFromSheet {
-//                        Text("\(value)")
+                    
+//                    .sheet(isPresented: $showSearch, onDismiss: {
+//                        
+//                    }) {
+//                        SearchView()
 //                    }
+
                 }
                 
                 Section("Time") {
@@ -63,17 +62,21 @@ struct NewLocationsView: View {
                         valueFromLocation = information
                         dismiss()
                     }
-                }
-                Button("Cancel", role: .destructive) {
+                    
+                    Button("Cancel", role: .destructive) {
                         dismiss()
                         showAddSheet = false
                     }
                     
                 }
+                
             }
-            .navigationTitle("New location")
+        }
+        .sheet(isPresented: $showSearch) {
+            SearchView(locationSource: $locationSource, valueFromSheet: .constant(nil))
         }
     }
+}
 
 
 
@@ -81,6 +84,6 @@ struct NewLocationsView: View {
 
 struct NewLocationsView_Previews: PreviewProvider {
     static var previews: some View {
-        NewLocationsView(tripSource: .constant([]), locationSource: .constant([]), showAddSheet: .constant(false), valueFromLocation: .constant(Location(name: "")))
+        NewLocationsView(showAddSheet: .constant(false), locationSource: .constant([]), valueFromLocation: .constant(Location(name: "")))
     }
 }
