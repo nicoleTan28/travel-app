@@ -1,13 +1,38 @@
 //
-//  Location.swift
+//  Data Structs.swift
 //  travel app
 //
-//  Created by T Krobot on 22/11/23.
+//  Created by Chhoryi_Ling_Nin on 25/11/23.
 //
-
 import Foundation
 
-struct Location: Identifiable, Codable {
+struct Todo: Identifiable {
+    
+    let id = UUID()
+    var title: String
+    var subtitle = ""
+    var isCompleted = false
+}
+
+
+struct Trip: Identifiable {
+    let id = UUID()
+    var name: String
+    var startDate:Date = Date()
+    var endDate:Date = Date()
+    var days: [Day]
+    //var departure = Date()
+    //var arrival = Date()
+
+}
+
+struct Day: Identifiable {
+    let id = UUID()
+    var count: Int
+    var locations: [Location]
+}
+
+struct Location: Identifiable {
     let id = UUID()
     var name: String
     var startTime = Date()

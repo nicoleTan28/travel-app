@@ -9,12 +9,15 @@ import SwiftUI
 
 struct SearchView: View {
     let fileName = "editedJSON"
+    
+    @Environment(\.dismiss) var dismiss
+
     @State var names: [String] = []
     @State private var searchText = ""
-    @Environment(\.dismiss) var dismiss
-    @Binding var locationSource: [Location]
     @State var location = Location(name: "")
     @State private var selectedIndex: Int?
+    
+    @Binding var locationSource: [Location]
     @Binding var valueFromSheet: String?
     
     var body: some View {
@@ -27,8 +30,8 @@ struct SearchView: View {
                                 if let index = names.firstIndex(of: name) { //finds index of tapped name
                                     selectedIndex = index //sets selectedIndex to said index
                                     locationSource.append(Location(name: name)) //adding to a 'list'
-                                    dismiss()
                                     valueFromSheet = name //tapped name
+                                    dismiss()
                                 }
                             }
                     }

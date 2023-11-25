@@ -15,6 +15,7 @@
 		9EEB3D442B1086B600569A23 /* sample3.json in Resources */ = {isa = PBXBuildFile; fileRef = 9EEB3D432B1086B600569A23 /* sample3.json */; };
 		9EEB3D482B116D8700569A23 /* originalGeoJSON.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 9EEB3D472B116D8700569A23 /* originalGeoJSON.geojson */; };
 		9EEB3D4A2B116DA200569A23 /* editedJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 9EEB3D492B116DA200569A23 /* editedJSON.json */; };
+		9EEB3D4F2B119BCB00569A23 /* Data Structs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EEB3D4E2B119BCB00569A23 /* Data Structs.swift */; };
 		D96FB5532B0AED0900E99464 /* travel_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5522B0AED0900E99464 /* travel_appApp.swift */; };
 		D96FB5552B0AED0900E99464 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5542B0AED0900E99464 /* ContentView.swift */; };
 		D96FB5572B0AED0B00E99464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D96FB5562B0AED0B00E99464 /* Assets.xcassets */; };
@@ -22,11 +23,8 @@
 		D96FB5632B0AF0F700E99464 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5622B0AF0F700E99464 /* HomeView.swift */; };
 		D96FB5652B0AF10000E99464 /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5642B0AF10000E99464 /* TripsView.swift */; };
 		D96FB5672B0AF2F800E99464 /* NewTripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5662B0AF2F800E99464 /* NewTripsView.swift */; };
-		D96FB5692B0B00FE00E99464 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5682B0B00FE00E99464 /* Trip.swift */; };
-		D98A3CD52B0B2A6500066D39 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A3CD42B0B2A6500066D39 /* Todo.swift */; };
 		D98A3CD72B0B2A8E00066D39 /* PackingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A3CD62B0B2A8E00066D39 /* PackingListView.swift */; };
 		D98A3CD92B0B2D1000066D39 /* NewTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A3CD82B0B2D1000066D39 /* NewTodoView.swift */; };
-		D98AA4ED2B0DA207006B2827 /* LocationStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98AA4EC2B0DA207006B2827 /* LocationStruct.swift */; };
 		D9A2F8952B0B41920085087A /* NewLocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A2F8942B0B41920085087A /* NewLocationsView.swift */; };
 		D9CBEA482B0F69A300A02014 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CBEA472B0F69A300A02014 /* SearchView.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +37,7 @@
 		9EEB3D432B1086B600569A23 /* sample3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sample3.json; sourceTree = "<group>"; };
 		9EEB3D472B116D8700569A23 /* originalGeoJSON.geojson */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = originalGeoJSON.geojson; sourceTree = "<group>"; };
 		9EEB3D492B116DA200569A23 /* editedJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = editedJSON.json; sourceTree = "<group>"; };
+		9EEB3D4E2B119BCB00569A23 /* Data Structs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data Structs.swift"; sourceTree = "<group>"; };
 		D96FB54F2B0AED0900E99464 /* travel app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "travel app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D96FB5522B0AED0900E99464 /* travel_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = travel_appApp.swift; sourceTree = "<group>"; };
 		D96FB5542B0AED0900E99464 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,11 +46,8 @@
 		D96FB5622B0AF0F700E99464 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D96FB5642B0AF10000E99464 /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
 		D96FB5662B0AF2F800E99464 /* NewTripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripsView.swift; sourceTree = "<group>"; };
-		D96FB5682B0B00FE00E99464 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
-		D98A3CD42B0B2A6500066D39 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		D98A3CD62B0B2A8E00066D39 /* PackingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingListView.swift; sourceTree = "<group>"; };
 		D98A3CD82B0B2D1000066D39 /* NewTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoView.swift; sourceTree = "<group>"; };
-		D98AA4EC2B0DA207006B2827 /* LocationStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationStruct.swift; sourceTree = "<group>"; };
 		D9A2F8942B0B41920085087A /* NewLocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocationsView.swift; sourceTree = "<group>"; };
 		D9CBEA472B0F69A300A02014 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,7 +74,7 @@
 			path = Locations;
 			sourceTree = "<group>";
 		};
-		9EEB3D422B1085E400569A23 /* Preview Content */ = {
+		9EEB3D4D2B119ADD00569A23 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -104,7 +100,7 @@
 		D96FB5512B0AED0900E99464 /* travel app */ = {
 			isa = PBXGroup;
 			children = (
-				9EEB3D422B1085E400569A23 /* Preview Content */,
+				9EEB3D4D2B119ADD00569A23 /* Preview Content */,
 				D96FB5522B0AED0900E99464 /* travel_appApp.swift */,
 				D96FB5542B0AED0900E99464 /* ContentView.swift */,
 				47C0F8852B0D90550032E1E1 /* Locations */,
@@ -120,7 +116,7 @@
 			children = (
 				D9A2F89A2B0B43810085087A /* Itinerary */,
 				D9A2F8992B0B43710085087A /* Packing List */,
-				D96FB5682B0B00FE00E99464 /* Trip.swift */,
+				9EEB3D4E2B119BCB00569A23 /* Data Structs.swift */,
 				D96FB5642B0AF10000E99464 /* TripsView.swift */,
 				9E2188012B0B30AC00F0C2A8 /* TripDetailsView.swift */,
 				D96FB5662B0AF2F800E99464 /* NewTripsView.swift */,
@@ -131,7 +127,6 @@
 		D9A2F8992B0B43710085087A /* Packing List */ = {
 			isa = PBXGroup;
 			children = (
-				D98A3CD42B0B2A6500066D39 /* Todo.swift */,
 				D98A3CD82B0B2D1000066D39 /* NewTodoView.swift */,
 				D98A3CD62B0B2A8E00066D39 /* PackingListView.swift */,
 			);
@@ -141,10 +136,9 @@
 		D9A2F89A2B0B43810085087A /* Itinerary */ = {
 			isa = PBXGroup;
 			children = (
-				D98AA4EC2B0DA207006B2827 /* LocationStruct.swift */,
-				D9CBEA472B0F69A300A02014 /* SearchView.swift */,
-				D9A2F8942B0B41920085087A /* NewLocationsView.swift */,
 				9E2188032B0B343F00F0C2A8 /* ItineraryView.swift */,
+				D9A2F8942B0B41920085087A /* NewLocationsView.swift */,
+				D9CBEA472B0F69A300A02014 /* SearchView.swift */,
 				9EEB3D432B1086B600569A23 /* sample3.json */,
 				9EEB3D492B116DA200569A23 /* editedJSON.json */,
 				9EEB3D472B116D8700569A23 /* originalGeoJSON.geojson */,
@@ -236,14 +230,12 @@
 				D96FB5612B0AF0EF00E99464 /* LocationsView.swift in Sources */,
 				D96FB5632B0AF0F700E99464 /* HomeView.swift in Sources */,
 				D98A3CD92B0B2D1000066D39 /* NewTodoView.swift in Sources */,
-				D98AA4ED2B0DA207006B2827 /* LocationStruct.swift in Sources */,
-				D98A3CD52B0B2A6500066D39 /* Todo.swift in Sources */,
+				9EEB3D4F2B119BCB00569A23 /* Data Structs.swift in Sources */,
 				D96FB5552B0AED0900E99464 /* ContentView.swift in Sources */,
 				9E2188042B0B343F00F0C2A8 /* ItineraryView.swift in Sources */,
 				D9CBEA482B0F69A300A02014 /* SearchView.swift in Sources */,
 				D9A2F8952B0B41920085087A /* NewLocationsView.swift in Sources */,
 				D96FB5672B0AF2F800E99464 /* NewTripsView.swift in Sources */,
-				D96FB5692B0B00FE00E99464 /* Trip.swift in Sources */,
 				D98A3CD72B0B2A8E00066D39 /* PackingListView.swift in Sources */,
 				D96FB5532B0AED0900E99464 /* travel_appApp.swift in Sources */,
 				47C0F8FF2B0DE2E20032E1E1 /* SwiftUIView.swift in Sources */,
