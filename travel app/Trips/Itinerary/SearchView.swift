@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SearchView: View {
-    let fileName = "sample3"
+    let fileName = "editedJSON"
     @State var names: [String] = []
     @State private var searchText = ""
     @Environment(\.dismiss) var dismiss
