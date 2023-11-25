@@ -20,9 +20,16 @@ struct Trip: Identifiable {
     var name: String
     var startDate:Date = Date()
     var endDate:Date = Date()
+    var days: [Day]
     //var departure = Date()
     //var arrival = Date()
 
+}
+
+struct Day: Identifiable {
+    let id = UUID()
+    var count: Int
+    var locations: [Location]
 }
 
 struct Location: Identifiable {

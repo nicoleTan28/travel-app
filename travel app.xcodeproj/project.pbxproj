@@ -136,9 +136,9 @@
 		D9A2F89A2B0B43810085087A /* Itinerary */ = {
 			isa = PBXGroup;
 			children = (
-				D9CBEA472B0F69A300A02014 /* SearchView.swift */,
-				D9A2F8942B0B41920085087A /* NewLocationsView.swift */,
 				9E2188032B0B343F00F0C2A8 /* ItineraryView.swift */,
+				D9A2F8942B0B41920085087A /* NewLocationsView.swift */,
+				D9CBEA472B0F69A300A02014 /* SearchView.swift */,
 				9EEB3D432B1086B600569A23 /* sample3.json */,
 				9EEB3D492B116DA200569A23 /* editedJSON.json */,
 				9EEB3D472B116D8700569A23 /* originalGeoJSON.geojson */,

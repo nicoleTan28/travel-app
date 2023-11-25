@@ -38,7 +38,7 @@ struct NewLocationsView: View {
                     .sheet(isPresented: $showSearch, onDismiss: {
                         // Handle any actions when the sheet is dismissed
                     }) {
-                        SearchView(locationSource: .constant([]), valueFromSheet: $valueFromSheet)
+                        SearchView(locationSource: $locationSource, valueFromSheet: $valueFromSheet)
                     }
                     if let value = valueFromSheet {
                         Text("\(value)")
@@ -59,14 +59,12 @@ struct NewLocationsView: View {
                 Section {
                     Button("Save", role: .none) {
                         let information = Location(name: valueFromSheet ?? "", startTime: startTime, endTime: endTime)
-                        selectedIndex = information
                         locationSource.append(Location(name: valueFromSheet ?? "", startTime: startTime, endTime: endTime))
                         valueFromLocation = information
                         dismiss()
                     }
                 }
                 Button("Cancel", role: .destructive) {
-                    // code to cancel
                         dismiss()
                         showAddSheet = false
                     }

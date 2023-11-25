@@ -30,8 +30,8 @@ struct SearchView: View {
                                 if let index = names.firstIndex(of: name) { //finds index of tapped name
                                     selectedIndex = index //sets selectedIndex to said index
                                     locationSource.append(Location(name: name)) //adding to a 'list'
-                                    dismiss()
                                     valueFromSheet = name //tapped name
+                                    dismiss()
                                 }
                             }
                     }
