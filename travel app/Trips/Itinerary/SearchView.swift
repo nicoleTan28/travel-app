@@ -38,7 +38,7 @@ struct SearchView: View {
             .onAppear{
                 if let places = loadJson(filename: fileName) {
                     for place in places {
-                        names.append(place.name)
+                        names.append(place.pageTitle)
                     }
                 }
             }

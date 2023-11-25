@@ -13,6 +13,8 @@
 		9E2188042B0B343F00F0C2A8 /* ItineraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2188032B0B343F00F0C2A8 /* ItineraryView.swift */; };
 		9E21880B2B0B8D5D00F0C2A8 /* Forever in Frameworks */ = {isa = PBXBuildFile; productRef = 9E21880A2B0B8D5D00F0C2A8 /* Forever */; };
 		9EEB3D442B1086B600569A23 /* sample3.json in Resources */ = {isa = PBXBuildFile; fileRef = 9EEB3D432B1086B600569A23 /* sample3.json */; };
+		9EEB3D482B116D8700569A23 /* originalGeoJSON.geojson in Resources */ = {isa = PBXBuildFile; fileRef = 9EEB3D472B116D8700569A23 /* originalGeoJSON.geojson */; };
+		9EEB3D4A2B116DA200569A23 /* editedJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 9EEB3D492B116DA200569A23 /* editedJSON.json */; };
 		D96FB5532B0AED0900E99464 /* travel_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5522B0AED0900E99464 /* travel_appApp.swift */; };
 		D96FB5552B0AED0900E99464 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5542B0AED0900E99464 /* ContentView.swift */; };
 		D96FB5572B0AED0B00E99464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D96FB5562B0AED0B00E99464 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 		9E2188012B0B30AC00F0C2A8 /* TripDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsView.swift; sourceTree = "<group>"; };
 		9E2188032B0B343F00F0C2A8 /* ItineraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryView.swift; sourceTree = "<group>"; };
 		9EEB3D432B1086B600569A23 /* sample3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sample3.json; sourceTree = "<group>"; };
+		9EEB3D472B116D8700569A23 /* originalGeoJSON.geojson */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = originalGeoJSON.geojson; sourceTree = "<group>"; };
+		9EEB3D492B116DA200569A23 /* editedJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = editedJSON.json; sourceTree = "<group>"; };
 		D96FB54F2B0AED0900E99464 /* travel app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "travel app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D96FB5522B0AED0900E99464 /* travel_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = travel_appApp.swift; sourceTree = "<group>"; };
 		D96FB5542B0AED0900E99464 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 				D9A2F8942B0B41920085087A /* NewLocationsView.swift */,
 				9E2188032B0B343F00F0C2A8 /* ItineraryView.swift */,
 				9EEB3D432B1086B600569A23 /* sample3.json */,
+				9EEB3D492B116DA200569A23 /* editedJSON.json */,
+				9EEB3D472B116D8700569A23 /* originalGeoJSON.geojson */,
 			);
 			path = Itinerary;
 			sourceTree = "<group>";
@@ -210,7 +216,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EEB3D4A2B116DA200569A23 /* editedJSON.json in Resources */,
 				D96FB5572B0AED0B00E99464 /* Assets.xcassets in Resources */,
+				9EEB3D482B116D8700569A23 /* originalGeoJSON.geojson in Resources */,
 				9EEB3D442B1086B600569A23 /* sample3.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

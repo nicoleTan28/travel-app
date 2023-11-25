@@ -35,7 +35,7 @@ struct ResponseData1: Decodable{
 }
 
 struct attract: Decodable,Hashable{
-    var name: String
-    var overview: String
-   var attractImage: String?
+    var pageTitle: String
+    //var overview: String
+   //var attractImage: String?
 }
