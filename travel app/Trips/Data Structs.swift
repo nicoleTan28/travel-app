@@ -20,7 +20,7 @@ struct Trip: Identifiable {
     var name: String
     var startDate:Date = Date()
     var endDate:Date = Date()
-    var days: [Day]
+  //  var days: [Day]
     //var departure = Date()
     //var arrival = Date()
 

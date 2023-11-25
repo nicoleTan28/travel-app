@@ -10,18 +10,16 @@ import SwiftUI
 struct ItineraryView: View {
     
     @Environment(\.dismiss) var dismiss
-
     @State  var showAddSheet = false
-    @State  var day = 1
-    
     @Binding var tripName: [Trip]
-    @Binding var valueFromLocation: [Location]
+    
+ @State var valueFromLocation: [Location] = []
 
     var body: some View {
         NavigationStack{
             List {
                 HStack {
-                    Text("Day \(day)")
+                    Text("Day")
                         .font(.title)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
@@ -33,7 +31,7 @@ struct ItineraryView: View {
                     .sheet(isPresented: $showAddSheet, onDismiss: {
                         // Handle any actions when the sheet is dismissed
                     }) {
-                        NewLocationsView(tripSource: .constant([]), locationSource: .constant([]), showAddSheet: .constant(false), valueFromLocation: .constant(Location(name: "")))
+                    NewLocationsView(showAddSheet: $showAddSheet, locationSource: $valueFromLocation)
                     }
                     //                    if let value = valueFromLocation {
                     //                        Text("\(value)")
@@ -60,7 +58,7 @@ struct ItineraryView: View {
             }
         }
         .sheet(isPresented: $showAddSheet) {
-            NewLocationsView(tripSource: .constant([]), locationSource: .constant([]), showAddSheet: .constant(false), valueFromLocation: .constant(Location(name: "")))
+            NewLocationsView(tripSource: , locationSource: , showAddSheet: , valueFromLocation: )
         }
     }
 }

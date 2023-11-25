@@ -14,7 +14,7 @@ struct SearchView: View {
 
     @State var names: [String] = []
     @State private var searchText = ""
-    @State var location = Location(name: "")
+//    @State var location = Location(name: "")
     @State private var selectedIndex: Int?
     
     @Binding var locationSource: [Location]

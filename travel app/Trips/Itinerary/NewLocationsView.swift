@@ -11,21 +11,21 @@ import UIKit
 struct NewLocationsView: View {
     
     @Environment(\.dismiss) var dismiss
-    
     @State private var startTime = Date()
     @State private var endTime = Date()
     @State private var isAllDay = false
+    
     @State private var selectedDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date()) ?? Date()
     @State private var showSearch = false
-    @State var locations = [Location(name: "Location 1")]
-    @State private var valueFromSheet: String?
-    @State private var location = Location(name: "")
-    @State private var selectedIndex: Location?
-    
-    @Binding var tripSource: [Trip]
-    @Binding var locationSource: [Location]
     @Binding var showAddSheet: Bool
-   @Binding var valueFromLocation: Location
+    
+//    @State var locations = [Location(name: "Location 1")]
+    @State private var valueFromSheet: String?
+//    @State private var location = Location(name: "")
+//    @State private var selectedIndex: Location?
+//    @Binding var tripSource: [Trip]
+    @Binding var locationSource: [Location]
+//    @Binding var valueFromLocation: Location
 
     
     var body: some View {
@@ -38,11 +38,11 @@ struct NewLocationsView: View {
                     .sheet(isPresented: $showSearch, onDismiss: {
                         // Handle any actions when the sheet is dismissed
                     }) {
-                        SearchView(locationSource: $locationSource, valueFromSheet: $valueFromSheet)
+                        SearchView()
                     }
-                    if let value = valueFromSheet {
-                        Text("\(value)")
-                    }
+//                    if let value = valueFromSheet {
+//                        Text("\(value)")
+//                    }
                 }
                 
                 Section("Time") {

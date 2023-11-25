@@ -10,7 +10,7 @@ import SwiftUI
 struct TripsView: View {
     
     @State private var showAddSheet = false
-    @State var trips = [Trip(name: "Trip 1", startDate: Date.now, endDate: Date.now)]
+    @State var trips = [Trip(name: "Trip 1", startDate: Date.now, endDate: Date.now]
     
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -22,7 +22,7 @@ struct TripsView: View {
         NavigationStack {
             List($trips, editActions: [.all]){ $trip in
                 NavigationLink{
-                    TripDetailsView()//tripSource: .constant([]))
+                    TripDetailsView()
                         .navigationTitle($trip.name)
                 }label:{
                     VStack(){

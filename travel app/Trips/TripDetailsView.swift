@@ -9,8 +9,8 @@ import SwiftUI
 
 struct TripDetailsView: View {
     
-//    @Binding var tripSource: [Trip]
-    @State var trips = [Trip(name: "Trip 1", startDate: Date.now, endDate: Date.now)]
+    @Binding var tripSource: [Trip]
+ //   @State var trips = [Trip(name: "Trip 1", startDate: Date.now, endDate: Date.now]
 
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -20,22 +20,24 @@ struct TripDetailsView: View {
     
     var body: some View {
         List {
-            ForEach($trips) { $trip in
+            ForEach($tripSource) { $tripSource in
                 VStack {
-                    Text("**Trip name:** \(trip.name)")
+                    Text("**Trip name:** \(tripSource.name)")
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
-                    Text("**Start date:** \(trip.startDate, formatter: dateFormatter)")
+                    Text("**Start date:** \(tripSource.startDate, formatter: dateFormatter)")
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
-                    Text("**End date:** \(trip.endDate, formatter: dateFormatter)")
+                    Text("**End date:** \(tripSource.endDate, formatter: dateFormatter)")
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
             
             
             
-            NavigationLink(destination: ItineraryView(tripName: .constant([]), valueFromLocation: .constant([]))) {
+            NavigationLink {
+                ItineraryView(tripName: $tripSource)
+            } label: {
                 Text("Itinerary")
             }
             
