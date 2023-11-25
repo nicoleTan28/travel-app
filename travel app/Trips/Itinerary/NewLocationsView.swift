@@ -10,22 +10,24 @@ import UIKit
 
 struct NewLocationsView: View {
     
-    @Environment(\.dismiss) var dismiss
-    @State private var startTime = Date()
-    @State private var endTime = Date()
-    @State private var isAllDay = false
-    
-    @State private var selectedDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date()) ?? Date()
-    @State private var showSearch = false
-    @Binding var showAddSheet: Bool
-    
-//    @State var locations = [Location(name: "Location 1")]
-    @State private var valueFromSheet: String?
-//    @State private var location = Location(name: "")
-//    @State private var selectedIndex: Location?
-//    @Binding var tripSource: [Trip]
-    @Binding var locationSource: [Location]
-    @Binding var valueFromLocation: Location
+      @Environment(\.dismiss) var dismiss
+//    @State private var startTime = Date()
+//    @State private var endTime = Date()
+      @State private var isAllDay = false
+//
+//    @State private var selectedDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date()) ?? Date()
+      @State private var showSearch = false
+      @Binding var showAddSheet: Bool
+//    
+////    @State var locations = [Location(name: "Location 1")]
+//    @State private var valueFromSheet: String?
+////    @State private var location = Location(name: "")
+////    @State private var selectedIndex: Location?
+////    @Binding var tripSource: [Trip]
+      @Binding var locationSource: [Location]
+//    @Binding var valueFromLocation: Location
+
+    @ObservedObject var location: Location = Location(name: "", startTime: Date(), endTime: Date())
 
     
     var body: some View {
@@ -47,19 +49,19 @@ struct NewLocationsView: View {
                 Section("Time") {
                     Toggle("All Day", isOn: $isAllDay)
                     
-                    DatePicker("Start", selection: isAllDay ? $selectedDate : $startTime, displayedComponents: .hourAndMinute)
+                    DatePicker("Start", selection: $location.startTime, displayedComponents: .hourAndMinute)
                         .disabled(isAllDay ? true : false)
                         .foregroundColor(isAllDay ? .gray : .black)
-                    DatePicker("End", selection: isAllDay ? $selectedDate : $endTime, displayedComponents: .hourAndMinute)
+                    DatePicker("End", selection: $location.endTime, displayedComponents: .hourAndMinute)
                         .disabled(isAllDay ? true : false)
                         .foregroundColor(isAllDay ? .gray : .black)
                 }
                 
                 Section {
                     Button("Save", role: .none) {
-                        let information = Location(name: valueFromSheet ?? "", startTime: startTime, endTime: endTime)
-                        locationSource.append(Location(name: valueFromSheet ?? "", startTime: startTime, endTime: endTime))
-                        valueFromLocation = information
+                        let information = Location(name: location.name, startTime: location.startTime, endTime: location.endTime)
+                        locationSource.append(Location(name: location.name, startTime: location.startTime, endTime: location.endTime)
+)
                         dismiss()
                     }
                     
@@ -84,6 +86,6 @@ struct NewLocationsView: View {
 
 struct NewLocationsView_Previews: PreviewProvider {
     static var previews: some View {
-        NewLocationsView(showAddSheet: .constant(false), locationSource: .constant([]), valueFromLocation: .constant(Location(name: "")))
+        NewLocationsView(showAddSheet: .constant(false), locationSource: .constant([]))
     }
 }

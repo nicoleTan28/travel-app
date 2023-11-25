@@ -5,6 +5,7 @@
 //  Created by Chhoryi_Ling_Nin on 25/11/23.
 //
 import Foundation
+import Combine
 
 struct Todo: Identifiable {
     
@@ -32,12 +33,12 @@ struct Day: Identifiable {
     var locations: [Location]
 }
 
-struct Location: Identifiable {
-    let id = UUID()
-    var name: String
-    var startTime = Date()
-    var endTime = Date()
-}
+//struct Location: Identifiable {
+//    let id = UUID()
+//    var name: String
+//    var startTime = Date()
+//    var endTime = Date()
+//}
 
 //Danin's json decoding stuff? is it??
 func loadJson(filename fileName: String) -> [attract]? {
@@ -65,3 +66,18 @@ struct attract: Decodable,Hashable{
    //var attractImage: String?
 }
 
+
+
+class Location: ObservableObject {
+    @Published var name: String
+    @Published var startTime: Date
+    @Published var endTime: Date
+
+    
+    init(name: String, startTime: Date, endTime: Date) {
+            self.name = name
+            self.startTime = startTime
+            self.endTime = endTime
+
+        }
+}
