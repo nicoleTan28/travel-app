@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ItineraryView: View {
     
-    @State  var showAddSheet = false
-    @Binding var tripName: [Trip]
-    @State  var day = 1
     @Environment(\.dismiss) var dismiss
-    @State var locations = [Location(name: "Trip 1")]
-    @Binding  var valueFromLocation: [Location]
 
+    @State  var showAddSheet = false
+    @State  var day = 1
+    @State var locations = [Location(name: "Trip 1")]
     
+    @Binding var tripName: [Trip]
+    @Binding  var valueFromLocation: [Location]
 
     var body: some View {
         NavigationStack{
