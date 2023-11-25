@@ -12,8 +12,8 @@ struct ItineraryView: View {
     @Environment(\.dismiss) var dismiss
     @State  var showAddSheet = false
     @Binding var tripName: [Trip]
-    
-    @State var valueFromLocation: [Location] = []
+    @Binding var locationSource: [Location]
+  //  @State var valueFromLocation: [Location] = []
 
     var body: some View {
         NavigationStack{
@@ -29,9 +29,10 @@ struct ItineraryView: View {
                     .padding()
                     .font(.title)
                     .sheet(isPresented: $showAddSheet, onDismiss: {
-                        // Handle any actions when the sheet is dismissed
+                        
                     }) {
-                        NewLocationsView(showAddSheet: $showAddSheet, locationSource: $valueFromLocation, valueFromLocation: <#Binding<Location>#>)
+                        NewLocationsView(showAddSheet: $showAddSheet, locationSource: $locationSource)
+
                     }
                     //                    if let value = valueFromLocation {
                     //                        Text("\(value)")
@@ -58,13 +59,13 @@ struct ItineraryView: View {
             }
         }
         .sheet(isPresented: $showAddSheet) {
-            NewLocationsView(showAddSheet: $showAddSheet, locationSource: $valueFromLocation, valueFromLocation: $tripName)
+            NewLocationsView(showAddSheet: $showAddSheet, locationSource: $locationSource)
         }
     }
 }
 
 struct ItineraryView_Previews: PreviewProvider {
     static var previews: some View {
-        ItineraryView(tripName: .constant([]), valueFromLocation: .constant([]))
+        ItineraryView(tripName: .constant([]), locationSource: .constant([]))
     }
 }

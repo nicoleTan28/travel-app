@@ -10,7 +10,12 @@ import SwiftUI
 struct TripsView: View {
     
     @State private var showAddSheet = false
-    @State var trips = [Trip(name: "Trip 1", startDate: Date.now, endDate: Date.now]
+  //  @State var trips = [Trip(name: "Trip 1", startDate: Date.now, endDate: Date.now]
+    @ObservedObject var trip: Trip = Trip(name: "", startDate: Date(), endDate: Date())
+    @Binding var tripSource: [Trip]
+    @Binding var locationSource: [Location]
+
+    
     
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -20,19 +25,18 @@ struct TripsView: View {
     
     var body: some View {
         NavigationStack {
-            List($trips, editActions: [.all]){ $trip in
+            List(){
                 NavigationLink{
-                    TripDetailsView()
+                    TripDetailsView(tripSource: $tripSource, locationSource: $locationSource)
                         .navigationTitle($trip.name)
-                }label:{
+                } label:{
                     VStack(){
-                        Text("**Trip name:** \(trip.name)")
+                        Text("**Name:** \(trip.name)")
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        Text("**Start date:** \(trip.startDate,formatter: dateFormatter)")
+                        Text("**Start Date:** \(trip.startDate, formatter: dateFormatter)")
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        Text("**End date:** \(trip.endDate, formatter: dateFormatter)")
+                        Text("**End Date:** \(trip.startDate, formatter: dateFormatter)")
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        
                     }
                     
                 }
@@ -58,7 +62,7 @@ struct TripsView: View {
         }
         
         .sheet(isPresented: $showAddSheet) {
-            NewTripsView(tripSource: $trips, isPresented: $showAddSheet)
+            NewTripsView(tripSource: $tripSource, isPresented: $showAddSheet)
                 .presentationDetents([.large])
         }
         
@@ -67,6 +71,6 @@ struct TripsView: View {
 
 struct TripsView_Previews: PreviewProvider {
     static var previews: some View {
-        TripsView()
+        TripsView(tripSource: .constant([]), locationSource: .constant([]))
     }
 }

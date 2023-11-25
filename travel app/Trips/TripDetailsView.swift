@@ -10,7 +10,9 @@ import SwiftUI
 struct TripDetailsView: View {
     
     @Binding var tripSource: [Trip]
- //   @State var trips = [Trip(name: "Trip 1", startDate: Date.now, endDate: Date.now]
+    @Binding var locationSource: [Location]
+    @ObservedObject var trip: Trip = Trip(name: "", startDate: Date(), endDate: Date())
+
 
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -20,15 +22,15 @@ struct TripDetailsView: View {
     
     var body: some View {
         List {
-            ForEach($tripSource) { $tripSource in
+            ForEach([trip], id: \.id) { trip in
                 VStack {
-                    Text("**Trip name:** \(tripSource.name)")
+                    Text("**Trip name:** \(trip.name)")
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
-                    Text("**Start date:** \(tripSource.startDate, formatter: dateFormatter)")
+                    Text("**Start date:** \(trip.startDate, formatter: dateFormatter)")
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
-                    Text("**End date:** \(tripSource.endDate, formatter: dateFormatter)")
+                    Text("**End date:** \(trip.endDate, formatter: dateFormatter)")
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
@@ -36,7 +38,7 @@ struct TripDetailsView: View {
             
             
             NavigationLink {
-                ItineraryView(tripName: $tripSource)
+                ItineraryView(tripName: $tripSource, locationSource: $locationSource)
             } label: {
                 Text("Itinerary")
             }
@@ -66,7 +68,7 @@ struct TripDetailsView: View {
 
 struct TripDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        TripDetailsView()//tripSource: .constant([]))
+        TripDetailsView(tripSource: .constant([]), locationSource: .constant([]))
     }
 }
 

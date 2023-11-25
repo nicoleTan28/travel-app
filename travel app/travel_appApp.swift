@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct travel_appApp: App {
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(tripSource: .constant([]), locationSource: .constant([]))
         }
     }
 }

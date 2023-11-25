@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @Binding var tripSource: [Trip]
+    @Binding var locationSource: [Location]
+
+    
     var body: some View {
         VStack {
             TabView {
@@ -15,7 +20,7 @@ struct ContentView: View {
                     .tabItem {
                         Label("Home", systemImage: "house.fill")
                     }
-                TripsView()
+                TripsView(tripSource: $tripSource, locationSource: $locationSource)
                     .tabItem {
                         Label("Trips", systemImage: "globe")
                     }
@@ -29,8 +34,9 @@ struct ContentView: View {
 }
 
 
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(tripSource: .constant([]), locationSource: .constant([]))
     }
 }

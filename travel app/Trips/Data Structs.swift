@@ -8,7 +8,6 @@ import Foundation
 import Combine
 
 struct Todo: Identifiable {
-    
     let id = UUID()
     var title: String
     var subtitle = ""
@@ -16,16 +15,16 @@ struct Todo: Identifiable {
 }
 
 
-struct Trip: Identifiable {
-    let id = UUID()
-    var name: String
-    var startDate:Date = Date()
-    var endDate:Date = Date()
-  //  var days: [Day]
-    //var departure = Date()
-    //var arrival = Date()
-
-}
+//struct Trip: Identifiable {
+//    let id = UUID()
+//    var name: String
+//    var startDate:Date = Date()
+//    var endDate:Date = Date()
+//  //  var days: [Day]
+//    //var departure = Date()
+//    //var arrival = Date()
+//
+//}
 
 struct Day: Identifiable {
     let id = UUID()
@@ -81,3 +80,22 @@ class Location: ObservableObject {
 
         }
 }
+
+
+class Trip: ObservableObject {
+    @Published var name: String
+    @Published var startDate: Date
+    @Published var endDate: Date
+    
+    init(name: String, startDate: Date, endDate: Date) {
+        self.name = name
+        self.startDate = startDate
+        self.endDate = endDate
+    }
+    
+    var id: ObjectIdentifier {
+            ObjectIdentifier(self)
+        }
+}
+
+

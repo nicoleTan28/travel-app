@@ -27,10 +27,11 @@ struct SearchView: View {
                     ForEach(names.sorted(), id: \.self) { name in
                         Text(name)
                             .onTapGesture {
-                                if let index = names.firstIndex(of: name) { //finds index of tapped name
-                                    selectedIndex = index //sets selectedIndex to said index
-                                    locationSource.append(Location(name: name)) //adding to a 'list'
-                                    valueFromSheet = name //tapped name
+                                if let index = names.firstIndex(of: name) {
+                                    selectedIndex = index
+                                    let valueFromSheet = name
+                                    locationSource.append(Location(name: name, startTime: Date(), endTime: Date()))
+                               //     valueFromSheet = name
                                     dismiss()
                                 }
                             }
