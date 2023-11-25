@@ -24,6 +24,48 @@ struct LocationsView: View {
             Map(position: $position)
                 .frame(width: 350, height: 250)
                 .navigationTitle("Locations")
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                            HStack {
+                                Button("Nature"){
+                                    
+                                }
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(.green)
+                                .cornerRadius(10)
+                                
+                                Spacer()
+                                
+                                Button("Heritage"){
+                                    
+                                }
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(.green)
+                                .cornerRadius(10)
+                                Button("Activties"){
+                                    
+                                }
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(.green)
+                                .cornerRadius(10)
+                                Button("Museum"){
+                                    
+                                }
+                                .padding()
+                                .foregroundColor(.white)
+                                .background(.green)
+                                .cornerRadius(10)
+                                Button("Popular"){
+                                    
+                                }                                .padding()
+                                    .foregroundColor(.white)
+                                    .background(.green)
+                                    .cornerRadius(10)
+                            }
+                        }
                 
             VStack {
                 HStack {
