@@ -29,7 +29,7 @@ struct TripsView: View {
     
     var body: some View {
         NavigationStack {
-            List($trips){ $trip in
+            List($trips, editActions: .all){ $trip in
                 NavigationLink{
                     TripDetailsView(tripSource: $trip) //locationSource: $locationSource)
                         .navigationTitle(trip.name)

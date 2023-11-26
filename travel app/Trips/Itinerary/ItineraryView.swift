@@ -11,8 +11,9 @@ struct ItineraryView: View {
     
     @Environment(\.dismiss) var dismiss
     @State  var showAddSheet = false
-    @Binding var tripName: [Trip]
-    @Binding var locationSource: [Location]
+    @Binding var trip: Trip
+    //commenting on this locationsource because i don't know what it's supposed to do -danin
+    //@Binding var locationSource: [Location]
   //  @State var valueFromLocation: [Location] = []
 
     var body: some View {
@@ -33,7 +34,7 @@ struct ItineraryView: View {
                     .sheet(isPresented: $showAddSheet, onDismiss: {
                         
                     }) {
-                        NewLocationsView(showAddSheet: $showAddSheet, locationSource: $locationSource)
+                        NewLocationsView(showAddSheet: $showAddSheet)//, locationSource: $locationSource)
 
                     }
                     //                    if let value = valueFromLocation {
@@ -61,13 +62,13 @@ struct ItineraryView: View {
             }
         }
         .sheet(isPresented: $showAddSheet) {
-            NewLocationsView(showAddSheet: $showAddSheet, locationSource: $locationSource)
+            NewLocationsView(showAddSheet: $showAddSheet)//, locationSource: $locationSource)
         }
     }
 }
 
 struct ItineraryView_Previews: PreviewProvider {
     static var previews: some View {
-        ItineraryView(tripName: .constant([]), locationSource: .constant([]))
+        ItineraryView(trip: .constant(Trip(name: "Fake trip", startDate: Date(), endDate: Date())))//, locationSource: .constant([]))
     }
 }

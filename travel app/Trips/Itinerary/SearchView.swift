@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct SearchView: View {
+    
     let fileName = "editedJSON"
     
     @Environment(\.dismiss) var dismiss
-
     @State var names: [String] = []
     @State private var searchText = ""
-//    @State var location = Location(name: "")
     @State private var selectedIndex: Int?
     
-    @Binding var locationSource: [Location]
+    //again i don't know what this location source is for - danin
+    //@Binding var locationSource: [Location]
     //what is the value from sheet for?
     //@Binding var valueFromSheet: String?
     
@@ -25,14 +25,15 @@ struct SearchView: View {
         NavigationStack {
             VStack {
                 List {
-                    ForEach(names.sorted(), id: \.self) { name in
+                    ForEach(searchResults, id: \.self) { name in
                         Text(name)
                             .onTapGesture {
                                 
                                 if let index = names.firstIndex(of: name) {
                                     selectedIndex = index
                                     //let valueFromSheet = name
-                                    locationSource.append(Location(name: name, startTime: Date(), endTime: Date()))
+                                    //locationSource??
+                                    //locationSource.append(Location(name: name, startTime: Date(), endTime: Date()))
                                //     valueFromSheet = name
                                     dismiss()
                                 }
@@ -63,5 +64,5 @@ struct SearchView: View {
 }
 
 #Preview {
-    SearchView(locationSource: .constant([]))//, valueFromSheet: .constant(nil))
+    SearchView()//(locationSource: .constant([]))//, valueFromSheet: .constant(nil))
 }

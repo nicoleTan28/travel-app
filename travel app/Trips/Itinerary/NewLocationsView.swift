@@ -24,7 +24,7 @@ struct NewLocationsView: View {
 ////    @State private var location = Location(name: "")
 ////    @State private var selectedIndex: Location?
 ////    @Binding var tripSource: [Trip]
-      @Binding var locationSource: [Location]
+ //     @Binding var locationSource: [Location]
 //    @Binding var valueFromLocation: Location
 
     @ObservedObject var location: Location = Location(name: "", startTime: Date(), endTime: Date())
@@ -58,9 +58,11 @@ struct NewLocationsView: View {
                 
                 Section {
                     Button("Save", role: .none) {
-                        let information = Location(name: location.name, startTime: location.startTime, endTime: location.endTime)
-                        locationSource.append(Location(name: location.name, startTime: location.startTime, endTime: location.endTime)
-)
+                        
+                        //no idea what this is so i'm commenting it temporarily - danin
+                        //let information = Location(name: location.name, startTime: location.startTime, endTime: location.endTime)
+                        //commenting on locationSource??
+                        //locationSource.append(Location(name: location.name, startTime: location.startTime, endTime: location.endTime)
                         dismiss()
                     }
                     
@@ -74,7 +76,9 @@ struct NewLocationsView: View {
             }
         }
         .sheet(isPresented: $showSearch) {
-            SearchView(locationSource: $locationSource)//, valueFromSheet: .constant(nil))
+            SearchView()
+            //temporarily commenting on this
+           // SearchView(locationSource: $locationSource)//, valueFromSheet: .constant(nil))
         }
     }
 }
@@ -85,6 +89,6 @@ struct NewLocationsView: View {
 
 struct NewLocationsView_Previews: PreviewProvider {
     static var previews: some View {
-        NewLocationsView(showAddSheet: .constant(false), locationSource: .constant([]))
+        NewLocationsView(showAddSheet: .constant(false))//, locationSource: .constant([]))
     }
 }
