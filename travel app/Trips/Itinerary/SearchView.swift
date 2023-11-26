@@ -20,6 +20,7 @@ struct SearchView: View {
     //@Binding var locationSource: [Location]
     //what is the value from sheet for?
     //@Binding var valueFromSheet: String?
+    @Binding var locationName : String
     
     var body: some View {
         NavigationStack {
@@ -28,15 +29,16 @@ struct SearchView: View {
                     ForEach(searchResults, id: \.self) { name in
                         Text(name)
                             .onTapGesture {
-                                
-                                if let index = names.firstIndex(of: name) {
-                                    selectedIndex = index
-                                    //let valueFromSheet = name
-                                    //locationSource??
-                                    //locationSource.append(Location(name: name, startTime: Date(), endTime: Date()))
-                               //     valueFromSheet = name
-                                    dismiss()
-                                }
+                                locationName = name
+                                dismiss()
+//                                if let index = names.firstIndex(of: name) {
+//                                    selectedIndex = index
+//                                    //let valueFromSheet = name
+//                                    //locationSource??
+//                                    //locationSource.append(Location(name: name, startTime: Date(), endTime: Date()))
+//                               //     valueFromSheet = name
+//                                    dismiss()
+//                                }
                             }
                     }
                 }
@@ -64,5 +66,5 @@ struct SearchView: View {
 }
 
 #Preview {
-    SearchView()//(locationSource: .constant([]))//, valueFromSheet: .constant(nil))
+    SearchView(locationName: .constant("Fake location"))//(locationSource: .constant([]))//, valueFromSheet: .constant(nil))
 }

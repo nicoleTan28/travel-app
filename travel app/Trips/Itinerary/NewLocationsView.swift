@@ -26,15 +26,16 @@ struct NewLocationsView: View {
 ////    @Binding var tripSource: [Trip]
  //     @Binding var locationSource: [Location]
 //    @Binding var valueFromLocation: Location
-
     @ObservedObject var location: Location = Location(name: "", startTime: Date(), endTime: Date())
 
+    @Binding var Locations: [Location]
+    @State private var locationName = ""
     
     var body: some View {
         NavigationView {
             Form {
                 Section("Location") {
-                    Button("Add location") {
+                    Button("Search location") {
                         showSearch = true
                     }
 //                    .sheet(isPresented: $showSearch, onDismiss: {
@@ -42,7 +43,7 @@ struct NewLocationsView: View {
 //                    }) {
 //                        SearchView()
 //                    }
-
+                    Text("**Selected location:** \(locationName)")
                 }
                 
                 Section("Time") {
@@ -58,7 +59,7 @@ struct NewLocationsView: View {
                 
                 Section {
                     Button("Save", role: .none) {
-                        
+                        Locations.append(Location(name: locationName, startTime: location.startTime, endTime: location.endTime))
                         //no idea what this is so i'm commenting it temporarily - danin
                         //let information = Location(name: location.name, startTime: location.startTime, endTime: location.endTime)
                         //commenting on locationSource??
@@ -68,7 +69,6 @@ struct NewLocationsView: View {
                     
                     Button("Cancel", role: .destructive) {
                         dismiss()
-                        showAddSheet = false
                     }
                     
                 }
@@ -76,7 +76,7 @@ struct NewLocationsView: View {
             }
         }
         .sheet(isPresented: $showSearch) {
-            SearchView()
+            SearchView(locationName: $locationName)
             //temporarily commenting on this
            // SearchView(locationSource: $locationSource)//, valueFromSheet: .constant(nil))
         }
@@ -89,6 +89,6 @@ struct NewLocationsView: View {
 
 struct NewLocationsView_Previews: PreviewProvider {
     static var previews: some View {
-        NewLocationsView(showAddSheet: .constant(false))//, locationSource: .constant([]))
+        NewLocationsView(showAddSheet: .constant(false), Locations: .constant([Location(name: "fake location", startTime: Date(), endTime: Date())]))//, locationSource: .constant([]))
     }
 }

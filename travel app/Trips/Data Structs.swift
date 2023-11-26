@@ -67,7 +67,7 @@ struct attract: Decodable,Hashable{
 
 
 
-class Location: ObservableObject {
+class Location: ObservableObject, Identifiable {
     @Published var name: String
     @Published var startTime: Date
     @Published var endTime: Date
