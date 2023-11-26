@@ -18,6 +18,8 @@ struct HomeView: View {
      let os = CLLocationCoordinate2D(latitude: 1.3032, longitude: 103.8344)
      let PU = CLLocationCoordinate2D(latitude: 1.4047, longitude: 103.9609)
     
+    let places = loadJson(filename: "editedJSON")
+    
     var body: some View {
         NavigationStack{
             Text("Recommended Areas")
@@ -25,6 +27,13 @@ struct HomeView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
             Map(){
+                
+//                for place in places{
+//                    Marker(place.pageTitle, coordinate: CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longtitude))
+//                }
+//                ForEach(places, id: \.name) { place in
+//                    Marker(place.pageTitle, coordinate: CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longtitude))
+//                }
                 Marker("Marina Bay Sands", coordinate: mbs)
                 Marker("Singapore Botanic Gardens", coordinate: sbg)
                 Marker("Sentosa Island", coordinate: SI)

@@ -37,6 +37,7 @@ struct TripDetailsView: View {
             NavigationLink {
                 //temporarily commenting this
                 //ItineraryView(tripName: [$tripSource], locationSource: $locationSource)
+                ItineraryView(trip: $tripSource)
             } label: {
                 Text("Itinerary")
             }
