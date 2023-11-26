@@ -118,8 +118,8 @@
 				D9A2F8992B0B43710085087A /* Packing List */,
 				9EEB3D4E2B119BCB00569A23 /* Data Structs.swift */,
 				D96FB5642B0AF10000E99464 /* TripsView.swift */,
-				9E2188012B0B30AC00F0C2A8 /* TripDetailsView.swift */,
 				D96FB5662B0AF2F800E99464 /* NewTripsView.swift */,
+				9E2188012B0B30AC00F0C2A8 /* TripDetailsView.swift */,
 			);
 			path = Trips;
 			sourceTree = "<group>";

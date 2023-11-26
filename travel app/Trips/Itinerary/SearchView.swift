@@ -28,6 +28,7 @@ struct SearchView: View {
                     ForEach(names.sorted(), id: \.self) { name in
                         Text(name)
                             .onTapGesture {
+                                
                                 if let index = names.firstIndex(of: name) {
                                     selectedIndex = index
                                     //let valueFromSheet = name

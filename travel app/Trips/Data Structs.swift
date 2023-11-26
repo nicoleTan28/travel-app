@@ -82,7 +82,7 @@ class Location: ObservableObject {
 }
 
 
-class Trip: ObservableObject {
+class Trip: ObservableObject, Identifiable {
     @Published var name: String
     @Published var startDate: Date
     @Published var endDate: Date

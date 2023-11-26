@@ -34,10 +34,9 @@ struct NewLocationsView: View {
         NavigationView {
             Form {
                 Section("Location") {
-                    Button("Find locations") {
-                        showSearch.toggle()
+                    Button("Add location") {
+                        showSearch = true
                     }
-                    
 //                    .sheet(isPresented: $showSearch, onDismiss: {
 //                        
 //                    }) {

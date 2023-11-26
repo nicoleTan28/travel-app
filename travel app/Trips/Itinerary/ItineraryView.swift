@@ -23,8 +23,10 @@ struct ItineraryView: View {
                         .font(.title)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
-                    Button("+") {
+                    Button {
                         showAddSheet.toggle()
+                    }label:{
+                        Image(systemName: "plus")
                     }
                     .padding()
                     .font(.title)

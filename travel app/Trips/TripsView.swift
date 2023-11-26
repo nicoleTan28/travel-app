@@ -11,8 +11,10 @@ struct TripsView: View {
     
     @State private var showAddSheet = false
   //  @State var trips = [Trip(name: "Trip 1", startDate: Date.now, endDate: Date.now]
-    @ObservedObject var trip: Trip = Trip(name: "", startDate: Date(), endDate: Date())
-    @Binding var tripSource: [Trip]
+    @State var trips: [Trip] = [Trip(name: "", startDate: Date(), endDate: Date())]
+    //not sure what this observed object is for
+//    @ObservedObject var trip: Trip = Trip(name: "", startDate: Date(), endDate: Date())
+//    @Binding var tripSource: [Trip]
     @Binding var locationSource: [Location]
 
     
@@ -25,18 +27,15 @@ struct TripsView: View {
     
     var body: some View {
         NavigationStack {
-            List(){
+            List($trips){ $trip in
                 NavigationLink{
-                    TripDetailsView(tripSource: $tripSource, locationSource: $locationSource)
-                        .navigationTitle($trip.name)
+                    TripDetailsView(tripSource: $trips, locationSource: $locationSource)
+                        .navigationTitle(trip.name)
                 } label:{
-                    VStack(){
+                    VStack(alignment:.leading){
                         Text("**Name:** \(trip.name)")
-                            .frame(maxWidth: .infinity, alignment: .leading)
                         Text("**Start Date:** \(trip.startDate, formatter: dateFormatter)")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        Text("**End Date:** \(trip.startDate, formatter: dateFormatter)")
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                        Text("**End Date:** \(trip.endDate, formatter: dateFormatter)")
                     }
                     
                 }
@@ -52,7 +51,7 @@ struct TripsView: View {
                     Button {
                         showAddSheet = true
                     } label: {
-                        Label("New candidate", systemImage: "plus")
+                        Label("New Day", systemImage: "plus")
                     }
                 }
                 
@@ -62,7 +61,7 @@ struct TripsView: View {
         }
         
         .sheet(isPresented: $showAddSheet) {
-            NewTripsView(tripSource: $tripSource, isPresented: $showAddSheet)
+            NewTripsView(tripSource: $trips, isPresented: $showAddSheet)
                 .presentationDetents([.large])
         }
         
@@ -71,6 +70,6 @@ struct TripsView: View {
 
 struct TripsView_Previews: PreviewProvider {
     static var previews: some View {
-        TripsView(tripSource: .constant([]), locationSource: .constant([]))
+        TripsView(trips: [Trip(name: "aaaaa", startDate: Date(), endDate: Date())], locationSource: .constant([]))
     }
 }

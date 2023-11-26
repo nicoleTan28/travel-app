@@ -60,12 +60,10 @@ struct NewTripsView: View {
                             let newTrip = Trip(name: name, startDate: startDate, endDate: endDate)
                             tripSource.append(newTrip)
                             dismiss()
-                            isPresented = false
                         }
                         Button("Cancel", role: .destructive) {
                             // code to cancel
                             dismiss()
-                            isPresented = false
                         }
                     }
                     
