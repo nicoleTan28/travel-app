@@ -9,9 +9,15 @@ import SwiftUI
 
 struct TripDetailsView: View {
     
-    @Binding var tripSource: [Trip]
-    @Binding var locationSource: [Location]
-    @ObservedObject var trip: Trip = Trip(name: "", startDate: Date(), endDate: Date())
+    //changed [Trip] -> Trip
+    @Binding var tripSource: Trip
+    @State private var locationSource: [Location] = []
+    //changing this binding to state var
+    //@Binding var locationSource: [Location]
+    
+    
+    //again i'm not sure what this is for -danin
+    //@ObservedObject var trip: Trip = Trip(name: "", startDate: Date(), endDate: Date())
 
 
     let dateFormatter: DateFormatter = {
@@ -22,23 +28,15 @@ struct TripDetailsView: View {
     
     var body: some View {
         List {
-            ForEach([trip], id: \.id) { trip in
-                VStack {
-                    Text("**Trip name:** \(trip.name)")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    Text("**Start date:** \(trip.startDate, formatter: dateFormatter)")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    Text("**End date:** \(trip.endDate, formatter: dateFormatter)")
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                }
+            VStack (alignment: .leading){
+                Text("**Trip name:** \(tripSource.name)")
+                Text("**Start date:** \(tripSource.startDate, formatter: dateFormatter)")
+                Text("**End date:** \(tripSource.endDate, formatter: dateFormatter)")
             }
             
-            
-            
             NavigationLink {
-                ItineraryView(tripName: $tripSource, locationSource: $locationSource)
+                //temporarily commenting this
+                //ItineraryView(tripName: [$tripSource], locationSource: $locationSource)
             } label: {
                 Text("Itinerary")
             }
@@ -68,7 +66,7 @@ struct TripDetailsView: View {
 
 struct TripDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        TripDetailsView(tripSource: .constant([]), locationSource: .constant([]))
+        TripDetailsView(tripSource: .constant(Trip(name: "fake trip", startDate: Date(), endDate: Date())))
     }
 }
 

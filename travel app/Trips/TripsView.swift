@@ -14,8 +14,10 @@ struct TripsView: View {
     @State var trips: [Trip] = [Trip(name: "", startDate: Date(), endDate: Date())]
     //not sure what this observed object is for
 //    @ObservedObject var trip: Trip = Trip(name: "", startDate: Date(), endDate: Date())
+    
+    //i think these bindings are not needed -> where does it even bind to??
 //    @Binding var tripSource: [Trip]
-    @Binding var locationSource: [Location]
+    //@Binding var locationSource: [Location]
 
     
     
@@ -29,7 +31,7 @@ struct TripsView: View {
         NavigationStack {
             List($trips){ $trip in
                 NavigationLink{
-                    TripDetailsView(tripSource: $trips, locationSource: $locationSource)
+                    TripDetailsView(tripSource: $trip) //locationSource: $locationSource)
                         .navigationTitle(trip.name)
                 } label:{
                     VStack(alignment:.leading){
@@ -70,6 +72,6 @@ struct TripsView: View {
 
 struct TripsView_Previews: PreviewProvider {
     static var previews: some View {
-        TripsView(trips: [Trip(name: "aaaaa", startDate: Date(), endDate: Date())], locationSource: .constant([]))
+        TripsView(trips: [Trip(name: "aaaaa", startDate: Date(), endDate: Date())])//, locationSource: .constant([]))
     }
 }

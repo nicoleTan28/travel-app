@@ -20,7 +20,7 @@ struct ContentView: View {
                     .tabItem {
                         Label("Home", systemImage: "house.fill")
                     }
-                TripsView(locationSource: $locationSource)
+                TripsView()
                     .tabItem {
                         Label("Trips", systemImage: "globe")
                     }
