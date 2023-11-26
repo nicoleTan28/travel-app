@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		478B8E392B138CA400257A41 /* NView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B8E382B138CA400257A41 /* NView.swift */; };
+		478B8E3B2B138CB700257A41 /* HView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B8E3A2B138CB700257A41 /* HView.swift */; };
+		478B8E3D2B138CCF00257A41 /* MView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B8E3C2B138CCF00257A41 /* MView.swift */; };
+		478B8E3F2B138DD400257A41 /* AView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478B8E3E2B138DD400257A41 /* AView.swift */; };
 		47C0F8FF2B0DE2E20032E1E1 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C0F8FE2B0DE2E20032E1E1 /* SwiftUIView.swift */; };
 		47C0F9012B0DE2FD0032E1E1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C0F9002B0DE2FD0032E1E1 /* Location.swift */; };
 		9E2188022B0B30AC00F0C2A8 /* TripDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2188012B0B30AC00F0C2A8 /* TripDetailsView.swift */; };
@@ -30,6 +34,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		478B8E382B138CA400257A41 /* NView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NView.swift; sourceTree = "<group>"; };
+		478B8E3A2B138CB700257A41 /* HView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HView.swift; sourceTree = "<group>"; };
+		478B8E3C2B138CCF00257A41 /* MView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MView.swift; sourceTree = "<group>"; };
+		478B8E3E2B138DD400257A41 /* AView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AView.swift; sourceTree = "<group>"; };
 		47C0F8FE2B0DE2E20032E1E1 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
 		47C0F9002B0DE2FD0032E1E1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		9E2188012B0B30AC00F0C2A8 /* TripDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsView.swift; sourceTree = "<group>"; };
@@ -70,6 +78,10 @@
 				D96FB5602B0AF0EF00E99464 /* LocationsView.swift */,
 				47C0F9002B0DE2FD0032E1E1 /* Location.swift */,
 				47C0F8FE2B0DE2E20032E1E1 /* SwiftUIView.swift */,
+				478B8E3C2B138CCF00257A41 /* MView.swift */,
+				478B8E3E2B138DD400257A41 /* AView.swift */,
+				478B8E3A2B138CB700257A41 /* HView.swift */,
+				478B8E382B138CA400257A41 /* NView.swift */,
 			);
 			path = Locations;
 			sourceTree = "<group>";
@@ -227,18 +239,22 @@
 				9E2188022B0B30AC00F0C2A8 /* TripDetailsView.swift in Sources */,
 				D96FB5652B0AF10000E99464 /* TripsView.swift in Sources */,
 				47C0F9012B0DE2FD0032E1E1 /* Location.swift in Sources */,
+				478B8E3F2B138DD400257A41 /* AView.swift in Sources */,
 				D96FB5612B0AF0EF00E99464 /* LocationsView.swift in Sources */,
 				D96FB5632B0AF0F700E99464 /* HomeView.swift in Sources */,
 				D98A3CD92B0B2D1000066D39 /* NewTodoView.swift in Sources */,
 				9EEB3D4F2B119BCB00569A23 /* Data Structs.swift in Sources */,
 				D96FB5552B0AED0900E99464 /* ContentView.swift in Sources */,
+				478B8E3B2B138CB700257A41 /* HView.swift in Sources */,
 				9E2188042B0B343F00F0C2A8 /* ItineraryView.swift in Sources */,
 				D9CBEA482B0F69A300A02014 /* SearchView.swift in Sources */,
 				D9A2F8952B0B41920085087A /* NewLocationsView.swift in Sources */,
+				478B8E3D2B138CCF00257A41 /* MView.swift in Sources */,
 				D96FB5672B0AF2F800E99464 /* NewTripsView.swift in Sources */,
 				D98A3CD72B0B2A8E00066D39 /* PackingListView.swift in Sources */,
 				D96FB5532B0AED0900E99464 /* travel_appApp.swift in Sources */,
 				47C0F8FF2B0DE2E20032E1E1 /* SwiftUIView.swift in Sources */,
+				478B8E392B138CA400257A41 /* NView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
