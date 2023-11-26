@@ -75,7 +75,7 @@ struct NewLocationsView: View {
             }
         }
         .sheet(isPresented: $showSearch) {
-            SearchView(locationSource: $locationSource, valueFromSheet: .constant(nil))
+            SearchView(locationSource: $locationSource)//, valueFromSheet: .constant(nil))
         }
     }
 }

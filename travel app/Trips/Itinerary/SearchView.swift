@@ -18,7 +18,8 @@ struct SearchView: View {
     @State private var selectedIndex: Int?
     
     @Binding var locationSource: [Location]
-    @Binding var valueFromSheet: String?
+    //what is the value from sheet for?
+    //@Binding var valueFromSheet: String?
     
     var body: some View {
         NavigationStack {
@@ -29,7 +30,7 @@ struct SearchView: View {
                             .onTapGesture {
                                 if let index = names.firstIndex(of: name) {
                                     selectedIndex = index
-                                    let valueFromSheet = name
+                                    //let valueFromSheet = name
                                     locationSource.append(Location(name: name, startTime: Date(), endTime: Date()))
                                //     valueFromSheet = name
                                     dismiss()
@@ -61,5 +62,5 @@ struct SearchView: View {
 }
 
 #Preview {
-    SearchView(locationSource: .constant([]), valueFromSheet: .constant(nil))
+    SearchView(locationSource: .constant([]))//, valueFromSheet: .constant(nil))
 }

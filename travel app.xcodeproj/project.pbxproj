@@ -74,7 +74,7 @@
 			path = Locations;
 			sourceTree = "<group>";
 		};
-		9EEB3D4D2B119ADD00569A23 /* Preview Content */ = {
+		9EEB3D552B12CE2100569A23 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -100,7 +100,7 @@
 		D96FB5512B0AED0900E99464 /* travel app */ = {
 			isa = PBXGroup;
 			children = (
-				9EEB3D4D2B119ADD00569A23 /* Preview Content */,
+				9EEB3D552B12CE2100569A23 /* Preview Content */,
 				D96FB5522B0AED0900E99464 /* travel_appApp.swift */,
 				D96FB5542B0AED0900E99464 /* ContentView.swift */,
 				47C0F8852B0D90550032E1E1 /* Locations */,
