@@ -11,6 +11,8 @@ import MapKit
 
 @available(iOS 17.0, *)
 struct LocationsView: View {
+    
+    let fileName = "editedJSON"
     @State private var locationService = LocationService(completer: .init())
     @State private var showingSheet = false
     @State private var position = MapCameraPosition.automatic
@@ -18,6 +20,12 @@ struct LocationsView: View {
     @State private var isMarkerVisible = false
     @State private var search: String = ""
     @State private var location: String = ""
+    @State private var showingSheetV = false
+    
+    @State private var showingSheetM = false
+    @State private var showingSheetA = false
+    @State private var showingSheetH = false
+    @State private var showingSheetN = false
     
     
     @State private var showingSheetM = false
@@ -128,6 +136,12 @@ struct LocationsView: View {
             }
             .sheet(isPresented: $showingSheet) {
                 SwiftUIView()
+            }
+            Button("Famous Places Details In SIngapore") {
+                showingSheetV.toggle()
+            }
+            .sheet(isPresented: $showingSheetV) {
+                AHHView(locationName: .constant("Fake location"))
             }
         }
         
