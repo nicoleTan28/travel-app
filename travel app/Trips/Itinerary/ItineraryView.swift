@@ -30,21 +30,27 @@ struct ItineraryView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     
-                    
-                        Text("**Destinations**")
+                    Button {
+                        showAddSheet = true
+                    } label: {
+                        Text("Destinations")
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding()
-                        
-                        ForEach(locations){location in
-                            Text(location.name)
-                        }
-                        
-                        
+                    }
+                    
+                    ForEach(locations){location in
+                        Text(location.name)
+                    }
+                    
+                    
                     
                 }
                 .navigationTitle("Itinerary")
                 
             }
+        }
+        .sheet(isPresented: $showAddSheet) {
+            NewLocationsView(showAddSheet: $showAddSheet, trip: $trip, selectedDay: $selectedDay)
         }
         .onAppear{
             for number in 1...trip.noOfDays{
