@@ -20,25 +20,27 @@ struct ItineraryView: View {
     var body: some View {
         NavigationStack{
             List {
-                ForEach((trip.days), id: \.id) {selectedDay in
+                ForEach(trip.days, id: \.id) { selectedDay in
                     
-                    Text("Day \(selectedDay.selectedDay)")
-                        .font(.title)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding()
-                    
-                    Button {
-                        let selectedDay = selectedDay
-                        showAddSheet = true
-                    } label: {
-                        Text("Destinations")
-                            .frame(maxWidth: .infinity, alignment: .leading)
-//                            .padding()
+                    Section("Day \(selectedDay.selectedDay)") {
+                        Button {
+                            self.selectedDay = selectedDay.selectedDay
+                            showAddSheet = true
+                        } label: {
+                            Text("Add new destination")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+    //                            .padding()
+                        }
+                        
+
+                        ForEach(selectedDay.locations){ location in
+                            Text(location.name)
+                        }
+                        
+                        
                     }
                     
-                    ForEach(locations){location in
-                        Text(location.name)
-                    }
+                    
                     
                     
                     
