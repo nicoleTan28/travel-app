@@ -19,14 +19,17 @@ struct HomeView: View {
     let PU = CLLocationCoordinate2D(latitude: 1.4047, longitude: 103.9609)
     
     @State var places: [Attraction] = []
+    @Binding var likedPlaces : [Attraction]
     
     var body: some View {
         NavigationStack{
-            Text("Recommended Areas")
-                .font(.title)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding()
+            VStack(alignment: .leading) {
+                Text("Recommended Areas")
+                    .font(.title)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding()
                 .bold()
+            }
             Map(){
                 
                 //                for place in places{
@@ -35,18 +38,34 @@ struct HomeView: View {
                 ForEach(places, id: \.self) { place in
                     Marker(place.pageTitle, coordinate: CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longtitude))
                 }
-                //                Marker("Marina Bay Sands", coordinate: mbs)
-                //                Marker("Singapore Botanic Gardens", coordinate: sbg)
-                //                Marker("Sentosa Island", coordinate: SI)
-                //                Marker("Gardens By the Bay", coordinate: GBB)
-                //                Marker("Singapore Zoo", coordinate: zoo)
-                //                Marker("Orchard Road(Shopping)", coordinate: os)
-                //                Marker("Pulau Ubin", coordinate: PU)
+                
+                
             }
             .frame(width:2500, height:230)
-            .navigationTitle("Home")
+            Text("Favourite places")
+                .font(.title)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
+                .bold()
             
-        }
+//            List {
+//                ForEach(likedPlaces){ likedPlace in
+//                    Text(String(likedPlace.pageTitle))
+//                }
+//            }
+            
+            
+                List{
+                    ForEach(likedPlaces){ likedPlace in
+                        Text(String(likedPlace.pageTitle))
+                    }
+                }
+            
+                    
+                .navigationTitle("Home")
+            }
+            
+            
         .onAppear() {
             places = loadJson(filename: "editedJSON") ?? []
             print(places)
@@ -57,6 +76,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(places: [])
+        HomeView(places: [], likedPlaces: .constant([Attraction(pageTitle: "fake", latitude: 2.0, longtitude: 2.0)]))
     }
 }

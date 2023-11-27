@@ -17,11 +17,7 @@ struct AHHView: View {
     @State private var searchText = ""
     @State private var selectedIndex: Int?
     @Binding var locationName : String
-
-    //again i don't know what this location source is for - danin
-    //@Binding var locationSource: [Location]
-    //what is the value from sheet for?
-    //@Binding var valueFromSheet: String?
+    @Binding var likedPlaces: [Attraction]
     
     var body: some View {
         NavigationStack {
@@ -29,7 +25,7 @@ struct AHHView: View {
                 List {
                     ForEach(searchResults, id: \.self) { place in
                         NavigationLink {
-                            DetailsView(place: place)
+                            DetailsView(place: place, likedPlaces: $likedPlaces)
                         } label: {
                             Text(place.pageTitle)
                             //                            .onTapGesture {
@@ -64,5 +60,5 @@ struct AHHView: View {
 }
 
 #Preview {
-    AHHView(locationName: .constant("Fake location"))//(locationSource: .constant([]))//, valueFromSheet: .constant(nil))
+    AHHView(locationName: .constant("Fake location"), likedPlaces: .constant([Attraction(pageTitle: "fake", latitude: 1.0, longtitude: 1.0)]))//(locationSource: .constant([]))//, valueFromSheet: .constant(nil))
 }

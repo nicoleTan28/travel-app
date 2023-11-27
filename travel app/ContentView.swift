@@ -11,12 +11,13 @@ struct ContentView: View {
     
     @Binding var tripSource: [Trip]
     @Binding var locationSource: [Location]
+    @State private var likedPlaces: [Attraction] = []
 
     
     var body: some View {
         VStack {
             TabView {
-                HomeView()
+                HomeView(likedPlaces: $likedPlaces)
                     .tabItem {
                         Label("Home", systemImage: "house.fill")
                     }
@@ -24,7 +25,7 @@ struct ContentView: View {
                     .tabItem {
                         Label("Trips", systemImage: "globe")
                     }
-                LocationsView()
+                LocationsView(likedPlaces: $likedPlaces)
                     .tabItem {
                         Label("Locations", systemImage: "location.circle.fill")
                     }
