@@ -116,5 +116,14 @@ class Trip: Identifiable {
             ObjectIdentifier(self)
         }
 }
+struct ResponseData2: Decodable{
+    var features: [attract]
+}
+
+struct attract: Decodable,Hashable{
+    var name: String
+    var overview: String
+   var attractImage: String?
+}
 
 
