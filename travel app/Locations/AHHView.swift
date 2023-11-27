@@ -27,7 +27,7 @@ struct AHHView: View {
         NavigationStack {
             VStack {
                 List {
-                    ForEach(places, id: \.self) { place in
+                    ForEach(searchResults, id: \.self) { place in
                         NavigationLink {
                             DetailsView(place: place)
                         } label: {

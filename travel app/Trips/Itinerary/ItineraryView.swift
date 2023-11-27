@@ -35,6 +35,7 @@ struct ItineraryView: View {
 
                         ForEach(selectedDay.locations){ location in
                             Text(location.name)
+                            
                         }
                         
                         
