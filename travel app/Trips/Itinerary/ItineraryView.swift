@@ -12,84 +12,50 @@ struct ItineraryView: View {
     @Environment(\.dismiss) var dismiss
     @State private var showAddSheet = false
     @Binding var trip: Trip
-    //commenting on this locationsource because i don't know what it's supposed to do -danin
-    //@Binding var locationSource: [Location]
-  //  @State var valueFromLocation: [Location] = []
-    
     @State private var locations: [Location] = []
+
+    @State private var dayNumbers: [Int] = []
+    @State var selectedDay: Int
     
     var body: some View {
         NavigationStack{
             List {
-                HStack {
-                    Text("Day")
+                ForEach((trip.days), id: \.id) {selectedDay in
+                    
+                    Text("Day \(selectedDay.selectedDay)")
                         .font(.title)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
+                    
                     Button {
-                        //this button should add a day because that would be clearer
-                    }label:{
-                        Image(systemName: "plus")
+                        let selectedDay = selectedDay
+                        showAddSheet = true
+                    } label: {
+                        Text("Destinations")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+//                            .padding()
                     }
-                    .padding()
-                    .font(.title)
-                    
-                    //why is there a sheet here?
-//                    .sheet(isPresented: $showAddSheet, onDismiss: {
-//                        
-//                    }) {
-//                        NewLocationsView(showAddSheet: $showAddSheet)//, locationSource: $locationSource)
-//
-//                    }
-                    //                    if let value = valueFromLocation {
-                    //                        Text("\(value)")
-                    //                    }                    
-                    
-                    
-                }
-                VStack(alignment:.leading){
-                    Text("**Destinations**")
                     
                     ForEach(locations){location in
                         Text(location.name)
                     }
+                    
+                    
+                    
                 }
-                //not very pleasing to look at - danin
-//                ScrollView(.horizontal) {
-//                    VStack(alignment:.leading){
-//                        Text("**Destinations**")
-//                        HStack {
-//                            ForEach(Locations){location in
-//                                Text(location.name)
-//                            }
-//                            
-//                        }
-//                    }
-//                    
-//                    
-//                }
+                .navigationTitle("Itinerary")
+                
             }
-            .navigationTitle("Itinerary")
-            
-            //do we really need to add days when there is a fixed number of days in the trip? -> instead we can display the 'built-in' number of days
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    Button {
-//                        
-//                    } label: {
-//                        Image(systemName: "plus")
-//                    }
-//                }
-//            }
         }
         .sheet(isPresented: $showAddSheet) {
-            NewLocationsView(showAddSheet: $showAddSheet, trip: $trip, selectedDay: .constant(0))//, locationSource: $locationSource)
+            NewLocationsView(showAddSheet: $showAddSheet, trip: $trip, selectedDay: $selectedDay)
         }
-    }
+        
+            }
 }
 
 struct ItineraryView_Previews: PreviewProvider {
     static var previews: some View {
-        ItineraryView(trip: .constant(Trip(name: "Fake trip", startDate: Date(), endDate: Date())))//, locationSource: .constant([]))
+        ItineraryView(trip: .constant(Trip(name: "Fake trip", startDate: "", endDate: "", noOfDays: 3)), selectedDay: 1)
     }
 }

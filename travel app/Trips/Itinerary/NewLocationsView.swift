@@ -10,20 +10,11 @@ import UIKit
 
 struct NewLocationsView: View {
     
-      @Environment(\.dismiss) var dismiss
-      @State private var isAllDay = false
-      @State private var showSearch = false
-      @Binding var showAddSheet: Bool
-//    
-////    @State var locations = [Location(name: "Location 1")]
-//    @State private var valueFromSheet: String?
-////    @State private var location = Location(name: "")
-////    @State private var selectedIndex: Location?
-////    @Binding var tripSource: [Trip]
- //     @Binding var locationSource: [Location]
-//    @Binding var valueFromLocation: Location
+    @Environment(\.dismiss) var dismiss
+    @State private var isAllDay = false
+    @State private var showSearch = false
     @State var location: Location = Location(name: "", startTime: Date(), endTime: Date())
-
+    @Binding var showAddSheet: Bool
     @Binding var trip: Trip
     @Binding var selectedDay: Int
     @State private var locationName = ""
@@ -86,6 +77,6 @@ struct NewLocationsView: View {
 
 struct NewLocationsView_Previews: PreviewProvider {
     static var previews: some View {
-        NewLocationsView(showAddSheet: .constant(false), trip: .constant(Trip(name: "Test", startDate: .now, endDate: .now, days: [])), selectedDay: .constant(0)) // locationSource: .constant([]))
+        NewLocationsView(showAddSheet: .constant(false), trip: .constant(Trip(name: "Test", startDate: "", endDate: "", days: [], noOfDays: 1)), selectedDay: .constant(0)) // locationSource: .constant([]))
     }
 }

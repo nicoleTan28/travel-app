@@ -10,7 +10,7 @@ import SwiftUI
 
 struct NewTripsView: View {
     
-    
+
     
     @Environment(\.dismiss) var dismiss
     @Binding var tripSource: [Trip]
@@ -19,9 +19,7 @@ struct NewTripsView: View {
     @State private var name = ""
     @State private var startDate: Date = Date()
     @State private var endDate: Date = Date()
-    @State private var flight = ""
-    @State private var departure = Date()
-    @State private var arrival = Date()
+
     
     
     var body: some View {
@@ -46,18 +44,26 @@ struct NewTripsView: View {
                         )
                     }
                     
-                    Section("Flight") {
-                        TextField("Enter Flight Number", text: $flight)
-                        
-                        DatePicker("Departure", selection: $departure, displayedComponents: .hourAndMinute)
-                        
-                        DatePicker("Arrival", selection: $arrival, displayedComponents: .hourAndMinute)
-                        
-                    }
+//                    Section("Flight") {
+//                        TextField("Enter Flight Number", text: $flight)
+//                        
+//                        DatePicker("Departure", selection: $departure, displayedComponents: .hourAndMinute)
+//                        
+//                        DatePicker("Arrival", selection: $arrival, displayedComponents: .hourAndMinute)
+//                        
+//                    }
+                    
                     Section {
                         Button("Save", role: .none) {
-                            // code to save the todo
-                            let newTrip = Trip(name: name, startDate: startDate, endDate: endDate)
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateStyle = .long
+                            
+                            let newTrip = Trip(
+                                name: name,
+                                startDate: dateFormatter.string(from: startDate),
+                                endDate: dateFormatter.string(from: endDate),
+                                noOfDays: Calendar.current.numberOfDaysBetween(startDate, and: endDate)
+                            )
                             tripSource.append(newTrip)
                             dismiss()
                         }
