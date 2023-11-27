@@ -30,8 +30,8 @@ struct TripDetailsView: View {
         List {
             VStack (alignment: .leading){
                 Text("**Trip name:** \(tripSource.name)")
-                Text("**Start date:** \(tripSource.startDate, formatter: dateFormatter)")
-                Text("**End date:** \(tripSource.endDate, formatter: dateFormatter)")
+                Text("**Start date:** \(tripSource.startDate)")
+                Text("**End date:** \(tripSource.endDate)")
             }
             
             NavigationLink {
@@ -67,7 +67,7 @@ struct TripDetailsView: View {
 
 struct TripDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        TripDetailsView(tripSource: .constant(Trip(name: "fake trip", startDate: Date(), endDate: Date())))
+        TripDetailsView(tripSource: .constant(Trip(name: "fake trip", startDate: "", endDate: "")))
     }
 }
 

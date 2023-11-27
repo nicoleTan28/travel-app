@@ -56,8 +56,11 @@ struct NewTripsView: View {
                     }
                     Section {
                         Button("Save", role: .none) {
-                            // code to save the todo
-                            let newTrip = Trip(name: name, startDate: startDate, endDate: endDate)
+                            let dateFormatter = DateFormatter()
+                            dateFormatter.dateStyle = .long
+                            //dateFormatter.timeStyle = .short
+                            
+                            let newTrip = Trip(name: name, startDate: dateFormatter.string(from: startDate), endDate: dateFormatter.string(from: endDate))
                             tripSource.append(newTrip)
                             dismiss()
                         }

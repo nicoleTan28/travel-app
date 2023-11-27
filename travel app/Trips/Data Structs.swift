@@ -86,10 +86,11 @@ class Location: ObservableObject, Identifiable {
 
 class Trip: ObservableObject, Identifiable {
     @Published var name: String
-    @Published var startDate: Date
-    @Published var endDate: Date
+    @Published var startDate: String
+    @Published var endDate: String
     
-    init(name: String, startDate: Date, endDate: Date) {
+    
+    init(name: String, startDate: String, endDate: String) {
         self.name = name
         self.startDate = startDate
         self.endDate = endDate
@@ -100,4 +101,13 @@ class Trip: ObservableObject, Identifiable {
         }
 }
 
+extension Calendar {
+    func numberOfDaysBetween(_ from: Date, and to: Date) -> Int {
+        let fromDate = startOfDay(for: from)
+        let toDate = startOfDay(for: to)
+        let numberOfDays = dateComponents([.day], from: fromDate, to: toDate)
+        
+        return numberOfDays.day! + 1 // <1>
+    }
+}
 
