@@ -45,11 +45,6 @@ struct TripsView: View {
                 }
                 
             }
-            .onAppear{
-                //number of days difference
-                let diffs = Calendar.current.dateComponents([.day], from: date1, to: date2)
-                print(diffs)
-            }
             .navigationTitle("Trips")
             .toolbar {
                 ToolbarItem {

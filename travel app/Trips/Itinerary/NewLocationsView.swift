@@ -47,7 +47,7 @@ struct NewLocationsView: View {
                 
                 Section {
                     Button("Save", role: .none) {
-                        trip.days[selectedDay-1].locations.append(Location(name: locationName, startTime: location.startTime, endTime: location.endTime))
+                        trip.days[selectedDay].locations.append(Location(name: locationName, startTime: location.startTime, endTime: location.endTime))
                         //no idea what this is so i'm commenting it temporarily - danin
                         //let information = Location(name: location.name, startTime: location.startTime, endTime: location.endTime)
                         //commenting on locationSource??
