@@ -11,6 +11,8 @@ import MapKit
 
 @available(iOS 17.0, *)
 struct LocationsView: View {
+    
+    let fileName = "editedJSON"
     @State private var locationService = LocationService(completer: .init())
     @State private var showingSheet = false
     @State private var position = MapCameraPosition.automatic
@@ -18,6 +20,21 @@ struct LocationsView: View {
     @State private var isMarkerVisible = false
     @State private var search: String = ""
     @State private var location: String = ""
+    @State private var showingSheetV = false
+<<<<<<< HEAD
+    
+    @State private var showingSheetM = false
+    @State private var showingSheetA = false
+    @State private var showingSheetH = false
+    @State private var showingSheetN = false
+    
+=======
+>>>>>>> cd565b0 (...)
+    
+    @State private var showingSheetM = false
+    @State private var showingSheetA = false
+    @State private var showingSheetH = false
+    @State private var showingSheetN = false
     
     var body: some View {
         NavigationStack{
@@ -28,7 +45,10 @@ struct LocationsView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 Button("Nature"){
-                                    
+                                    showingSheetN.toggle()
+                                }
+                                .sheet(isPresented: $showingSheetN) {
+                                    NView()
                                 }
                                 .padding()
                                 .foregroundColor(.white)
@@ -38,21 +58,30 @@ struct LocationsView: View {
                                 Spacer()
                                 
                                 Button("Heritage"){
-                                    
+                                    showingSheetH.toggle()
+                                }
+                                .sheet(isPresented: $showingSheetH) {
+                                    HView()
                                 }
                                 .padding()
                                 .foregroundColor(.white)
                                 .background(.green)
                                 .cornerRadius(10)
                                 Button("Activties"){
-                                    
+                                    showingSheetA.toggle()
+                                }
+                                .sheet(isPresented: $showingSheetA) {
+                                    AView()
                                 }
                                 .padding()
                                 .foregroundColor(.white)
                                 .background(.green)
                                 .cornerRadius(10)
                                 Button("Museum"){
-                                    
+                                    showingSheetM.toggle()
+                                }
+                                .sheet(isPresented: $showingSheetM) {
+                                    MView()
                                 }
                                 .padding()
                                 .foregroundColor(.white)
@@ -110,6 +139,12 @@ struct LocationsView: View {
             }
             .sheet(isPresented: $showingSheet) {
                 SwiftUIView()
+            }
+            Button("Famous Places Details In SIngapore") {
+                showingSheetV.toggle()
+            }
+            .sheet(isPresented: $showingSheetV) {
+                AHHView(locationName: .constant("Fake location"))
             }
         }
         

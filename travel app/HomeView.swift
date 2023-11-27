@@ -26,7 +26,12 @@ struct HomeView: View {
                 .font(.title)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding()
-            Map() {
+                .bold()
+            Map(){
+                
+                //                for place in places{
+                //                    Marker(place.pageTitle, coordinate: CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longtitude))
+                //                }
                 ForEach(places, id: \.self) { place in
                     Marker(place.pageTitle, coordinate: CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longtitude))
                 }
