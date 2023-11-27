@@ -37,7 +37,7 @@ struct TripDetailsView: View {
             NavigationLink {
                 //temporarily commenting this
                 //ItineraryView(tripName: [$tripSource], locationSource: $locationSource)
-                ItineraryView(trip: $tripSource)
+                ItineraryView(trip: $tripSource, selectedDay: 1)
             } label: {
                 Text("Itinerary")
             }
@@ -67,7 +67,7 @@ struct TripDetailsView: View {
 
 struct TripDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        TripDetailsView(tripSource: .constant(Trip(name: "fake trip", startDate: "", endDate: "")))
+        TripDetailsView(tripSource: .constant(Trip(name: "fake trip", startDate: "", endDate: "", noOfDays: 1)))
     }
 }
 

@@ -11,9 +11,9 @@ struct TripsView: View {
     
     @State private var showAddSheet = false
   //  @State var trips = [Trip(name: "Trip 1", startDate: Date.now, endDate: Date.now]
-    @State var trips: [Trip] = [Trip(name: "", startDate: "", endDate: "")]
+    @State var trips: [Trip] = [Trip(name: "", startDate: "", endDate: "", noOfDays: 1)]
     //not sure what this observed object is for
-//    @ObservedObject var trip: Trip = Trip(name: "", startDate: Date(), endDate: Date())
+//    @ObservedObject var trip: Trip = Trip(name: "", startDate: Date(), endDate: Date()
     
     //i think these bindings are not needed -> where does it even bind to??
 //    @Binding var tripSource: [Trip]
@@ -79,6 +79,6 @@ struct TripsView: View {
 
 struct TripsView_Previews: PreviewProvider {
     static var previews: some View {
-        TripsView(trips: [Trip(name: "aaaaa", startDate: "", endDate: "")])//, locationSource: .constant([]))
+        TripsView(trips: [Trip(name: "aaaaa", startDate: "", endDate: "", noOfDays: 1)])//, locationSource: .constant([]))
     }
 }

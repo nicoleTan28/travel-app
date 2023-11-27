@@ -101,15 +101,18 @@ class Location: Identifiable {
 
 class Trip: Identifiable {
     var name: String
-    var startDate: Date
-    var endDate: Date
+    var startDate: String
+    var endDate: String
+    var noOfDays: Int
     var days: [Day]
     
-    init(name: String, startDate: Date, endDate: Date, days: [Day] = []) {
+    
+    init(name: String, startDate: String, endDate: String, days: [Day] = [], noOfDays: Int) {
         self.name = name
         self.startDate = startDate
         self.endDate = endDate
         self.days = days
+        self.noOfDays = noOfDays
     }
     
     var id: ObjectIdentifier {
@@ -117,13 +120,5 @@ class Trip: Identifiable {
         }
 }
 
-extension Calendar {
-    func numberOfDaysBetween(_ from: Date, and to: Date) -> Int {
-        let fromDate = startOfDay(for: from)
-        let toDate = startOfDay(for: to)
-        let numberOfDays = dateComponents([.day], from: fromDate, to: toDate)
-        
-        return numberOfDays.day! + 1 // <1>
-    }
-}
+
 

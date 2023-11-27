@@ -10,7 +10,7 @@ import SwiftUI
 
 struct NewTripsView: View {
     
-    
+
     
     @Environment(\.dismiss) var dismiss
     @Binding var tripSource: [Trip]
@@ -54,13 +54,18 @@ struct NewTripsView: View {
                         DatePicker("Arrival", selection: $arrival, displayedComponents: .hourAndMinute)
                         
                     }
+                    
                     Section {
                         Button("Save", role: .none) {
                             let dateFormatter = DateFormatter()
                             dateFormatter.dateStyle = .long
-                            //dateFormatter.timeStyle = .short
                             
-                            let newTrip = Trip(name: name, startDate: dateFormatter.string(from: startDate), endDate: dateFormatter.string(from: endDate))
+                            let newTrip = Trip(
+                                name: name,
+                                startDate: dateFormatter.string(from: startDate),
+                                endDate: dateFormatter.string(from: endDate),
+                                noOfDays: Calendar.current.numberOfDaysBetween(startDate, and: endDate)
+                            )
                             tripSource.append(newTrip)
                             dismiss()
                         }

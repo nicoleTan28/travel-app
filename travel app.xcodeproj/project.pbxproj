@@ -26,6 +26,7 @@
 		D98A3CD72B0B2A8E00066D39 /* PackingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A3CD62B0B2A8E00066D39 /* PackingListView.swift */; };
 		D98A3CD92B0B2D1000066D39 /* NewTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A3CD82B0B2D1000066D39 /* NewTodoView.swift */; };
 		D9A2F8952B0B41920085087A /* NewLocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A2F8942B0B41920085087A /* NewLocationsView.swift */; };
+		D9CB54142B14346D00733C21 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CB54132B14346D00733C21 /* extensions.swift */; };
 		D9CBEA482B0F69A300A02014 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CBEA472B0F69A300A02014 /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		D98A3CD62B0B2A8E00066D39 /* PackingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingListView.swift; sourceTree = "<group>"; };
 		D98A3CD82B0B2D1000066D39 /* NewTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTodoView.swift; sourceTree = "<group>"; };
 		D9A2F8942B0B41920085087A /* NewLocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLocationsView.swift; sourceTree = "<group>"; };
+		D9CB54132B14346D00733C21 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		D9CBEA472B0F69A300A02014 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 				D9A2F89A2B0B43810085087A /* Itinerary */,
 				D9A2F8992B0B43710085087A /* Packing List */,
 				9EEB3D4E2B119BCB00569A23 /* Data Structs.swift */,
+				D9CB54132B14346D00733C21 /* extensions.swift */,
 				D96FB5642B0AF10000E99464 /* TripsView.swift */,
 				9E2188012B0B30AC00F0C2A8 /* TripDetailsView.swift */,
 				D96FB5662B0AF2F800E99464 /* NewTripsView.swift */,
@@ -235,6 +238,7 @@
 				9E2188042B0B343F00F0C2A8 /* ItineraryView.swift in Sources */,
 				D9CBEA482B0F69A300A02014 /* SearchView.swift in Sources */,
 				D9A2F8952B0B41920085087A /* NewLocationsView.swift in Sources */,
+				D9CB54142B14346D00733C21 /* extensions.swift in Sources */,
 				D96FB5672B0AF2F800E99464 /* NewTripsView.swift in Sources */,
 				D98A3CD72B0B2A8E00066D39 /* PackingListView.swift in Sources */,
 				D96FB5532B0AED0900E99464 /* travel_appApp.swift in Sources */,
