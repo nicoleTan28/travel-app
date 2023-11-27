@@ -11,11 +11,7 @@ import UIKit
 struct NewLocationsView: View {
     
       @Environment(\.dismiss) var dismiss
-//    @State private var startTime = Date()
-//    @State private var endTime = Date()
       @State private var isAllDay = false
-//
-//    @State private var selectedDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date()) ?? Date()
       @State private var showSearch = false
       @Binding var showAddSheet: Bool
 //    

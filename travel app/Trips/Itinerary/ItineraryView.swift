@@ -27,7 +27,7 @@ struct ItineraryView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     Button {
-                        showAddSheet.toggle()
+                        //this button should add a day because that would be clearer
                     }label:{
                         Image(systemName: "plus")
                     }
