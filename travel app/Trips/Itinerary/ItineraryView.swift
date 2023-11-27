@@ -22,27 +22,29 @@ struct ItineraryView: View {
     
     var body: some View {
         NavigationStack{
-            ForEach((dayNumbers), id: \.self) {selectedDay in
-
+            List {
+                ForEach((dayNumbers), id: \.self) {selectedDay in
+                    
                     Text("Day \(selectedDay)")
                         .font(.title)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     
-                
-                VStack(alignment:.leading){
-                    Text("**Destinations**")
                     
-                    ForEach(locations){location in
-                        Text(location.name)
-                    }
-                    
+                        Text("**Destinations**")
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .padding()
+                        
+                        ForEach(locations){location in
+                            Text(location.name)
+                        }
+                        
+                        
                     
                 }
+                .navigationTitle("Itinerary")
+                
             }
-            .navigationTitle("Itinerary")
-            
-
         }
         .onAppear{
             for number in 1...trip.noOfDays{
