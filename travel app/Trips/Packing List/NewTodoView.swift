@@ -21,7 +21,7 @@ struct NewTodoView: View {
             
             Section("Actions") {
                 Button("Save") {
-                    let todo = Todo(title: todoTitle, subtitle: todoSubtitle)
+                    let todo = Todo(title: todoTitle)
                     sourceArray.append(todo)
                     dismiss()
                     // TODO: (ha ha, TODO, get it) Save and dismiss

@@ -42,7 +42,10 @@ struct TripDetailsView: View {
                 Text("Itinerary")
             }
             
-            NavigationLink(destination: PackingListView().navigationTitle("Packing List")) {
+            NavigationLink { 
+                PackingListView(packingList: $tripSource.packingList)
+                    .navigationTitle("Packing List")
+            } label: {
                 Text("Packing list")
             }
         }

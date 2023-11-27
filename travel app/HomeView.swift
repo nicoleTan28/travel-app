@@ -70,6 +70,7 @@ struct HomeView: View {
             places = loadJson(filename: "editedJSON") ?? []
             print(places)
         }
+       
         
     }
 }

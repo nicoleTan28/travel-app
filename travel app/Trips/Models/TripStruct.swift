@@ -7,13 +7,13 @@
 
 import Foundation
 
-class Trip: Identifiable {
+struct Trip: Identifiable, Codable {
     var name: String
     var startDate: String
     var endDate: String
     var noOfDays: Int
     var days: [Day]
-    
+    var packingList: [Todo] = []
     
     init(name: String, startDate: String, endDate: String, days: [Day] = [], noOfDays: Int) {
         self.name = name
@@ -26,9 +26,9 @@ class Trip: Identifiable {
         }
     }
     
-    var id: ObjectIdentifier {
-            ObjectIdentifier(self)
-        }
+    var id: String {
+        "\(name)\(startDate)\(endDate)\(noOfDays)"
+    }
 }
 
 

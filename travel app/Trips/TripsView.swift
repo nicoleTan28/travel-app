@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import Forever
 
 struct TripsView: View {
     
     @State private var showAddSheet = false
   //  @State var trips = [Trip(name: "Trip 1", startDate: Date.now, endDate: Date.now]
-    @State var trips: [Trip] = [Trip(name: "", startDate: "", endDate: "", noOfDays: 1)]
+    @Forever("trips") var trips: [Trip] = []
     //not sure what this observed object is for
 //    @ObservedObject var trip: Trip = Trip(name: "", startDate: Date(), endDate: Date()
     
