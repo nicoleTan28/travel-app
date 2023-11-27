@@ -34,59 +34,59 @@ struct LocationsView: View {
                 .frame(width: 350, height: 250)
                 .navigationTitle("Locations")
             
-            ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                Button("Nature"){
-                                    showingSheetN.toggle()
-                                }
-                                .sheet(isPresented: $showingSheetN) {
-                                    NView()
-                                }
-                                .padding()
-                                .foregroundColor(.white)
-                                .background(.green)
-                                .cornerRadius(10)
-                                
-                                Spacer()
-                                
-                                Button("Heritage"){
-                                    showingSheetH.toggle()
-                                }
-                                .sheet(isPresented: $showingSheetH) {
-                                    HView()
-                                }
-                                .padding()
-                                .foregroundColor(.white)
-                                .background(.green)
-                                .cornerRadius(10)
-                                Button("Activties"){
-                                    showingSheetA.toggle()
-                                }
-                                .sheet(isPresented: $showingSheetA) {
-                                    AView()
-                                }
-                                .padding()
-                                .foregroundColor(.white)
-                                .background(.green)
-                                .cornerRadius(10)
-                                Button("Museum"){
-                                    showingSheetM.toggle()
-                                }
-                                .sheet(isPresented: $showingSheetM) {
-                                    MView()
-                                }
-                                .padding()
-                                .foregroundColor(.white)
-                                .background(.green)
-                                .cornerRadius(10)
-                                Button("Popular"){
-                                    
-                                }                                .padding()
-                                    .foregroundColor(.white)
-                                    .background(.green)
-                                    .cornerRadius(10)
-                            }
-                        }
+//            ScrollView(.horizontal, showsIndicators: false) {
+//                            HStack {
+//                                Button("Nature"){
+//                                    showingSheetN.toggle()
+//                                }
+//                                .sheet(isPresented: $showingSheetN) {
+//                                    NView()
+//                                }
+//                                .padding()
+//                                .foregroundColor(.white)
+//                                .background(.green)
+//                                .cornerRadius(10)
+//                                
+//                                Spacer()
+//                                
+//                                Button("Heritage"){
+//                                    showingSheetH.toggle()
+//                                }
+//                                .sheet(isPresented: $showingSheetH) {
+//                                    HView()
+//                                }
+//                                .padding()
+//                                .foregroundColor(.white)
+//                                .background(.green)
+//                                .cornerRadius(10)
+//                                Button("Activties"){
+//                                    showingSheetA.toggle()
+//                                }
+//                                .sheet(isPresented: $showingSheetA) {
+//                                    AView()
+//                                }
+//                                .padding()
+//                                .foregroundColor(.white)
+//                                .background(.green)
+//                                .cornerRadius(10)
+//                                Button("Museum"){
+//                                    showingSheetM.toggle()
+//                                }
+//                                .sheet(isPresented: $showingSheetM) {
+//                                    MView()
+//                                }
+//                                .padding()
+//                                .foregroundColor(.white)
+//                                .background(.green)
+//                                .cornerRadius(10)
+//                                Button("Popular"){
+//                                    
+//                                }                                .padding()
+//                                    .foregroundColor(.white)
+//                                    .background(.green)
+//                                    .cornerRadius(10)
+//                            }
+//                        }
                 
             VStack {
                 HStack {
@@ -129,12 +129,20 @@ struct LocationsView: View {
             Button("Show Current Location") {
                 showingSheet.toggle()
             }
+            .padding()
+            .background(.blue)
+            .foregroundColor(.white)
+            .cornerRadius(10)
             .sheet(isPresented: $showingSheet) {
                 SwiftUIView()
             }
             Button("Famous Places Details In SIngapore") {
                 showingSheetV.toggle()
             }
+            .padding()
+            .background(.blue)
+            .foregroundColor(.white)
+            .cornerRadius(10)
             .sheet(isPresented: $showingSheetV) {
                 AHHView(locationName: .constant("Fake location"))
             }
