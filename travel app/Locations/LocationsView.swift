@@ -21,21 +21,13 @@ struct LocationsView: View {
     @State private var search: String = ""
     @State private var location: String = ""
     @State private var showingSheetV = false
-<<<<<<< HEAD
     
     @State private var showingSheetM = false
     @State private var showingSheetA = false
     @State private var showingSheetH = false
     @State private var showingSheetN = false
     
-=======
->>>>>>> cd565b0 (...)
-    
-    @State private var showingSheetM = false
-    @State private var showingSheetA = false
-    @State private var showingSheetH = false
-    @State private var showingSheetN = false
-    
+
     var body: some View {
         NavigationStack{
             Map(position: $position)
