@@ -15,12 +15,12 @@ struct SearchView: View {
     @State var names: [String] = []
     @State private var searchText = ""
     @State private var selectedIndex: Int?
-    
+    @Binding var locationName : String
+
     //again i don't know what this location source is for - danin
     //@Binding var locationSource: [Location]
     //what is the value from sheet for?
     //@Binding var valueFromSheet: String?
-    @Binding var locationName : String
     
     var body: some View {
         NavigationStack {

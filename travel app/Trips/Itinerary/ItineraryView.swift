@@ -28,7 +28,7 @@ struct ItineraryView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding()
                     Button {
-                        showAddSheet.toggle()
+                        //this button should add a day because that would be clearer
                     }label:{
                         Image(systemName: "plus")
                     }
@@ -48,11 +48,20 @@ struct ItineraryView: View {
                     
                     
                 }
-                VStack(alignment:.leading){
-                    Text("**Destinations**")
-                    
-                    ForEach(Locations){location in
-                        Text(location.name)
+                VStack(alignment:.leading) {
+                    HStack {
+                        Text("**Destinations**")
+                        Spacer()
+                        Button {
+                            showAddSheet.toggle()
+                        } label: {
+                            Image(systemName: "plus")
+                        }
+                        .padding()
+                        
+                        ForEach(Locations){location in
+                            Text(location.name)
+                        }
                     }
                 }
                 //not very pleasing to look at - danin

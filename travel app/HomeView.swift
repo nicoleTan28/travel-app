@@ -10,7 +10,7 @@ import MapKit
 
 
 struct HomeView: View {
-    let mbs = CLLocationCoordinate2D(latitude: 1.2836, longitude: 103.8606)
+     let mbs = CLLocationCoordinate2D(latitude: 1.2836, longitude: 103.8606)
      let sbg = CLLocationCoordinate2D(latitude: 1.3136, longitude: 103.8158)
      let SI = CLLocationCoordinate2D(latitude: 1.2494, longitude: 103.8303)
      let GBB = CLLocationCoordinate2D(latitude: 1.2815, longitude: 103.8633)
@@ -42,6 +42,7 @@ struct HomeView: View {
                 Marker("Orchard Road(Shopping)", coordinate: os)
                 Marker("Pulau Ubin", coordinate: PU)
             }
+            .padding()
                 .frame(width:2500, height:230)
                 .navigationTitle("Home")
             
