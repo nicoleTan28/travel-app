@@ -44,7 +44,7 @@ struct SearchView: View {
                 }
                 .navigationTitle("Locations")
             }
-            .onAppear{
+            .onAppear {
                 if let places = loadJson(filename: fileName) {
                     for place in places {
                         names.append(place.pageTitle)

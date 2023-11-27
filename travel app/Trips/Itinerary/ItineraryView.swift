@@ -16,9 +16,8 @@ struct ItineraryView: View {
     //@Binding var locationSource: [Location]
   //  @State var valueFromLocation: [Location] = []
     
-    @State private var Locations: [Location] = []
+    @State private var locations: [Location] = []
     
-
     var body: some View {
         NavigationStack{
             List {
@@ -29,20 +28,11 @@ struct ItineraryView: View {
                         .padding()
                     
                 }
-                VStack(alignment:.leading) {
-                    HStack {
-                        Text("**Destinations**")
-                        Spacer()
-                        Button {
-                            showAddSheet.toggle()
-                        } label: {
-                            Image(systemName: "plus")
-                        }
-                        .padding()
-                        
-                        ForEach(Locations){location in
-                            Text(location.name)
-                        }
+                VStack(alignment:.leading){
+                    Text("**Destinations**")
+                    
+                    ForEach(locations){location in
+                        Text(location.name)
                     }
                 }
 
@@ -52,7 +42,7 @@ struct ItineraryView: View {
 
         }
         .sheet(isPresented: $showAddSheet) {
-            NewLocationsView(showAddSheet: $showAddSheet, Locations: $Locations)
+            NewLocationsView(showAddSheet: $showAddSheet, trip: $trip, selectedDay: .constant(0))//, locationSource: $locationSource)
         }
     }
 }
