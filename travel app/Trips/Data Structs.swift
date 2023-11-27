@@ -40,13 +40,19 @@ struct Day: Identifiable {
 //}
 
 //Danin's json decoding stuff? is it??
-func loadJson(filename fileName: String) -> [attract]? {
+func loadJson(filename fileName: String) -> [Attraction]? {
     if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
         do {
             let data = try Data(contentsOf: url)
             let decoder = JSONDecoder()
+            
             let jsonData = try decoder.decode(ResponseData1.self, from: data)
-            return jsonData.features
+            var attractions: [Attraction] = []
+            
+            for attraction in jsonData.features {
+                attractions.append(Attraction(pageTitle: attraction.pageTitle, overview: attraction.overview, latitude: attraction.latitude, longtitude: attraction.longtitude))
+            }
+            return attractions
             
         } catch {
             print("error:\(error)")
@@ -55,11 +61,20 @@ func loadJson(filename fileName: String) -> [attract]? {
     return nil
 }
 
-struct ResponseData1: Decodable{
-    var features: [attract]
+fileprivate struct ResponseData1: Decodable{
+    var features: [idLessAttraction]
 }
 
-struct attract: Decodable,Hashable{
+fileprivate struct idLessAttraction: Codable, Hashable {
+    var pageTitle: String
+    var overview: String?
+   //var attractImage: String?
+    var latitude: Double
+    var longtitude: Double
+}
+
+struct Attraction: Identifiable, Codable, Hashable {
+    var id = UUID()
     var pageTitle: String
     var overview: String?
    //var attractImage: String?
@@ -69,10 +84,10 @@ struct attract: Decodable,Hashable{
 
 
 
-class Location: ObservableObject, Identifiable {
-    @Published var name: String
-    @Published var startTime: Date
-    @Published var endTime: Date
+class Location: Identifiable {
+    var name: String
+    var startTime: Date
+    var endTime: Date
 
     
     init(name: String, startTime: Date, endTime: Date) {
@@ -84,15 +99,17 @@ class Location: ObservableObject, Identifiable {
 }
 
 
-class Trip: ObservableObject, Identifiable {
-    @Published var name: String
-    @Published var startDate: Date
-    @Published var endDate: Date
+class Trip: Identifiable {
+    var name: String
+    var startDate: Date
+    var endDate: Date
+    var days: [Day]
     
-    init(name: String, startDate: Date, endDate: Date) {
+    init(name: String, startDate: Date, endDate: Date, days: [Day] = []) {
         self.name = name
         self.startDate = startDate
         self.endDate = endDate
+        self.days = days
     }
     
     var id: ObjectIdentifier {
