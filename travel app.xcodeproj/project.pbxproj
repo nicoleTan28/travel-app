@@ -103,8 +103,8 @@
 				9EEB3D552B12CE2100569A23 /* Preview Content */,
 				D96FB5522B0AED0900E99464 /* travel_appApp.swift */,
 				D96FB5542B0AED0900E99464 /* ContentView.swift */,
-				47C0F8852B0D90550032E1E1 /* Locations */,
 				D96FB5622B0AF0F700E99464 /* HomeView.swift */,
+				47C0F8852B0D90550032E1E1 /* Locations */,
 				D9A2F8982B0B43360085087A /* Trips */,
 				D96FB5562B0AED0B00E99464 /* Assets.xcassets */,
 			);

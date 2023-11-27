@@ -61,7 +61,7 @@ struct ResponseData1: Decodable{
 
 struct attract: Decodable,Hashable{
     var pageTitle: String
-    var overview: String
+    var overview: String?
    //var attractImage: String?
     var latitude: Double
     var longtitude: Double

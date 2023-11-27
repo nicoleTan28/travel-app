@@ -18,7 +18,9 @@ struct TripsView: View {
     //i think these bindings are not needed -> where does it even bind to??
 //    @Binding var tripSource: [Trip]
     //@Binding var locationSource: [Location]
-
+    @State private var date1 = Date()
+    @State private var date2 = Date()
+        
     
     
     let dateFormatter: DateFormatter = {
@@ -43,6 +45,11 @@ struct TripsView: View {
                 }
                 
             }
+            .onAppear{
+                //number of days difference
+                let diffs = Calendar.current.dateComponents([.day], from: date1, to: date2)
+                print(diffs)
+            }
             .navigationTitle("Trips")
             .toolbar {
                 ToolbarItem {
@@ -53,7 +60,7 @@ struct TripsView: View {
                     Button {
                         showAddSheet = true
                     } label: {
-                        Label("New Day", systemImage: "plus")
+                        Label("New trip", systemImage: "plus")
                     }
                 }
                 

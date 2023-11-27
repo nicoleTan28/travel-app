@@ -50,6 +50,7 @@ struct SearchView: View {
                         names.append(place.pageTitle)
                     }
                 }
+                print(names)
             }
         }
         .searchable(text: $searchText)
