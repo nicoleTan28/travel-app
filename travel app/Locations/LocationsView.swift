@@ -19,6 +19,12 @@ struct LocationsView: View {
     @State private var search: String = ""
     @State private var location: String = ""
     
+    
+    @State private var showingSheetM = false
+    @State private var showingSheetA = false
+    @State private var showingSheetH = false
+    @State private var showingSheetN = false
+    
     var body: some View {
         NavigationStack{
             Map(position: $position)
@@ -28,7 +34,10 @@ struct LocationsView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                             HStack {
                                 Button("Nature"){
-                                    
+                                    showingSheetN.toggle()
+                                }
+                                .sheet(isPresented: $showingSheetN) {
+                                    NView()
                                 }
                                 .padding()
                                 .foregroundColor(.white)
@@ -38,21 +47,30 @@ struct LocationsView: View {
                                 Spacer()
                                 
                                 Button("Heritage"){
-                                    
+                                    showingSheetH.toggle()
+                                }
+                                .sheet(isPresented: $showingSheetH) {
+                                    HView()
                                 }
                                 .padding()
                                 .foregroundColor(.white)
                                 .background(.green)
                                 .cornerRadius(10)
                                 Button("Activties"){
-                                    
+                                    showingSheetA.toggle()
+                                }
+                                .sheet(isPresented: $showingSheetA) {
+                                    AView()
                                 }
                                 .padding()
                                 .foregroundColor(.white)
                                 .background(.green)
                                 .cornerRadius(10)
                                 Button("Museum"){
-                                    
+                                    showingSheetM.toggle()
+                                }
+                                .sheet(isPresented: $showingSheetM) {
+                                    MView()
                                 }
                                 .padding()
                                 .foregroundColor(.white)
