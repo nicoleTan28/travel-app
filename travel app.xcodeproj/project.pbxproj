@@ -38,6 +38,7 @@
 		D9A2F8952B0B41920085087A /* NewLocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9A2F8942B0B41920085087A /* NewLocationsView.swift */; };
 		D9CB54142B14346D00733C21 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CB54132B14346D00733C21 /* extensions.swift */; };
 		D9CBEA482B0F69A300A02014 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CBEA472B0F69A300A02014 /* SearchView.swift */; };
+		D9D164692B14812A00C0DC2D /* Forever in Frameworks */ = {isa = PBXBuildFile; productRef = D9D164682B14812A00C0DC2D /* Forever */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9D164692B14812A00C0DC2D /* Forever in Frameworks */,
 				9E21880B2B0B8D5D00F0C2A8 /* Forever in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -205,6 +207,7 @@
 			name = "travel app";
 			packageProductDependencies = (
 				9E21880A2B0B8D5D00F0C2A8 /* Forever */,
+				D9D164682B14812A00C0DC2D /* Forever */,
 			);
 			productName = "travel app";
 			productReference = D96FB54F2B0AED0900E99464 /* travel app.app */;
@@ -509,6 +512,10 @@
 		9E21880A2B0B8D5D00F0C2A8 /* Forever */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 9E2188092B0B8D5D00F0C2A8 /* XCRemoteSwiftPackageReference "forever" */;
+			productName = Forever;
+		};
+		D9D164682B14812A00C0DC2D /* Forever */ = {
+			isa = XCSwiftPackageProductDependency;
 			productName = Forever;
 		};
 /* End XCSwiftPackageProductDependency section */

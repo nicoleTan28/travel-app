@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Day: Identifiable {
+struct Day: Identifiable, Codable {
     let id = UUID()
     var selectedDay: Int
     var locations: [Location]

@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import Forever
 
 struct ItineraryView: View {
     
     @Environment(\.dismiss) var dismiss
     @State private var showAddSheet = false
     @Binding var trip: Trip
-    @State private var locations: [Location] = []
+    @Forever("locations") var locations: [Location] = []
 
     @State private var dayNumbers: [Int] = []
     @State var selectedDay: Int
@@ -30,6 +31,7 @@ struct ItineraryView: View {
                             Text("Add new destination")
                                 .frame(maxWidth: .infinity, alignment: .leading)
     //                            .padding()
+                                
                         }
                         
 
@@ -38,12 +40,7 @@ struct ItineraryView: View {
                             
                         }
                         
-                        
                     }
-                    
-                    
-                    
-                    
                     
                 }
                 .navigationTitle("Itinerary")

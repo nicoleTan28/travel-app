@@ -6,18 +6,16 @@
 //
 
 import SwiftUI
+import Forever
 
 struct PackingListView: View {
     
-    @State private var todos = [
-        Todo(title: "Passport", isCompleted: false),
-        Todo(title: "Wallet", isCompleted: false),
-    ]
+    @Binding var packingList: [Todo]
     @State private var showAddSheet = false
     
     
     var body: some View {
-        List($todos, editActions: [.all]) { $todo in
+        List($packingList, editActions: [.all]) { $todo in
             HStack {
                 Image(systemName: todo.isCompleted ? "checkmark.circle.fill" :  "circle")
                     .onTapGesture {
@@ -51,7 +49,7 @@ struct PackingListView: View {
         
         
         .sheet(isPresented: $showAddSheet) {
-            NewTodoView(sourceArray: $todos)
+            NewTodoView(sourceArray: $packingList)
         }
         
     }
@@ -59,6 +57,6 @@ struct PackingListView: View {
 
 struct PackingListView_Previews: PreviewProvider {
     static var previews: some View {
-        PackingListView()
+        PackingListView(packingList: .constant([]))
     }
 }

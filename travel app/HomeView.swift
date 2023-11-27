@@ -43,7 +43,7 @@ struct HomeView: View {
                 //                Marker("Orchard Road(Shopping)", coordinate: os)
                 //                Marker("Pulau Ubin", coordinate: PU)
             }
-            .frame(width:2500, height:230)
+            .frame(width: 375, height:230)
             .navigationTitle("Home")
             
         }
@@ -51,6 +51,7 @@ struct HomeView: View {
             places = loadJson(filename: "editedJSON") ?? []
             print(places)
         }
+       
         
     }
 }

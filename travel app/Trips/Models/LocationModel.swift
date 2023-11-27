@@ -7,7 +7,8 @@
 
 import Foundation
 
-class Location: Identifiable {
+struct Location: Identifiable, Codable {
+    var id = UUID()
     var name: String
     var startTime: Date
     var endTime: Date
