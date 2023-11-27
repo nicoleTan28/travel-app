@@ -25,7 +25,7 @@ struct ItineraryView: View {
                     Text("Day \(selectedDay.selectedDay)")
                         .font(.title)
                         .frame(maxWidth: .infinity, alignment: .leading)
-//                        .padding()
+                        .padding()
                     
                     Button {
                         let selectedDay = selectedDay
