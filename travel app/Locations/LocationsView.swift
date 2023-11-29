@@ -22,11 +22,6 @@ struct LocationsView: View {
     @State private var location: String = ""
     @State private var showingSheetV = false
     
-    @State private var showingSheetM = false
-    @State private var showingSheetA = false
-    @State private var showingSheetH = false
-    @State private var showingSheetN = false
-    
     @Binding var likedPlaces: [Attraction]
     
 

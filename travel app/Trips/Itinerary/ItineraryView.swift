@@ -19,28 +19,31 @@ struct ItineraryView: View {
     @State var selectedDay: Int
     
     var dateFormatter = DateFormatter()
+    var dayDateFormatter = DateFormatter()
     
     var body: some View {
         NavigationStack{
             List {
                 ForEach(trip.days, id: \.id) { selectedDay in
                     
-                    Section("Day \(selectedDay.selectedDay)") {
+                    Section("Day \(selectedDay.selectedDay) - ") {
                         Button {
                             self.selectedDay = selectedDay.selectedDay
                             showAddSheet = true
                         } label: {
                             Text("Add new destination")
                                 .frame(maxWidth: .infinity, alignment: .leading)
-    //                            .padding()
-                                
                         }
                         
                         ForEach(selectedDay.locations){ location in
                             HStack{
                                 Text(location.name)
-                                //align to right and colour + do end time
-                                Text(dateFormatter.string(from: location.startTime))
+                                HStack {
+                                    Text(dateFormatter.string(from: location.startTime))
+                                    Text(dateFormatter.string(from: location.endTime))
+                                }
+                                .font(.caption)
+                                
                             }
                             
                         }
@@ -56,7 +59,12 @@ struct ItineraryView: View {
             NewLocationsView(showAddSheet: $showAddSheet, trip: $trip, selectedDay: $selectedDay)
         }
         .onAppear{
+            let startDay = trip.startDate
+            
+            //add one day then convert to string
+            dayDateFormatter.dateFormat = "MMM dd, YYYY"
             dateFormatter.dateFormat = "HH:MM"
+            
         }
         
             }

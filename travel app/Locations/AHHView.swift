@@ -12,7 +12,6 @@ struct AHHView: View {
     let fileName = "editedJSON"
     
     @Environment(\.dismiss) var dismiss
-//    @State var names: [String] = []
     @State var places: [Attraction] = []
     @State private var searchText = ""
     @State private var selectedIndex: Int?
@@ -28,9 +27,6 @@ struct AHHView: View {
                             DetailsView(place: place, likedPlaces: $likedPlaces)
                         } label: {
                             Text(place.pageTitle)
-                            //                            .onTapGesture {
-                            //                                locationName = name
-                            //                            }
                         }
                     }
                 }
@@ -38,12 +34,8 @@ struct AHHView: View {
             }
             .onAppear {
                 if let places = loadJson(filename: fileName) {
-//                    for place in places {
-//                        names.append(place.pageTitle)
-//                    }
                     self.places = places
                 }
-//                print(names)
             }
         }
         .searchable(text: $searchText)
@@ -60,5 +52,5 @@ struct AHHView: View {
 }
 
 #Preview {
-    AHHView(locationName: .constant("Fake location"), likedPlaces: .constant([Attraction(pageTitle: "fake", latitude: 1.0, longtitude: 1.0)]))//(locationSource: .constant([]))//, valueFromSheet: .constant(nil))
+    AHHView(locationName: .constant("Fake location"), likedPlaces: .constant([Attraction(pageTitle: "fake", latitude: 1.0, longtitude: 1.0)]))
 }

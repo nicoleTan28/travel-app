@@ -37,12 +37,6 @@ struct HomeView: View {
                 .padding()
                 .bold()
             
-//            List {
-//                ForEach(likedPlaces){ likedPlace in
-//                    Text(String(likedPlace.pageTitle))
-//                }
-//            }
-            
             
                 List{
                     ForEach(likedPlaces){ likedPlace in
@@ -51,7 +45,7 @@ struct HomeView: View {
                 }
             
                     
-                .navigationTitle("Home")
+                .navigationTitle("Favourited")
             }
             
             

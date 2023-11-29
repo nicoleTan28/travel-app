@@ -18,17 +18,17 @@ struct ContentView: View {
     var body: some View {
         VStack {
             TabView {
-                HomeView(likedPlaces: $likedPlaces)
+                LocationsView(likedPlaces: $likedPlaces)
                     .tabItem {
-                        Label("Home", systemImage: "house.fill")
+                        Label("Home", systemImage: "location.circle.fill")
                     }
                 TripsView()
                     .tabItem {
                         Label("Trips", systemImage: "globe")
                     }
-                LocationsView(likedPlaces: $likedPlaces)
+                HomeView(likedPlaces: $likedPlaces)
                     .tabItem {
-                        Label("Locations", systemImage: "location.circle.fill")
+                        Label("Favourited", systemImage: "heart.fill")
                     }
             }
         }
