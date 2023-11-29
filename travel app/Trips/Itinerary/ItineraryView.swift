@@ -18,6 +18,8 @@ struct ItineraryView: View {
     @State private var dayNumbers: [Int] = []
     @State var selectedDay: Int
     
+    var dateFormatter = DateFormatter()
+    
     var body: some View {
         NavigationStack{
             List {
@@ -34,9 +36,12 @@ struct ItineraryView: View {
                                 
                         }
                         
-
                         ForEach(selectedDay.locations){ location in
-                            Text(location.name)
+                            HStack{
+                                Text(location.name)
+                                //align to right and colour + do end time
+                                Text(dateFormatter.string(from: location.startTime))
+                            }
                             
                         }
                         
@@ -49,6 +54,9 @@ struct ItineraryView: View {
         }
         .sheet(isPresented: $showAddSheet) {
             NewLocationsView(showAddSheet: $showAddSheet, trip: $trip, selectedDay: $selectedDay)
+        }
+        .onAppear{
+            dateFormatter.dateFormat = "HH:MM"
         }
         
             }

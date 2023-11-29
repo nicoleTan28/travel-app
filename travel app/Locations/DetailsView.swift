@@ -4,7 +4,7 @@ struct DetailsView: View {
     var place: Attraction
     
     
-    @State private var isLiked = true
+    @State var isLiked = false
     @Binding var likedPlaces: [Attraction]
     
     var body: some View {
@@ -15,10 +15,32 @@ struct DetailsView: View {
             HStack{
                 Text(place.pageTitle)
                     .font(.title)
-                Image(systemName: isLiked ? "heart" : "heart.fill")
-                    .onTapGesture {
-                        isLiked.toggle()
+                Button{
+//                    isLiked.toggle()
+                    
+                    if isLiked {
+                        if likedPlaces.contains(where:{$0.pageTitle == place.pageTitle}){
+                            //if they dislike
+                            likedPlaces.removeAll { likedPlace in
+                                likedPlace.pageTitle == place.pageTitle
+    
+                            }
+                            isLiked = false
+                        }
+                        
+                       
+                    } else{
+                        if !likedPlaces.contains(where:{$0.pageTitle == place.pageTitle}){
+                            likedPlaces.append(place)
+                            isLiked = true
+                        }
+                        
                     }
+                } label:{
+                    Image(systemName: isLiked ? "heart.fill" : "heart")
+                }
+                
+                
             }
             
           
@@ -28,8 +50,9 @@ struct DetailsView: View {
         }
         .navigationTitle("Details")
         .onAppear{
-            if isLiked {
-                likedPlaces.append(Attraction(pageTitle: place.pageTitle, latitude: place.latitude, longtitude: place.longtitude))
+            //check if liked
+            if likedPlaces.contains(where:{$0.pageTitle == place.pageTitle}){
+                isLiked = true
             }
         }
     }

@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import Forever
 
 struct ContentView: View {
     
     @Binding var tripSource: [Trip]
     @Binding var locationSource: [Location]
-    @State private var likedPlaces: [Attraction] = []
+    @State var likedPlaces: [Attraction] = []
 
     
     var body: some View {
