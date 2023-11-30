@@ -70,26 +70,25 @@ struct HomeView: View {
             .presentationBackground(.regularMaterial)
             .presentationBackgroundInteraction(.enabled(upThrough: .large))
             
-            Button("Show Current Location") {
-                showingSheet.toggle()
-            }
-            .padding()
-            .background(.blue)
-            .foregroundColor(.white)
-            .cornerRadius(10)
-            .sheet(isPresented: $showingSheet) {
-                SwiftUIView()
-            }
-            Button("Famous Places Details In SIngapore") {
-                showingSheetV.toggle()
-            }
-            .padding()
-            .background(.blue)
-            .foregroundColor(.white)
-            .cornerRadius(10)
-            .sheet(isPresented: $showingSheetV) {
-                AHHView(likedPlaces: $likedPlaces)
-            }
+            //OLD BUTTONS
+//            Button("Show Current Location") {
+//                showingSheet.toggle()
+//            }
+//            .padding()
+//            .background(.blue)
+//            .cornerRadius(10)
+//            .sheet(isPresented: $showingSheet) {
+//                SwiftUIView()
+//            }
+//            Button("Famous Places Details In SIngapore") {
+//                showingSheetV.toggle()
+//            }
+//            .padding()
+//            .background(.blue)
+//            .cornerRadius(10)
+//            .sheet(isPresented: $showingSheetV) {
+//                LocationsListView(likedPlaces: $likedPlaces)
+//            }
         }
         
         

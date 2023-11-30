@@ -17,43 +17,44 @@ struct FavouritedView: View {
     
     var body: some View {
         NavigationStack{
-            VStack(alignment: .leading) {
-                Text("Recommended Areas")
-                    .font(.title)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding()
-                .bold()
-            }
+            
+            //CODE FOR ALL MARKERS
+//            Map(){
+//                ForEach(places, id: \.self) { place in
+//                    Marker(place.pageTitle, coordinate: CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longtitude))
+//                }
+//                
+//                
+//            }
+//            .frame(width:2500, height:230)
+            
             Map(){
-                ForEach(places, id: \.self) { place in
+                ForEach(likedPlaces, id: \.self) { place in
                     Marker(place.pageTitle, coordinate: CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longtitude))
                 }
                 
                 
             }
             .frame(width:2500, height:230)
-            Text("Favourite places")
-                .font(.title)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding()
-                .bold()
-            
             
                 List{
                     ForEach(likedPlaces){ likedPlace in
-                        Text(likedPlace.pageTitle)
+                        NavigationLink{
+                            DetailsView(place: likedPlace, likedPlaces: $likedPlaces)
+                        }label:{
+                            Text(likedPlace.pageTitle)
+                        }
                     }
                 }
             
                     
                 .navigationTitle("Favourited")
             }
-            
-            
-        .onAppear() {
-            places = loadJson(filename: "editedJSON") ?? []
-            print(places)
-        }
+           
+           //CODE FOR ALL MARKERS
+//        .onAppear() {
+//            places = loadJson(filename: "editedJSON") ?? []
+//        }
        
         
     }

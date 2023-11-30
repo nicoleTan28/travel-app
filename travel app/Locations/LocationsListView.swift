@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AHHView: View {
+struct LocationsListView: View {
     
     let fileName = "editedJSON"
     
@@ -51,5 +51,5 @@ struct AHHView: View {
 }
 
 #Preview {
-    AHHView(likedPlaces: .constant([Attraction(pageTitle: "fake", latitude: 1.0, longtitude: 1.0)]))
+    LocationsListView(likedPlaces: .constant([Attraction(pageTitle: "fake", latitude: 1.0, longtitude: 1.0)]))
 }
