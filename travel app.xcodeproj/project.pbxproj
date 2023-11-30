@@ -25,8 +25,8 @@
 		D96FB5532B0AED0900E99464 /* travel_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5522B0AED0900E99464 /* travel_appApp.swift */; };
 		D96FB5552B0AED0900E99464 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5542B0AED0900E99464 /* ContentView.swift */; };
 		D96FB5572B0AED0B00E99464 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D96FB5562B0AED0B00E99464 /* Assets.xcassets */; };
-		D96FB5612B0AF0EF00E99464 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5602B0AF0EF00E99464 /* LocationsView.swift */; };
-		D96FB5632B0AF0F700E99464 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5622B0AF0F700E99464 /* HomeView.swift */; };
+		D96FB5612B0AF0EF00E99464 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5602B0AF0EF00E99464 /* HomeView.swift */; };
+		D96FB5632B0AF0F700E99464 /* FavouritedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5622B0AF0F700E99464 /* FavouritedView.swift */; };
 		D96FB5652B0AF10000E99464 /* TripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5642B0AF10000E99464 /* TripsView.swift */; };
 		D96FB5672B0AF2F800E99464 /* NewTripsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96FB5662B0AF2F800E99464 /* NewTripsView.swift */; };
 		D98A3CD72B0B2A8E00066D39 /* PackingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D98A3CD62B0B2A8E00066D39 /* PackingListView.swift */; };
@@ -56,8 +56,8 @@
 		D96FB5522B0AED0900E99464 /* travel_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = travel_appApp.swift; sourceTree = "<group>"; };
 		D96FB5542B0AED0900E99464 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D96FB5562B0AED0B00E99464 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D96FB5602B0AF0EF00E99464 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
-		D96FB5622B0AF0F700E99464 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D96FB5602B0AF0EF00E99464 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D96FB5622B0AF0F700E99464 /* FavouritedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritedView.swift; sourceTree = "<group>"; };
 		D96FB5642B0AF10000E99464 /* TripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripsView.swift; sourceTree = "<group>"; };
 		D96FB5662B0AF2F800E99464 /* NewTripsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTripsView.swift; sourceTree = "<group>"; };
 		D98A3CD62B0B2A8E00066D39 /* PackingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingListView.swift; sourceTree = "<group>"; };
@@ -83,10 +83,9 @@
 		47C0F8852B0D90550032E1E1 /* Locations */ = {
 			isa = PBXGroup;
 			children = (
-				D96FB5602B0AF0EF00E99464 /* LocationsView.swift */,
+				D96FB5602B0AF0EF00E99464 /* HomeView.swift */,
 				478B8E482B1445B500257A41 /* AHHView.swift */,
 				478B8E462B14401200257A41 /* DetailsView.swift */,
-				47C0F9002B0DE2FD0032E1E1 /* Location.swift */,
 				47C0F8FE2B0DE2E20032E1E1 /* SwiftUIView.swift */,
 			);
 			path = Locations;
@@ -98,6 +97,7 @@
 				9EEB3D4E2B119BCB00569A23 /* Data Structs.swift */,
 				9E5F39692B144B240018781C /* TripStruct.swift */,
 				9E5F396D2B144BB80018781C /* DayModel.swift */,
+				47C0F9002B0DE2FD0032E1E1 /* Location.swift */,
 				9E5F396B2B144B880018781C /* LocationModel.swift */,
 				9E5F39672B144ABD0018781C /* Attractions.swift */,
 				D9CB54132B14346D00733C21 /* extensions.swift */,
@@ -134,7 +134,7 @@
 				9E5F39702B1477C30018781C /* Preview Content */,
 				D96FB5522B0AED0900E99464 /* travel_appApp.swift */,
 				D96FB5542B0AED0900E99464 /* ContentView.swift */,
-				D96FB5622B0AF0F700E99464 /* HomeView.swift */,
+				D96FB5622B0AF0F700E99464 /* FavouritedView.swift */,
 				47C0F8852B0D90550032E1E1 /* Locations */,
 				D9A2F8982B0B43360085087A /* Trips */,
 				D96FB5562B0AED0B00E99464 /* Assets.xcassets */,
@@ -259,9 +259,9 @@
 				9E2188022B0B30AC00F0C2A8 /* TripDetailsView.swift in Sources */,
 				D96FB5652B0AF10000E99464 /* TripsView.swift in Sources */,
 				47C0F9012B0DE2FD0032E1E1 /* Location.swift in Sources */,
-				D96FB5612B0AF0EF00E99464 /* LocationsView.swift in Sources */,
+				D96FB5612B0AF0EF00E99464 /* HomeView.swift in Sources */,
 				478B8E472B14401200257A41 /* DetailsView.swift in Sources */,
-				D96FB5632B0AF0F700E99464 /* HomeView.swift in Sources */,
+				D96FB5632B0AF0F700E99464 /* FavouritedView.swift in Sources */,
 				D98A3CD92B0B2D1000066D39 /* NewTodoView.swift in Sources */,
 				478B8E492B1445B500257A41 /* AHHView.swift in Sources */,
 				9E5F39682B144ABD0018781C /* Attractions.swift in Sources */,

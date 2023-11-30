@@ -8,9 +8,10 @@
 import SwiftUI
 import MapKit
 
-//calculate distance from current location to closest attraction
+//HAVE A MAP TO HIGHLIGHT FAVOURITE LOCATIONS
+//LIST 
 
-struct HomeView: View {
+struct FavouritedView: View {
     @State var places: [Attraction] = []
     @Binding var likedPlaces : [Attraction]
     
@@ -60,6 +61,6 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(places: [], likedPlaces: .constant([Attraction(pageTitle: "fake", latitude: 2.0, longtitude: 2.0)]))
+        FavouritedView(places: [], likedPlaces: .constant([Attraction(pageTitle: "fake", latitude: 2.0, longtitude: 2.0)]))
     }
 }

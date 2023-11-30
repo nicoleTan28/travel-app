@@ -30,10 +30,6 @@ struct SwiftUIView: View {
     }
 }
 
-#Preview {
-    SwiftUIView()
-}
-
 
 final class ContentViewModel:NSObject, ObservableObject, CLLocationManagerDelegate{
     

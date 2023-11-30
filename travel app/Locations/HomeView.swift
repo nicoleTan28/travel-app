@@ -8,9 +8,10 @@
 import SwiftUI
 import MapKit
 
+//ON SATURDAY - CALCULATE DISTANCE TO CLOSEST ATTRACTION FROM CURRENT LOCATION
 
 @available(iOS 17.0, *)
-struct LocationsView: View {
+struct HomeView: View {
     
     let fileName = "editedJSON"
     @State private var locationService = LocationService(completer: .init())
@@ -87,7 +88,7 @@ struct LocationsView: View {
             .foregroundColor(.white)
             .cornerRadius(10)
             .sheet(isPresented: $showingSheetV) {
-                AHHView(locationName: .constant("Fake location"), likedPlaces: $likedPlaces)
+                AHHView(likedPlaces: $likedPlaces)
             }
         }
         
@@ -97,5 +98,5 @@ struct LocationsView: View {
 }
 
 #Preview {
-    LocationsView(likedPlaces: .constant([Attraction(pageTitle: "fake", latitude: 1.0, longtitude: 2.0)]))
+    HomeView(likedPlaces: .constant([Attraction(pageTitle: "fake", latitude: 1.0, longtitude: 2.0)]))
 }

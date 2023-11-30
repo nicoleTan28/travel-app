@@ -15,7 +15,6 @@ struct AHHView: View {
     @State var places: [Attraction] = []
     @State private var searchText = ""
     @State private var selectedIndex: Int?
-    @Binding var locationName : String
     @Binding var likedPlaces: [Attraction]
     
     var body: some View {
@@ -52,5 +51,5 @@ struct AHHView: View {
 }
 
 #Preview {
-    AHHView(locationName: .constant("Fake location"), likedPlaces: .constant([Attraction(pageTitle: "fake", latitude: 1.0, longtitude: 1.0)]))
+    AHHView(likedPlaces: .constant([Attraction(pageTitle: "fake", latitude: 1.0, longtitude: 1.0)]))
 }

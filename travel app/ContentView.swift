@@ -18,7 +18,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             TabView {
-                LocationsView(likedPlaces: $likedPlaces)
+                HomeView(likedPlaces: $likedPlaces)
                     .tabItem {
                         Label("Home", systemImage: "location.circle.fill")
                     }
@@ -26,7 +26,7 @@ struct ContentView: View {
                     .tabItem {
                         Label("Trips", systemImage: "globe")
                     }
-                HomeView(likedPlaces: $likedPlaces)
+                FavouritedView(likedPlaces: $likedPlaces)
                     .tabItem {
                         Label("Favourited", systemImage: "heart.fill")
                     }
