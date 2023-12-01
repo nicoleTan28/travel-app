@@ -30,28 +30,24 @@ struct NewTripsView: View {
                     Section("Name") {
                         TextField("Enter Trip Name", text: $name)
                     }
-                    
+
                     Section("Date") {
                         DatePicker(
                             "Start Date",
                             selection: $startDate,
+                            in: Date()...,
                             displayedComponents: [.date]
                         )
+                        
+                        
                         DatePicker(
                             "End Date",
                             selection: $endDate,
+                            in: startDate...,
                             displayedComponents: [.date]
                         )
                     }
                     
-//                    Section("Flight") {
-//                        TextField("Enter Flight Number", text: $flight)
-//                        
-//                        DatePicker("Departure", selection: $departure, displayedComponents: .hourAndMinute)
-//                        
-//                        DatePicker("Arrival", selection: $arrival, displayedComponents: .hourAndMinute)
-//                        
-//                    }
                     
                     Section {
                         Button(role: .none) {
@@ -69,7 +65,7 @@ struct NewTripsView: View {
                         } label: {
                             Text("Save")
                         }
-                        .disabled(startDate > endDate || name.isEmpty)
+                        .disabled(name.isEmpty)
                         Button("Cancel", role: .destructive) {
                             // code to cancel
                             dismiss()

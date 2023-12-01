@@ -19,7 +19,6 @@ struct ItineraryView: View {
     @State var selectedDay: Int
     
     var dateFormatter = DateFormatter()
-    var dayDateFormatter = DateFormatter()
     
     var body: some View {
         NavigationStack{
@@ -61,11 +60,7 @@ struct ItineraryView: View {
             NewLocationsView(showAddSheet: $showAddSheet, trip: $trip, selectedDay: $selectedDay)
         }
         .onAppear{
-            let startDay = trip.startDate
-            
-            
-            //add one day then convert to string
-            dayDateFormatter.dateFormat = "MMM DD, YYYY"
+    
             dateFormatter.dateFormat = "HH:MM"
             
         }

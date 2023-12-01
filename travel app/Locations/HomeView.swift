@@ -15,21 +15,35 @@ struct HomeView: View {
     
     let fileName = "editedJSON"
     //@State private var locationService = LocationService(completer: .init())
-    @State private var showingSheet = false
     @State private var position = MapCameraPosition.automatic
     @State private var isSheetPresented: Bool = false
-    @State private var isMarkerVisible = false
+    @State private var isMarkerVisible = true
     @State private var search: String = ""
-    @State private var location: String = ""
-    @State private var showingSheetV = false
     
     @Binding var likedPlaces: [Attraction]
     @State var places: [Attraction] = []
-
+    
     
     var body: some View {
         NavigationStack {
-            ZStack{
+            
+            VStack(alignment: .leading){
+                Map(position: $position)
+                    .frame(width: 350, height: 250)
+                    .padding()
+                
+                Text("Locations")
+                    .font(.title)
+                    .bold()
+                    .padding()
+                
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                    TextField("Search for a place", text: $search)
+                        .autocorrectionDisabled()
+                }
+                .padding()
+                
                 List {
                     ForEach(searchResults, id: \.self) { name in
                         NavigationLink {
@@ -38,42 +52,36 @@ struct HomeView: View {
                             Text(name.pageTitle)
                         }
                     }
+                    .listRowBackground(Color.clear)
+
                 }
+                .scrollContentBackground(.hidden)
+                .listStyle(.plain)
                 
 
-                VStack(alignment: .leading){
-                    Map(position: $position)
-                        .frame(width: 350, height: 250)
-                        .padding()
-                    
-                    Text("Nearby locations")
-                        .font(.title)
-                        .bold()
-                        .padding()
-                    Spacer()
-                }
-                .opacity(search.isEmpty ? 1:0)
                 
-
-               
-                .navigationTitle("Home")
             }
-          
+            .navigationTitle("Home")
+            
+            
         }
-        .searchable(text: $search)
         .onAppear {
             if let placesJSON = loadJson(filename: fileName) {
                 for place in placesJSON {
-                    places.append(place)
+                    //conditional to avoid appending the place again
+                    if !places.contains(where: {$0.pageTitle == place.pageTitle}){
+                        places.append(place)
+                    }
                 }
             }
         }
     }
     
     
+    
     var searchResults: [Attraction] {
         if search.isEmpty{
-            return []
+            return places
         }else{
             return places.filter { $0.pageTitle.contains(search) }
         }

@@ -10,7 +10,7 @@ import Forever
 
 struct ContentView: View {
     
-    @State var likedPlaces: [Attraction] = []
+    @Forever("likedPlaces") var likedPlaces: [Attraction] = []
     
     var body: some View {
         VStack {
