@@ -47,9 +47,6 @@ struct NewLocationsView: View {
                 
                 Section {
                     Button("Save", role: .none) {
-//                        if trip.days[selectedDay-1].locations.contains({
-//                            
-//                        }
                         trip.days[selectedDay-1].locations.append(Location(name: locationName, startTime: location.startTime, endTime: location.endTime))
                         dismiss()
                     }

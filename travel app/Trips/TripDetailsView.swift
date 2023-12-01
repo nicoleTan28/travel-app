@@ -12,14 +12,8 @@ struct TripDetailsView: View {
     //changed [Trip] -> Trip
     @Binding var tripSource: Trip
     @State private var locationSource: [Location] = []
-    //changing this binding to state var
-    //@Binding var locationSource: [Location]
     
     
-    //again i'm not sure what this is for -danin
-    //@ObservedObject var trip: Trip = Trip(name: "", startDate: Date(), endDate: Date())
-
-
     let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
@@ -42,27 +36,18 @@ struct TripDetailsView: View {
                 Text("Itinerary")
             }
             
-            NavigationLink { 
+            NavigationLink {
                 PackingListView(packingList: $tripSource.packingList)
                     .navigationTitle("Packing List")
             } label: {
                 Text("Packing list")
             }
         }
-   //     .listStyle(PlainListStyle())
+        //     .listStyle(PlainListStyle())
         
-        // Button("Itinerary"){
-        //    print("Itinerary button pressed")
-        //}
-        //Button("Packing list"){
-        //   print("Packing list button pressed")
-        //}
+        
         //Text("Photolog")
         //  .font(.largeTitle)
-        
-        //.navigationTitle("Trip name")
-        
-        //}
         
         
     }

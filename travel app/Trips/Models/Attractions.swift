@@ -17,7 +17,7 @@ func loadJson(filename fileName: String) -> [Attraction]? {
             var attractions: [Attraction] = []
             
             for attraction in jsonData.features {
-                attractions.append(Attraction(pageTitle: attraction.pageTitle, overview: attraction.overview, latitude: attraction.latitude, longtitude: attraction.longtitude))
+                attractions.append(Attraction(pageTitle: attraction.pageTitle, overview: attraction.overview ?? "", latitude: attraction.latitude, longtitude: attraction.longtitude))
             }
             return attractions
             
@@ -35,7 +35,7 @@ fileprivate struct ResponseData1: Decodable{
 fileprivate struct idLessAttraction: Codable, Hashable {
     var pageTitle: String
     var overview: String?
-   //var attractImage: String?
+    //var attractImage: String?
     var latitude: Double
     var longtitude: Double
 }
@@ -43,8 +43,8 @@ fileprivate struct idLessAttraction: Codable, Hashable {
 struct Attraction: Identifiable, Codable, Hashable {
     var id = UUID()
     var pageTitle: String
-    var overview: String?
-   //var attractImage: String?
+    var overview: String
+    var image: String?
     var latitude: Double
     var longtitude: Double
 }

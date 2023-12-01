@@ -92,5 +92,5 @@ struct HomeView: View {
 
 
 #Preview {
-    HomeView(likedPlaces: .constant([Attraction(pageTitle: "fake", latitude: 1.0, longtitude: 2.0)]))
+    HomeView(likedPlaces: .constant([Attraction(pageTitle: "fake", overview: "", latitude: 1.0, longtitude: 2.0)]))
 }

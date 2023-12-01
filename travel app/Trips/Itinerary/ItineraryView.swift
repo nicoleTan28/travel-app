@@ -14,7 +14,7 @@ struct ItineraryView: View {
     @State private var showAddSheet = false
     @Binding var trip: Trip
     @Forever("locations") var locations: [Location] = []
-
+    
     @State private var dayNumbers: [Int] = []
     @State var selectedDay: Int
     
@@ -60,12 +60,10 @@ struct ItineraryView: View {
             NewLocationsView(showAddSheet: $showAddSheet, trip: $trip, selectedDay: $selectedDay)
         }
         .onAppear{
-    
             dateFormatter.dateFormat = "HH:MM"
-            
         }
         
-            }
+    }
 }
 
 struct ItineraryView_Previews: PreviewProvider {

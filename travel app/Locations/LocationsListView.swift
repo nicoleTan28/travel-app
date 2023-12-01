@@ -51,5 +51,5 @@ struct LocationsListView: View {
 }
 
 #Preview {
-    LocationsListView(likedPlaces: .constant([Attraction(pageTitle: "fake", latitude: 1.0, longtitude: 1.0)]))
+    LocationsListView(likedPlaces: .constant([Attraction(pageTitle: "fake", overview: "", latitude: 1.0, longtitude: 1.0)]))
 }

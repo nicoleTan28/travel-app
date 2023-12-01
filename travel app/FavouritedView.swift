@@ -62,6 +62,6 @@ struct FavouritedView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        FavouritedView(places: [], likedPlaces: .constant([Attraction(pageTitle: "fake", latitude: 2.0, longtitude: 2.0)]))
+        FavouritedView(places: [], likedPlaces: .constant([Attraction(pageTitle: "fake", overview: "", latitude: 2.0, longtitude: 2.0)]))
     }
 }
