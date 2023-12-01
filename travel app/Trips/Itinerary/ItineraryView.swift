@@ -26,7 +26,7 @@ struct ItineraryView: View {
             List {
                 ForEach(trip.days, id: \.id) { selectedDay in
                     
-                    Section("Day \(selectedDay.selectedDay) - ") {
+                    Section("Day \(selectedDay.selectedDay)") {
                         Button {
                             self.selectedDay = selectedDay.selectedDay
                             showAddSheet = true
@@ -63,8 +63,9 @@ struct ItineraryView: View {
         .onAppear{
             let startDay = trip.startDate
             
+            
             //add one day then convert to string
-            dayDateFormatter.dateFormat = "MMM dd, YYYY"
+            dayDateFormatter.dateFormat = "MMM DD, YYYY"
             dateFormatter.dateFormat = "HH:MM"
             
         }

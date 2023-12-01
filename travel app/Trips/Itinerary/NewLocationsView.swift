@@ -11,13 +11,17 @@ import UIKit
 struct NewLocationsView: View {
     
     @Environment(\.dismiss) var dismiss
-    @State private var isAllDay = false
-    @State private var showSearch = false
-    @State var location: Location = Location(name: "", startTime: Date(), endTime: Date())
+    
     @Binding var showAddSheet: Bool
     @Binding var trip: Trip
     @Binding var selectedDay: Int
+    
+    @State private var isAllDay = false
+    @State private var showSearch = false
+    @State var location: Location = Location(name: "", startTime: Date(), endTime: Date())
     @State private var locationName = ""
+    @State private var showAlert = false
+    
     
     var body: some View {
         NavigationView {
@@ -43,6 +47,9 @@ struct NewLocationsView: View {
                 
                 Section {
                     Button("Save", role: .none) {
+//                        if trip.days[selectedDay-1].locations.contains({
+//                            
+//                        }
                         trip.days[selectedDay-1].locations.append(Location(name: locationName, startTime: location.startTime, endTime: location.endTime))
                         dismiss()
                     }
@@ -57,8 +64,6 @@ struct NewLocationsView: View {
         }
         .sheet(isPresented: $showSearch) {
             SearchView(locationName: $locationName)
-            //temporarily commenting on this
-           // SearchView(locationSource: $locationSource)//, valueFromSheet: .constant(nil))
         }
     }
 }

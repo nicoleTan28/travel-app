@@ -12,7 +12,7 @@ struct travel_appApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(tripSource: .constant([]), locationSource: .constant([]))
+            ContentView()
         }
     }
 }

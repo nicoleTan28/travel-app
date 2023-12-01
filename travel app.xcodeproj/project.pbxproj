@@ -97,8 +97,8 @@
 				9EEB3D4E2B119BCB00569A23 /* Data Structs.swift */,
 				9E5F39692B144B240018781C /* TripStruct.swift */,
 				9E5F396D2B144BB80018781C /* DayModel.swift */,
-				47C0F9002B0DE2FD0032E1E1 /* Location.swift */,
 				9E5F396B2B144B880018781C /* LocationModel.swift */,
+				47C0F9002B0DE2FD0032E1E1 /* Location.swift */,
 				9E5F39672B144ABD0018781C /* Attractions.swift */,
 				D9CB54132B14346D00733C21 /* extensions.swift */,
 			);

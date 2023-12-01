@@ -16,16 +16,20 @@ struct DetailsView: View {
                     .padding()
                 Spacer()
                 Button{
-                    //when liked
+                    //when place is already liked
                     if isLiked {
+                        //check if they dislike
                         if likedPlaces.contains(where:{$0.pageTitle == place.pageTitle}){
-                            //if they dislike
+                            //remove from likedPlaces
                             likedPlaces.removeAll { likedPlace in
                                 likedPlace.pageTitle == place.pageTitle
                             }
+                            //change liked status
                             isLiked = false
                         }
-                    } else{
+                        
+                    } else {
+                        //place is not yet liked, but button pressed
                         if !likedPlaces.contains(where:{$0.pageTitle == place.pageTitle}){
                             likedPlaces.append(place)
                             isLiked = true
@@ -57,6 +61,6 @@ struct DetailsView: View {
 
 
 #Preview {
-    DetailsView(place: Attraction(pageTitle: "Somewhere", latitude: 1.0, longtitude: 2.0), likedPlaces: .constant([Attraction(pageTitle: "aaaaa", latitude: 1.0, longtitude: 1.0)]))// attractImage: "1095-national-gallery-singapore-carousel-01-rec"))
+    DetailsView(place: Attraction(pageTitle: "Somewhere", latitude: 1.0, longtitude: 2.0), likedPlaces: .constant([Attraction(pageTitle: "aaaaa", latitude: 1.0, longtitude: 1.0)]))
 }
 

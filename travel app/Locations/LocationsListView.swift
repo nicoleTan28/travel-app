@@ -30,10 +30,11 @@ struct LocationsListView: View {
                 }
                 .navigationTitle("Locations")
             }
-            .onAppear {
-                if let places = loadJson(filename: fileName) {
-                    self.places = places
-                }
+           
+        }
+        .onAppear {
+            if let places = loadJson(filename: fileName) {
+                self.places = places
             }
         }
         .searchable(text: $searchText)

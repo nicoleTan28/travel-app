@@ -58,16 +58,16 @@ struct HomeView: View {
                
                 .navigationTitle("Home")
             }
-            .onAppear {
-                if let placesJSON = loadJson(filename: fileName) {
-                    for place in placesJSON {
-                        places.append(place)
-                    }
-                }
-            }
           
         }
         .searchable(text: $search)
+        .onAppear {
+            if let placesJSON = loadJson(filename: fileName) {
+                for place in placesJSON {
+                    places.append(place)
+                }
+            }
+        }
     }
     
     
@@ -79,84 +79,6 @@ struct HomeView: View {
         }
     }
     
-    //        NavigationStack{
-    //            VStack(alignment: .leading){
-    //                HStack {
-    //                    Image(systemName: "magnifyingglass")
-    //                    TextField("Search for a place", text: $search)
-    //                        .autocorrectionDisabled()
-    //                        .padding()
-    //                }
-    //
-    //                Map(position: $position)
-    //                    .frame(width: 350, height: 250)
-    //
-    //                Text("Nearby locations")
-    //                    .font(.title)
-    //                    .bold()
-    //            }
-    //            .padding()
-    //
-    //            Spacer()
-    
-    
-    //            VStack {
-    //                HStack {
-    //                    Image(systemName: "magnifyingglass")
-    //                    TextField("Search for a place", text: $search)
-    //                        .autocorrectionDisabled()
-    //                }
-    //
-    //                Spacer()
-    //
-    //                // 2
-    //                List {
-    //                    ForEach(locationService.completions) { completion in
-    //                        Button(action: { }) {
-    //                            VStack(alignment: .leading, spacing: 4) {
-    //                                Text(completion.title)
-    //                                    .font(.headline)
-    //                                    .fontDesign(.rounded)
-    //                                Text(completion.subTitle)
-    //                            }
-    //                        }
-    //                        // 3
-    //                        .listRowBackground(Color.clear)
-    //                    }
-    //                }
-    //                // 4
-    //                .listStyle(.plain)
-    //                .scrollContentBackground(.hidden)
-    //            }
-    //            // 5
-    //            .onChange(of: search) {
-    //                locationService.update(queryFragment: search)
-    //            }
-    //            .padding()
-    //            .interactiveDismissDisabled()
-    //            .presentationDetents([.height(200), .large])
-    //            .presentationBackground(.regularMaterial)
-    //            .presentationBackgroundInteraction(.enabled(upThrough: .large))
-    
-    //OLD BUTTONS
-    //            Button("Show Current Location") {
-    //                showingSheet.toggle()
-    //            }
-    //            .padding()
-    //            .background(.blue)
-    //            .cornerRadius(10)
-    //            .sheet(isPresented: $showingSheet) {
-    //                SwiftUIView()
-    //            }
-    //            Button("Famous Places Details In SIngapore") {
-    //                showingSheetV.toggle()
-    //            }
-    //            .padding()
-    //            .background(.blue)
-    //            .cornerRadius(10)
-    //            .sheet(isPresented: $showingSheetV) {
-    //                LocationsListView(likedPlaces: $likedPlaces)
-    //            }
     
 }
 

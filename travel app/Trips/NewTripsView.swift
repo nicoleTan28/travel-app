@@ -54,7 +54,7 @@ struct NewTripsView: View {
 //                    }
                     
                     Section {
-                        Button("Save", role: .none) {
+                        Button(role: .none) {
                             let dateFormatter = DateFormatter()
                             dateFormatter.dateStyle = .long
                             
@@ -66,7 +66,10 @@ struct NewTripsView: View {
                             )
                             tripSource.append(newTrip)
                             dismiss()
+                        } label: {
+                            Text("Save")
                         }
+                        .disabled(startDate > endDate || name.isEmpty)
                         Button("Cancel", role: .destructive) {
                             // code to cancel
                             dismiss()
