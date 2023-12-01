@@ -22,16 +22,12 @@ struct NewLocationsView: View {
     var body: some View {
         NavigationView {
             Form {
+                Text("**Selected location:** \(locationName)")
+
                 Section("Location") {
                     Button("Search location") {
                         showSearch = true
                     }
-//                    .sheet(isPresented: $showSearch, onDismiss: {
-//                        
-//                    }) {
-//                        SearchView()
-//                    }
-                    Text("**Selected location:** \(locationName)")
                 }
                 
                 Section("Time") {
@@ -48,10 +44,6 @@ struct NewLocationsView: View {
                 Section {
                     Button("Save", role: .none) {
                         trip.days[selectedDay-1].locations.append(Location(name: locationName, startTime: location.startTime, endTime: location.endTime))
-                        //no idea what this is so i'm commenting it temporarily - danin
-                        //let information = Location(name: location.name, startTime: location.startTime, endTime: location.endTime)
-                        //commenting on locationSource??
-                        //locationSource.append(Location(name: location.name, startTime: location.startTime, endTime: location.endTime)
                         dismiss()
                     }
                     

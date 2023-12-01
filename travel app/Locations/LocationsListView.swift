@@ -14,7 +14,6 @@ struct LocationsListView: View {
     @Environment(\.dismiss) var dismiss
     @State var places: [Attraction] = []
     @State private var searchText = ""
-    @State private var selectedIndex: Int?
     @Binding var likedPlaces: [Attraction]
     
     var body: some View {

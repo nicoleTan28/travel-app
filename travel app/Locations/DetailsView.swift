@@ -9,26 +9,22 @@ struct DetailsView: View {
     
     var body: some View {
         VStack {
-//            Image(place.attractImage ?? "sad")
-//                .resizable()
-//                .scaledToFit()
+
             HStack{
                 Text(place.pageTitle)
                     .font(.title)
+                    .padding()
+                Spacer()
                 Button{
-//                    isLiked.toggle()
-                    
+                    //when liked
                     if isLiked {
                         if likedPlaces.contains(where:{$0.pageTitle == place.pageTitle}){
                             //if they dislike
                             likedPlaces.removeAll { likedPlace in
                                 likedPlace.pageTitle == place.pageTitle
-    
                             }
                             isLiked = false
                         }
-                        
-                       
                     } else{
                         if !likedPlaces.contains(where:{$0.pageTitle == place.pageTitle}){
                             likedPlaces.append(place)
@@ -38,6 +34,7 @@ struct DetailsView: View {
                     }
                 } label:{
                     Image(systemName: isLiked ? "heart.fill" : "heart")
+                        .padding()
                 }
                 
                 
@@ -50,7 +47,7 @@ struct DetailsView: View {
         }
         .navigationTitle("Details")
         .onAppear{
-            //check if liked
+            //check if place is liked
             if likedPlaces.contains(where:{$0.pageTitle == place.pageTitle}){
                 isLiked = true
             }

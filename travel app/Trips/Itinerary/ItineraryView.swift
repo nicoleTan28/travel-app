@@ -38,12 +38,14 @@ struct ItineraryView: View {
                         ForEach(selectedDay.locations){ location in
                             HStack{
                                 Text(location.name)
+                                Spacer()
                                 HStack {
                                     Text(dateFormatter.string(from: location.startTime))
+                                    Text("-")
                                     Text(dateFormatter.string(from: location.endTime))
                                 }
                                 .font(.caption)
-                                
+                                .foregroundStyle(.gray)
                             }
                             
                         }
