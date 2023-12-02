@@ -105,7 +105,7 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		9E5F39702B1477C30018781C /* Preview Content */ = {
+		9E86FF382B1ABD4B00B47DFB /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -131,7 +131,7 @@
 		D96FB5512B0AED0900E99464 /* travel app */ = {
 			isa = PBXGroup;
 			children = (
-				9E5F39702B1477C30018781C /* Preview Content */,
+				9E86FF382B1ABD4B00B47DFB /* Preview Content */,
 				D96FB5522B0AED0900E99464 /* travel_appApp.swift */,
 				D96FB5542B0AED0900E99464 /* ContentView.swift */,
 				D96FB5622B0AF0F700E99464 /* FavouritedView.swift */,
