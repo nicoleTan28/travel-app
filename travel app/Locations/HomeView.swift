@@ -19,7 +19,7 @@ struct HomeView: View {
     @State private var isSheetPresented: Bool = false
     @State private var isMarkerVisible = true
     @State private var search: String = ""
-    
+    @State private var showingSheet = false
     @Binding var likedPlaces: [Attraction]
     @State var places: [Attraction] = []
     
@@ -53,43 +53,47 @@ struct HomeView: View {
                         }
                     }
                     .listRowBackground(Color.clear)
-
+                    
                 }
                 .scrollContentBackground(.hidden)
                 .listStyle(.plain)
                 
-
+                
                 
             }
             .navigationTitle("Home")
             
-            
-        }
-        .onAppear {
-            if let placesJSON = loadJson(filename: fileName) {
-                for place in placesJSON {
-                    //conditional to avoid appending the place again
-                    if !places.contains(where: {$0.pageTitle == place.pageTitle}){
-                        places.append(place)
+            Button("Show Current Location") {
+                showingSheet.toggle()
+            }
+            .sheet(isPresented: $showingSheet) {
+                SwiftUIView()
+            }
+            .onAppear {
+                if let placesJSON = loadJson(filename: fileName) {
+                    for place in placesJSON {
+                        //conditional to avoid appending the place again
+                        if !places.contains(where: {$0.pageTitle == place.pageTitle}){
+                            places.append(place)
+                        }
                     }
                 }
             }
         }
-    }
-    
-    
-    
-    var searchResults: [Attraction] {
-        if search.isEmpty{
-            return places
-        }else{
-            return places.filter { $0.pageTitle.contains(search) }
+        
+        
+        
+        var searchResults: [Attraction] {
+            if search.isEmpty{
+                return places
+            }else{
+                return places.filter { $0.pageTitle.contains(search) }
+            }
         }
+        
+        
     }
-    
-    
 }
-
 
 #Preview {
     HomeView(likedPlaces: .constant([Attraction(pageTitle: "fake", overview: "", latitude: 1.0, longtitude: 2.0)]))
