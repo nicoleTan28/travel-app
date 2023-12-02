@@ -26,7 +26,7 @@ struct NewLocationsView: View {
     var body: some View {
         NavigationView {
             Form {
-                Text("**Selected location:** \(location.name)")
+                Text("**Selected location:** \(locationName)")
 
                 Section("Location") {
                     Button("Search location") {

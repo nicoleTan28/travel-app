@@ -18,7 +18,6 @@ struct ItineraryView: View {
     @State private var dayNumbers: [Int] = []
     @State var selectedDay: Int
     
-    var dateFormatter = DateFormatter()
     
     var body: some View {
         NavigationStack{
@@ -35,24 +34,24 @@ struct ItineraryView: View {
                         }
                         
                         ScrollView(.horizontal){
-                            HStack{
-                                ForEach(selectedDay.locations){ location in
-                                    VStack{
-                                        Text(location.name)
-                                            .padding()
-                                        HStack {
-                                            Text(dateFormatter.string(from: location.startTime))
-                                            Text("-")
-                                            Text(dateFormatter.string(from: location.endTime))
-                                        }
-                                        .font(.caption)
-                                        .foregroundStyle(.gray)
+                            // HStack{
+                            ForEach(selectedDay.locations){ location in
+                                VStack{
+                                    Text(location.name)
+                                        .padding()
+                                    HStack {
+                                        Text(location.startTime.formatted(date: .omitted, time: .shortened))
+                                        Text("-")
+                                        Text(location.endTime.formatted(date: .omitted, time: .shortened))
                                     }
-//                                    .background(.accentColor)
-                                   
-                                    
+                                    .font(.caption)
+                                    .foregroundStyle(.gray)
                                 }
+                                //                                    .background(.accentColor)
+                                
+                                
                             }
+                            //}
                         }
                         .scrollTargetBehavior(.paging)
                         
@@ -65,9 +64,6 @@ struct ItineraryView: View {
         }
         .sheet(isPresented: $showAddSheet) {
             NewLocationsView(showAddSheet: $showAddSheet, trip: $trip, selectedDay: $selectedDay)
-        }
-        .onAppear{
-            dateFormatter.dateFormat = "HH:MM"
         }
         
     }
