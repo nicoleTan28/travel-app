@@ -34,20 +34,27 @@ struct ItineraryView: View {
                                 .frame(maxWidth: .infinity, alignment: .leading)
                         }
                         
-                        ForEach(selectedDay.locations){ location in
+                        ScrollView(.horizontal){
                             HStack{
-                                Text(location.name)
-                                Spacer()
-                                HStack {
-                                    Text(dateFormatter.string(from: location.startTime))
-                                    Text("-")
-                                    Text(dateFormatter.string(from: location.endTime))
+                                ForEach(selectedDay.locations){ location in
+                                    VStack{
+                                        Text(location.name)
+                                            .padding()
+                                        HStack {
+                                            Text(dateFormatter.string(from: location.startTime))
+                                            Text("-")
+                                            Text(dateFormatter.string(from: location.endTime))
+                                        }
+                                        .font(.caption)
+                                        .foregroundStyle(.gray)
+                                    }
+//                                    .background(.accentColor)
+                                   
+                                    
                                 }
-                                .font(.caption)
-                                .foregroundStyle(.gray)
                             }
-                            
                         }
+                        .scrollTargetBehavior(.paging)
                         
                     }
                     

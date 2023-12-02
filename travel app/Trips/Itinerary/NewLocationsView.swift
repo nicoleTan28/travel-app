@@ -26,7 +26,7 @@ struct NewLocationsView: View {
     var body: some View {
         NavigationView {
             Form {
-                Text("**Selected location:** \(locationName)")
+                Text("**Selected location:** \(location.name)")
 
                 Section("Location") {
                     Button("Search location") {
@@ -37,10 +37,15 @@ struct NewLocationsView: View {
                 Section("Time") {
                     Toggle("All Day", isOn: $isAllDay)
                     
-                    DatePicker("Start", selection: $location.startTime, displayedComponents: .hourAndMinute)
+                    DatePicker("Start", 
+                               selection: $location.startTime,
+                               displayedComponents: .hourAndMinute)
                         .disabled(isAllDay ? true : false)
                         .foregroundColor(isAllDay ? .gray : .black)
-                    DatePicker("End", selection: $location.endTime, displayedComponents: .hourAndMinute)
+                    DatePicker("End", 
+                               selection: $location.endTime,
+                               in: location.startTime...,
+                               displayedComponents: .hourAndMinute)
                         .disabled(isAllDay ? true : false)
                         .foregroundColor(isAllDay ? .gray : .black)
                 }
@@ -50,6 +55,7 @@ struct NewLocationsView: View {
                         trip.days[selectedDay-1].locations.append(Location(name: locationName, startTime: location.startTime, endTime: location.endTime))
                         dismiss()
                     }
+                    .disabled(locationName.isEmpty)
                     
                     Button("Cancel", role: .destructive) {
                         dismiss()
@@ -71,6 +77,6 @@ struct NewLocationsView: View {
 
 struct NewLocationsView_Previews: PreviewProvider {
     static var previews: some View {
-        NewLocationsView(showAddSheet: .constant(false), trip: .constant(Trip(name: "Test", startDate: "", endDate: "", days: [], noOfDays: 1)), selectedDay: .constant(0)) // locationSource: .constant([]))
+        NewLocationsView(showAddSheet: .constant(false), trip: .constant(Trip(name: "Test", startDate: "", endDate: "", days: [], noOfDays: 1)), selectedDay: .constant(0))/*, location: Location(name: "", startTime: Date(), endTime: Date()))*/ // locationSource: .constant([]))
     }
 }

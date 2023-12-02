@@ -58,13 +58,11 @@ struct SearchView: View {
     
     
     var searchResults: [String] {
-                   return names.filter { $0.contains(searchText) }
-
-//        if searchText.isEmpty {
-//            return names
-//        } else {
-//            return names.filter { $0.contains(searchText) }
-//        }
+        if searchText.isEmpty {
+            return names
+        } else {
+            return names.filter { $0.contains(searchText) }
+        }
     }
 }
 
