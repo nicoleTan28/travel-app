@@ -33,8 +33,11 @@ struct ItineraryView: View {
                                 .frame(maxWidth: .infinity, alignment: .leading)
                         }
                         
-                        ScrollView(.horizontal){
-                            // HStack{
+                        TabView{
+                            if selectedDay.locations.isEmpty{
+                                Text("No destinations added")
+                                    .foregroundStyle(Color.secondary)
+                            }
                             ForEach(selectedDay.locations){ location in
                                 VStack{
                                     Text(location.name)
@@ -47,13 +50,16 @@ struct ItineraryView: View {
                                     .font(.caption)
                                     .foregroundStyle(.gray)
                                 }
-                                //                                    .background(.accentColor)
-                                
+                                .padding()
+                                .padding(.bottom)
                                 
                             }
                             //}
                         }
-                        .scrollTargetBehavior(.paging)
+                        .frame(height: 150)
+                        .tabViewStyle(.page)
+                        .listRowBackground(Color.gray.opacity(0.1))
+                        .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                         
                     }
                     
