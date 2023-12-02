@@ -44,7 +44,7 @@ struct Attraction: Identifiable, Codable, Hashable {
     var id = UUID()
     var pageTitle: String
     var overview: String
-    var image: String?
+    //var image: String?
     var latitude: Double
     var longtitude: Double
 }

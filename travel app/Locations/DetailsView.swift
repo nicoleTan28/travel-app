@@ -11,12 +11,12 @@ struct DetailsView: View {
     var body: some View {
         ScrollView {
             VStack (alignment: .leading){
-                AsyncImage(url: URL(string: place.image ?? "")){image in
-                    image
-                } placeholder: {
-                    ProgressView()
-                }
-                    .scaledToFit()
+//                AsyncImage(url: URL(string: place.image ?? "")){image in
+//                    image
+//                } placeholder: {
+//                    ProgressView()
+//                }
+//                    .scaledToFit()
                 
                 HStack{
                     Text(place.pageTitle)
@@ -56,7 +56,7 @@ struct DetailsView: View {
                 Text(place.overview)
                     .padding()
                 
-                Text("Where?")
+                Text("Location")
                     .font(.title)
                 Map(){
                     Marker(place.pageTitle, coordinate: CLLocationCoordinate2D(latitude: place.latitude, longitude: place.longtitude))
